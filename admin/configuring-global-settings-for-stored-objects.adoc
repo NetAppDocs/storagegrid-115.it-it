@@ -1,0 +1,19 @@
+---
+permalink: admin/configuring-global-settings-for-stored-objects.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile utilizzare Opzioni griglia per configurare le impostazioni per tutti gli oggetti memorizzati nel sistema StorageGRID, inclusa la compressione degli oggetti memorizzati e la crittografia degli oggetti memorizzati. e l"hashing degli oggetti memorizzati.' 
+---
+= Configurazione delle impostazioni globali per gli oggetti memorizzati
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare Opzioni griglia per configurare le impostazioni per tutti gli oggetti memorizzati nel sistema StorageGRID, inclusa la compressione degli oggetti memorizzati e la crittografia degli oggetti memorizzati. e l'hashing degli oggetti memorizzati.
+
+* link:configuring-stored-object-compression.html["Configurazione della compressione degli oggetti memorizzati"]
+* link:configuring-stored-object-encryption.html["Configurazione della crittografia degli oggetti memorizzati"]
+* link:configuring-stored-object-hashing.html["Configurazione dell'hashing degli oggetti memorizzati"]
+

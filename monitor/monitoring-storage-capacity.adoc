@@ -1,0 +1,21 @@
+---
+permalink: monitor/monitoring-storage-capacity.html 
+sidebar: sidebar 
+keywords:  
+summary: È necessario monitorare lo spazio utilizzabile totale disponibile sui nodi di storage per garantire che il sistema StorageGRID non esaurisca lo spazio di storage per gli oggetti o per i metadati degli oggetti. 
+---
+= Monitoraggio della capacità dello storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario monitorare lo spazio utilizzabile totale disponibile sui nodi di storage per garantire che il sistema StorageGRID non esaurisca lo spazio di storage per gli oggetti o per i metadati degli oggetti.
+
+StorageGRID memorizza i dati degli oggetti e i metadati degli oggetti separatamente e riserva una quantità specifica di spazio per un database Cassandra distribuito che contiene metadati degli oggetti. Monitorare la quantità totale di spazio consumata per gli oggetti e per i metadati degli oggetti, nonché le tendenze della quantità di spazio consumata per ciascuno di essi. Ciò consente di pianificare in anticipo l'aggiunta di nodi ed evitare interruzioni del servizio.
+
+È possibile visualizzare le informazioni sulla capacità dello storage per l'intero grid, per ciascun sito e per ciascun nodo di storage nel sistema StorageGRID.
+
+.Informazioni correlate
+link:viewing-storage-tab.html["Visualizzazione della scheda Storage (archiviazione)"]

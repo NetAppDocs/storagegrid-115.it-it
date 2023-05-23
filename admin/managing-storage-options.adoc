@@ -1,0 +1,18 @@
+---
+permalink: admin/managing-storage-options.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile visualizzare e configurare le opzioni di storage utilizzando il menu Configuration (Configurazione) di Grid Manager. Le opzioni di storage includono le impostazioni di segmentazione degli oggetti e i valori correnti per le filigrane di storage. È inoltre possibile visualizzare le porte S3 e Swift utilizzate dal servizio CLB obsoleto sui nodi gateway e dal servizio LDR sui nodi storage.' 
+---
+= Gestione delle opzioni di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile visualizzare e configurare le opzioni di storage utilizzando il menu Configuration (Configurazione) di Grid Manager. Le opzioni di storage includono le impostazioni di segmentazione degli oggetti e i valori correnti per le filigrane di storage. È inoltre possibile visualizzare le porte S3 e Swift utilizzate dal servizio CLB obsoleto sui nodi gateway e dal servizio LDR sui nodi storage.
+
+Per informazioni sulle assegnazioni delle porte, vedere link:summary-ip-addresses-and-ports-for-client-connections.html["Riepilogo: Indirizzi IP e porte per le connessioni client"].
+
+image::../media/storage_options.gif[Opzioni di storage]

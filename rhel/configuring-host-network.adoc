@@ -1,0 +1,51 @@
+---
+permalink: rhel/configuring-host-network.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Dopo aver completato l"installazione di Linux sugli host, potrebbe essere necessario eseguire alcune configurazioni aggiuntive per preparare un set di interfacce di rete su ciascun host adatte per il mapping nei nodi StorageGRID che verranno implementati in seguito.' 
+---
+= Configurazione della rete host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dopo aver completato l'installazione di Linux sugli host, potrebbe essere necessario eseguire alcune configurazioni aggiuntive per preparare un set di interfacce di rete su ciascun host adatte per il mapping nei nodi StorageGRID che verranno implementati in seguito.
+
+.Di cosa hai bisogno
+* Hai esaminato le linee guida per il networking StorageGRID.
++
+link:../network/index.html["Linee guida per la rete"]
+
+* Sono state esaminate le informazioni relative ai requisiti di migrazione dei container di nodi.
++
+link:node-container-migration-requirements.html["Requisiti per la migrazione dei container di nodi"]
+
+* Se si utilizzano host virtuali, prima di configurare la rete host sono state lette le considerazioni e i consigli per la clonazione dell'indirizzo MAC.
++
+link:considerations-and-recommendations-for-mac-address-cloning.html["Considerazioni e consigli per la clonazione degli indirizzi MAC"]
+
+
+
+
+NOTE: Se si utilizzano macchine virtuali come host, selezionare VMXNET 3 come scheda di rete virtuale. L'adattatore di rete VMware E1000 ha causato problemi di connettività con i container StorageGRID implementati su determinate distribuzioni di Linux.
+
+.A proposito di questa attività
+I nodi Grid devono essere in grado di accedere alla rete Grid e, facoltativamente, alle reti Admin e Client. È possibile fornire questo accesso creando mappature che associano l'interfaccia fisica dell'host alle interfacce virtuali per ciascun nodo della griglia. Quando si creano interfacce host, utilizzare nomi descrittivi per facilitare l'implementazione su tutti gli host e per abilitare la migrazione.
+
+La stessa interfaccia può essere condivisa tra l'host e uno o più nodi. Ad esempio, è possibile utilizzare la stessa interfaccia per l'accesso all'host e l'accesso alla rete di amministrazione del nodo, per facilitare la manutenzione di host e nodi. Sebbene sia possibile condividere la stessa interfaccia tra l'host e i singoli nodi, tutti devono avere indirizzi IP diversi. Gli indirizzi IP non possono essere condivisi tra nodi o tra l'host e qualsiasi nodo.
+
+È possibile utilizzare la stessa interfaccia di rete host per fornire l'interfaccia di rete griglia per tutti i nodi StorageGRID sull'host; è possibile utilizzare un'interfaccia di rete host diversa per ciascun nodo oppure eseguire operazioni intermedie. Tuttavia, in genere, non è possibile fornire la stessa interfaccia di rete host delle interfacce Grid e Admin Network per un singolo nodo o Grid Network per un nodo e Client Network per un altro.
+
+Puoi completare questa attività in molti modi. Ad esempio, se gli host sono macchine virtuali e si stanno implementando uno o due nodi StorageGRID per ciascun host, è possibile creare semplicemente il numero corretto di interfacce di rete nell'hypervisor e utilizzare un mapping 1-to-1. Se si implementano più nodi su host bare metal per uso in produzione, è possibile sfruttare il supporto dello stack di rete Linux per VLAN e LACP per la fault tolerance e la condivisione della larghezza di banda. Le sezioni seguenti forniscono approcci dettagliati per entrambi questi esempi. Non è necessario utilizzare nessuno di questi esempi; è possibile utilizzare qualsiasi approccio che soddisfi le proprie esigenze.
+
+
+NOTE: Non utilizzare dispositivi bond o bridge direttamente come interfaccia di rete del container. In questo modo si potrebbe impedire l'avvio del nodo causato da un problema del kernel con l'utilizzo di MACVLAN con dispositivi bond e bridge nello spazio dei nomi container. Utilizzare invece un dispositivo non-bond, ad esempio una coppia VLAN o Virtual Ethernet (veth). Specificare questo dispositivo come interfaccia di rete nel file di configurazione del nodo.
+
+.Informazioni correlate
+link:../network/index.html["Linee guida per la rete"]
+
+link:node-container-migration-requirements.html["Requisiti per la migrazione dei container di nodi"]
+
+link:creating-node-configuration-files.html["Creazione di file di configurazione del nodo"]

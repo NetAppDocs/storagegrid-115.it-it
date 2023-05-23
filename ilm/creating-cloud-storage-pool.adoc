@@ -1,0 +1,82 @@
+---
+permalink: ilm/creating-cloud-storage-pool.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Quando crei un pool di storage cloud, specifica il nome e la posizione del bucket o del container esterno che StorageGRID utilizzerà per memorizzare gli oggetti, il tipo di provider cloud (Amazon S3 o Azure Blob Storage) e le informazioni StorageGRID necessarie per accedere al bucket o al container esterno.' 
+---
+= Creazione di un pool di storage cloud
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando crei un pool di storage cloud, specifica il nome e la posizione del bucket o del container esterno che StorageGRID utilizzerà per memorizzare gli oggetti, il tipo di provider cloud (Amazon S3 o Azure Blob Storage) e le informazioni necessarie per accedere al bucket o al container esterno da parte di StorageGRID.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre di autorizzazioni di accesso specifiche.
+* Devi aver esaminato le linee guida per la configurazione dei Cloud Storage Pools.
+* Il bucket o il container esterno a cui fa riferimento il Cloud Storage Pool deve esistere.
+* È necessario disporre di tutte le informazioni di autenticazione necessarie per accedere al bucket o al container.
+
+
+.A proposito di questa attività
+Un Cloud Storage Pool specifica un singolo bucket S3 esterno o un container di storage Azure Blob. StorageGRID convalida il pool di storage cloud non appena viene salvato, quindi devi assicurarti che il bucket o il container specificato nel pool di storage cloud esista e sia raggiungibile.
+
+.Fasi
+. Selezionare *ILM* > *Storage Pools*.
++
+Viene visualizzata la pagina Storage Pools. Questa pagina include due sezioni: Pool di storage e pool di storage cloud.
+
++
+image::../media/storage_pools_page_cloud_storage_pool.png[Pool di storage pagina Pool di storage cloud]
+
+. Nella sezione Cloud Storage Pools della pagina, fare clic su *Create* (Crea).
++
+Viene visualizzata la finestra di dialogo Create Cloud Storage Pool (Crea pool di storage cloud).
+
++
+image::../media/cloud_storage_pool_create.png[Creazione del pool di storage cloud]
+
+. Inserire le seguenti informazioni:
++
+[cols="1a,2a"]
+|===
+| Campo | Descrizione 
+
+
+ a| 
+Nome visualizzato
+ a| 
+Un nome che descrive brevemente il Cloud Storage Pool e il suo scopo. Utilizzare un nome che sia facile da identificare quando si configurano le regole ILM.
+
+
+
+ a| 
+Tipo di provider
+ a| 
+Quale cloud provider utilizzerai per questo Cloud Storage Pool:
+
+** Amazon S3 (selezionare questa opzione per un pool di storage cloud S3 o C2S S3)
+** Azure Blob Storage
+
+
+*Nota:* quando si seleziona un tipo di provider, nella parte inferiore della pagina vengono visualizzate le sezioni Service Endpoint, Authentication e Server Verification.
+
+
+
+ a| 
+Bucket o container
+ a| 
+Il nome del bucket S3 esterno o del container Azure creato per il Cloud Storage Pool. Il nome specificato qui deve corrispondere esattamente al nome del bucket o del container, altrimenti la creazione del Cloud Storage Pool non avrà esito positivo. Non è possibile modificare questo valore dopo il salvataggio del Cloud Storage Pool.
+
+|===
+. Completare le sezioni Service Endpoint, Authentication e Server Verification della pagina, in base al tipo di provider selezionato.
++
+** link:s3-authentication-details-for-cloud-storage-pool.html["S3: Specifica dei dettagli di autenticazione per un Cloud Storage Pool"]
+** link:c2s-s3-authentication-details-for-cloud-storage-pool.html["C2S S3: Specifica dei dettagli di autenticazione per un Cloud Storage Pool"]
+** link:azure-authentication-details-for-cloud-storage-pool.html["Azure: Specifica dei dettagli di autenticazione per un pool di storage cloud"]
+
+
+

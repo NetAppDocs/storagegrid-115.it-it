@@ -1,0 +1,60 @@
+---
+permalink: monitor/chart-legend.html 
+sidebar: sidebar 
+keywords: chart, legend 
+summary: Le linee e i colori utilizzati per disegnare i grafici hanno un significato specifico. 
+---
+= Legenda del grafico
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le linee e i colori utilizzati per disegnare i grafici hanno un significato specifico.
+
+|===
+| Esempio | Significato 
+
+
+ a| 
+image:../media/dark_green_chart_line.gif["schermata che mostra una linea verde scura"]
+ a| 
+I valori degli attributi riportati vengono tracciati utilizzando linee di colore verde scuro.
+
+
+
+ a| 
+image:../media/light_green_chart_line.gif["schermata che mostra l'ombreggiatura che indica il binning dei dati"]
+ a| 
+L'ombreggiatura verde chiara intorno alle linee di colore verde scuro indica che i valori effettivi in quell'intervallo di tempo variano e sono stati "`binned`" per un plotting più rapido. La linea scura rappresenta la media ponderata. L'intervallo in verde chiaro indica i valori massimi e minimi all'interno del contenitore. L'ombreggiatura marrone chiaro viene utilizzata per i grafici dell'area per indicare i dati volumetrici.
+
+
+
+ a| 
+image:../media/no_data_plotted_chart.gif["schermata che mostra le aree vuote sulla linea di plottaggio"]
+ a| 
+Le aree vuote (nessun dato plottato) indicano che i valori degli attributi non erano disponibili. Lo sfondo può essere blu, grigio o una combinazione di grigio e blu, a seconda dello stato del servizio che segnala l'attributo.
+
+
+
+ a| 
+image:../media/light_blue_chart_shading.gif["schermata con ombreggiatura blu chiaro che indica valori indeterminati"]
+ a| 
+L'ombreggiatura blu chiaro indica che alcuni o tutti i valori degli attributi in quel momento erano indeterminati; l'attributo non stava riportando i valori perché il servizio era in uno stato sconosciuto.
+
+
+
+ a| 
+image:../media/gray_chart_shading.gif["schermata con ombreggiatura dei grigi dovuta a valori sconosciuti"]
+ a| 
+L'ombreggiatura dei grigi indica che alcuni o tutti i valori degli attributi in quel momento non erano noti perché il servizio che riporta gli attributi era amministrativamente inattivo.
+
+
+
+ a| 
+image:../media/gray_blue_chart_shading.gif["schermata che mostra la combinazione di valori indeterminati e sconosciuti"]
+ a| 
+Una combinazione di ombreggiature grigie e blu indica che alcuni dei valori degli attributi all'epoca erano indeterminati (perché il servizio era in uno stato sconosciuto), mentre altri non erano noti perché il servizio che riportava gli attributi era amministrativamente inattivo.
+
+|===

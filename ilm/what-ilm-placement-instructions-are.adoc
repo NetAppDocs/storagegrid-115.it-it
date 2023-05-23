@@ -1,0 +1,49 @@
+---
+permalink: ilm/what-ilm-placement-instructions-are.html 
+sidebar: sidebar 
+keywords:  
+summary: Le istruzioni di posizionamento determinano dove, quando e come vengono memorizzati i dati degli oggetti. Una regola ILM può includere una o più istruzioni di posizionamento. Ogni istruzione di posizionamento si applica a un singolo periodo di tempo. 
+---
+= Quali sono le istruzioni per il posizionamento delle regole ILM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le istruzioni di posizionamento determinano dove, quando e come vengono memorizzati i dati degli oggetti. Una regola ILM può includere una o più istruzioni di posizionamento. Ogni istruzione di posizionamento si applica a un singolo periodo di tempo.
+
+Quando si crea un'istruzione di posizionamento, si specifica quando si applica il posizionamento (il periodo di tempo), quale tipo di copie creare (replicate o codificate per la cancellazione) e dove memorizzare le copie (una o più posizioni di archiviazione). All'interno di una singola regola è possibile specificare più posizioni per un periodo di tempo e le istruzioni di posizionamento per più di un periodo di tempo:
+
+* Per specificare più di un posizionamento degli oggetti durante un singolo periodo di tempo, fare clic sull'icona con il segno più image:../media/icon_plus_sign_black_on_white.gif["Icona segno più nero su bianco"] per aggiungere più di una riga per quel periodo di tempo.
+* Per specificare il posizionamento degli oggetti per più di un periodo di tempo, fare clic sul pulsante *Add* (Aggiungi) per aggiungere il periodo di tempo successivo. Quindi, specificare una o più righe entro il periodo di tempo.
+
+
+L'esempio mostra la pagina Definisci posizioni della procedura guidata Crea regola ILM.
+
+image::../media/ilm_rule_multiple_placements_in_single_time_period.png[Schermata ILM placements (posizionamenti ILM) di Grid Manager]
+
+[cols="1a,3a"]
+|===
+
+
+ a| 
+image:../media/icon_number_1.png["icona numero 1"]
+ a| 
+La prima istruzione di posizionamento ha due righe per il primo anno:
+
+. La prima riga crea due copie di oggetti replicate in due siti del data center.
+. La seconda riga crea una copia 6+3 con codifica di cancellazione utilizzando tre siti del data center.
+
+
+
+
+ a| 
+image:../media/icon_number_2.png["icona numero 2"]
+ a| 
+La seconda istruzione di posizionamento crea due copie archiviate dopo un anno e le conserva per sempre.
+
+|===
+Quando si definisce il set di istruzioni di posizionamento per una regola, è necessario assicurarsi che almeno un'istruzione di posizionamento inizi al giorno 0, che non vi siano intervalli tra i periodi di tempo definiti, e che l'istruzione finale di posizionamento continui per sempre o fino a quando non si richiede più alcuna copia oggetto.
+
+Alla scadenza di ogni periodo di tempo previsto dalla regola, vengono applicate le istruzioni per il posizionamento dei contenuti per il periodo di tempo successivo. Vengono create nuove copie di oggetti e tutte le copie non necessarie vengono eliminate.

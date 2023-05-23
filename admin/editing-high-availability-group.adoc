@@ -1,0 +1,101 @@
+---
+permalink: admin/editing-high-availability-group.html 
+sidebar: sidebar 
+keywords:  
+summary: È possibile modificare un gruppo ad alta disponibilità per modificarne nome e descrizione, aggiungere o rimuovere interfacce o aggiungere o aggiornare un indirizzo IP virtuale. 
+---
+= Modifica di un gruppo ad alta disponibilità
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile modificare un gruppo ad alta disponibilità (ha) per modificarne nome e descrizione, aggiungere o rimuovere interfacce o aggiungere o aggiornare un indirizzo IP virtuale.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre dell'autorizzazione di accesso root.
+
+
+.A proposito di questa attività
+Alcuni dei motivi per modificare un gruppo ha sono i seguenti:
+
+* Aggiunta di un'interfaccia a un gruppo esistente. L'indirizzo IP dell'interfaccia deve trovarsi all'interno della stessa subnet delle altre interfacce già assegnate al gruppo.
+* Rimozione di un'interfaccia da un gruppo ha. Ad esempio, non è possibile avviare una procedura di decommissionamento di un sito o di un nodo se in un gruppo ha viene utilizzata l'interfaccia di un nodo per Grid Network o Client Network.
+
+
+.Fasi
+. Selezionare *Configurazione* > *Impostazioni di rete* > *gruppi ad alta disponibilità*.
++
+Viene visualizzata la pagina High Availability Groups.
+
++
+image::../media/ha_groups_page_with_two_groups.png[Pagina HA Groups con due gruppi]
+
+. Selezionare il gruppo ha che si desidera modificare e fare clic su *Edit* (Modifica).
++
+Viene visualizzata la finestra di dialogo Modifica gruppo ad alta disponibilità.
+
+. Facoltativamente, aggiornare il nome o la descrizione del gruppo.
+. Facoltativamente, fare clic su *Select Interfaces* (Seleziona interfacce) per modificare le interfacce per il gruppo ha.
++
+Viene visualizzata la finestra di dialogo Add Interfaces to High Availability Group.
+
++
+image::../media/ha_group_add_interfaces.png[Gruppi HA Aggiungi interfacce]
+
++
+Se il relativo indirizzo IP è assegnato da DHCP, l'interfaccia non viene visualizzata nell'elenco.
+
+. Selezionare o deselezionare le caselle di controllo per aggiungere o rimuovere interfacce.
++
+Attenersi alle seguenti linee guida per la selezione delle interfacce:
+
++
+** Selezionare almeno un'interfaccia.
+** Se si seleziona più di un'interfaccia, tutte le interfacce devono trovarsi sulla rete griglia (eth0) o sulla rete client (eth2).
+** Tutte le interfacce devono trovarsi nella stessa subnet o in subnet con un prefisso comune.
++
+Gli indirizzi IP saranno limitati alla subnet più piccola (quella con il prefisso più grande).
+
+** Se si selezionano interfacce su diversi tipi di nodi e si verifica un failover, solo i servizi comuni ai nodi selezionati saranno disponibili sugli IP virtuali.
++
+*** Selezionare due o più nodi di amministrazione per la protezione ha di Grid Manager o di Tenant Manager.
+*** Selezionare due o più nodi di amministrazione, nodi gateway o entrambi per la protezione ha del servizio Load Balancer.
+*** Selezionare due o più nodi gateway per la protezione ha del servizio CLB.
++
+
+NOTE: Il servizio CLB è obsoleto.
+
+
+
+
+
+. Fare clic su *Apply* (Applica).
++
+Le interfacce selezionate sono elencate nella sezione interfacce della pagina. Per impostazione predefinita, la prima interfaccia dell'elenco viene selezionata come Master preferito.
+
++
+image::../media/ha_group_edit_group.png[Gruppo HA Edit Group (Modifica gruppo HA)]
+
+. Se si desidera che un'interfaccia diversa sia la master preferita, selezionare tale interfaccia nella colonna *Master preferito*.
++
+Preferred Master è l'interfaccia attiva a meno che non si verifichi un errore che causa la riassegnazione degli indirizzi VIP a un'interfaccia di backup.
+
++
+
+NOTE: Se il gruppo ha fornisce l'accesso a Grid Manager, è necessario selezionare un'interfaccia sul nodo di amministrazione primario come master preferito. Alcune procedure di manutenzione possono essere eseguite solo dal nodo di amministrazione primario.
+
+. Facoltativamente, aggiornare gli indirizzi IP virtuali per il gruppo ha.
++
+Specificare almeno un indirizzo IPv4. In alternativa, è possibile specificare ulteriori indirizzi IPv4 e IPv6.
+
++
+Gli indirizzi IPv4 devono trovarsi all'interno della subnet IPv4 condivisa da tutte le interfacce membri.
+
+. Fare clic su *Save* (Salva).
++
+Il gruppo ha viene aggiornato.
+
+

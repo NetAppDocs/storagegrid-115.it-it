@@ -1,0 +1,58 @@
+---
+permalink: sg5600/upgrading-santricity-os-on-e2700-controller-using-maintenance-mode.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, controller, e2700, storage controller, upgrade, upgrading, SANtricity OS, SANtricity, maintenance mode 
+summary: 'Se non si riesce ad aggiornare il software SANtricity OS utilizzando Grid Manager, utilizzare la procedura della modalità di manutenzione per applicare l"aggiornamento.' 
+---
+= Aggiornamento del sistema operativo SANtricity sul controller E2700 utilizzando la modalità di manutenzione
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se non si riesce ad aggiornare il software SANtricity OS utilizzando Grid Manager, utilizzare la procedura della modalità di manutenzione per applicare l'aggiornamento.
+
+.Di cosa hai bisogno
+* Hai consultato lo strumento matrice di interoperabilità NetApp (IMT) per confermare che la versione del sistema operativo SANtricity che stai utilizzando per l'aggiornamento è compatibile con l'appliance.
+* Se non si utilizza Grid Manager, è necessario attivare la modalità di manutenzione del controller E5600SG. L'attivazione della modalità di manutenzione del controller interrompe il collegamento al controller E2700. Prima di modificare la configurazione del collegamento, è necessario impostare il controller E5600SG in modalità di manutenzione. L'attivazione della modalità di manutenzione di un'appliance StorageGRID potrebbe rendere l'appliance non disponibile per l'accesso remoto.
++
+link:placing-appliance-into-maintenance-mode.html["Attivazione della modalità di manutenzione dell'appliance"]
+
+
+
+.A proposito di questa attività
+Non aggiornare il sistema operativo SANtricity o NVSRAM nel controller e-Series su più appliance StorageGRID alla volta.
+
+
+IMPORTANT: L'aggiornamento di più appliance StorageGRID alla volta potrebbe causare l'indisponibilità dei dati, a seconda del modello di implementazione e delle policy ILM.
+
+.Fasi
+. Da un laptop di assistenza, accedere a Gestione storage SANtricity ed effettuare l'accesso.
+. Scaricare il nuovo file del software SANtricity OS e IL file NVSRAM sul client di gestione.
++
+
+IMPORTANT: L'NVSRAM è specifico dell'appliance StorageGRID. Non utilizzare IL download STANDARD DI NVSRAM.
+
+. Seguire le istruzioni riportate nelle _istruzioni per l'aggiornamento del software e del firmware E2700 e E5600 SANtricity_ o nella guida in linea di SANtricity Storage Manager e aggiornare il firmware DEL controller E2700, NVSRAM o entrambi.
++
+
+IMPORTANT: Se è necessario aggiornare L'NVSRAM nel controller E2700, è necessario confermare che il file SANtricity OS scaricato è stato designato come compatibile con le appliance StorageGRID.
+
++
+
+NOTE: Attivare immediatamente i file di aggiornamento. Non rinviare l'attivazione.
+
+. Al termine dell'operazione di aggiornamento, riavviare il nodo. Dal programma di installazione dell'appliance StorageGRID, selezionare *Avanzate* > *Riavvia controller*, quindi selezionare una delle seguenti opzioni:
++
+** Selezionare *Riavvia in StorageGRID* per riavviare il controller con il nodo che si ricongiunge alla griglia. Selezionare questa opzione se si è terminato di lavorare in modalità di manutenzione e si è pronti per ripristinare il normale funzionamento del nodo.
+** Selezionare *Reboot into Maintenance Mode* (Riavvia in modalità di manutenzione) per riavviare il controller con il nodo in modalità di manutenzione. Selezionare questa opzione se sono necessarie ulteriori operazioni di manutenzione sul nodo prima di ricongiungersi alla griglia.image:../media/reboot_controller_from_maintenance_mode.png["Riavviare il controller in modalità di manutenzione"]
++
+Il riavvio dell'appliance e il ricongiungersi alla griglia possono richiedere fino a 20 minuti. Per confermare che il riavvio è stato completato e che il nodo ha ricongiungersi alla griglia, tornare a Grid Manager. La scheda *Nodes* dovrebbe visualizzare uno stato normale image:../media/icon_alert_green_checkmark.png["icona di avviso segno di spunta verde"] per il nodo appliance, che indica che non sono attivi avvisi e che il nodo è connesso alla griglia.
+
++
+image::../media/node_rejoin_grid_confirmation.png[Nodo appliance riconentrato in Grid]
+
+
+
+

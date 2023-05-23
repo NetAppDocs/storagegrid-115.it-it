@@ -1,0 +1,23 @@
+---
+permalink: network/network-topology-examples.html 
+sidebar: sidebar 
+keywords: storagegrid, network topology 
+summary: 'Oltre alla rete Grid richiesta, è possibile scegliere se configurare le interfacce Admin Network e Client Network quando si progetta la topologia di rete per un"implementazione a sito singolo o multisito.' 
+---
+= Esempi di topologia di rete
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Oltre alla rete Grid richiesta, è possibile scegliere se configurare le interfacce Admin Network e Client Network quando si progetta la topologia di rete per un'implementazione a sito singolo o multisito.
+
+Le porte interne sono accessibili solo tramite la rete Grid. Le porte esterne sono accessibili da tutti i tipi di rete. Questa flessibilità offre diverse opzioni per la progettazione di un'implementazione StorageGRID e la configurazione di IP esterni e filtraggio delle porte in switch e firewall. Per ulteriori informazioni sulle porte interne ed esterne, consultare il riferimento alla porta di rete.
+
+Se si specifica che l'interfaccia di rete client di un nodo non è attendibile, configurare un endpoint di bilanciamento del carico per accettare il traffico in entrata. Per informazioni sulla configurazione delle reti client non attendibili e degli endpoint del bilanciamento del carico, vedere le istruzioni per l'amministrazione di StorageGRID.
+
+.Informazioni correlate
+link:../admin/index.html["Amministrare StorageGRID"]
+
+link:network-port-reference.html["Riferimento porta di rete"]

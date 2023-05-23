@@ -1,0 +1,531 @@
+---
+permalink: s3/operations-on-buckets.html 
+sidebar: sidebar 
+keywords: bucket, buckets, operations on buckets 
+summary: Il sistema StorageGRID supporta un massimo di 1,000 bucket per ciascun account tenant S3. 
+---
+= Operazioni sui bucket
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il sistema StorageGRID supporta un massimo di 1,000 bucket per ciascun account tenant S3.
+
+Le restrizioni dei nomi dei bucket seguono le restrizioni delle regioni AWS US Standard, ma è necessario limitarle ulteriormente alle convenzioni di denominazione DNS per supportare le richieste di tipo host virtuale S3.
+
+https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html["Documentazione di Amazon Web Services (AWS): Limitazioni e limitazioni del bucket"]
+
+link:configuring-tenant-accounts-and-connections.html["Nomi di dominio degli endpoint per la richiesta S3"]
+
+LE operazioni GET bucket (Elenca oggetti) e GET Bucket Versions supportano i controlli di coerenza StorageGRID.
+
+È possibile verificare se gli aggiornamenti dell'ultimo tempo di accesso sono attivati o disattivati per i singoli bucket.
+
+La seguente tabella descrive come StorageGRID implementa le operazioni del bucket API REST S3. Per eseguire una di queste operazioni, è necessario fornire le credenziali di accesso necessarie per l'account.
+
+|===
+| Operazione | Implementazione 
+
+
+ a| 
+ELIMINA bucket
+ a| 
+Implementato con tutti i comportamenti REST API di Amazon S3.
+
+
+
+ a| 
+ELIMINA cors bucket
+ a| 
+Questa operazione elimina la configurazione CORS per il bucket.
+
+
+
+ a| 
+ELIMINA crittografia bucket
+ a| 
+Questa operazione elimina la crittografia predefinita dal bucket. Gli oggetti crittografati esistenti rimangono crittografati, ma i nuovi oggetti aggiunti al bucket non vengono crittografati.
+
+
+
+ a| 
+ELIMINA ciclo di vita bucket
+ a| 
+Questa operazione elimina la configurazione del ciclo di vita dal bucket.
+
+
+
+ a| 
+ELIMINA policy bucket
+ a| 
+Questa operazione elimina la policy associata al bucket.
+
+
+
+ a| 
+ELIMINA replica bucket
+ a| 
+Questa operazione elimina la configurazione di replica collegata al bucket.
+
+
+
+ a| 
+ELIMINA tag bucket
+ a| 
+Questa operazione utilizza `tagging` sottorisorsa per rimuovere tutti i tag da un bucket.
+
+
+
+ a| 
+GET Bucket (Elenca oggetti), versione 1 e versione 2
+ a| 
+Questa operazione restituisce alcuni o tutti (fino a 1,000) gli oggetti in un bucket. La classe Storage per gli oggetti può avere due valori, anche se l'oggetto è stato acquisito con `REDUCED_REDUNDANCY` opzione classe di storage:
+
+* `STANDARD`, Che indica che l'oggetto è memorizzato in un pool di storage costituito da nodi di storage.
+* `GLACIER`, Che indica che l'oggetto è stato spostato nel bucket esterno specificato dal Cloud Storage Pool.
+
+
+Se il bucket contiene un numero elevato di chiavi eliminate con lo stesso prefisso, la risposta potrebbe includere alcune `CommonPrefixes` che non contengono chiavi.
+
+
+
+ a| 
+OTTIENI acl bucket
+ a| 
+Questa operazione restituisce una risposta positiva e l'ID, il DisplayName e il permesso del proprietario del bucket, indicando che il proprietario ha pieno accesso al bucket.
+
+
+
+ a| 
+OTTIENI bucket cors
+ a| 
+Questa operazione restituisce il `cors` configurazione per il bucket.
+
+
+
+ a| 
+OTTIENI la crittografia bucket
+ a| 
+Questa operazione restituisce la configurazione di crittografia predefinita per il bucket.
+
+
+
+ a| 
+OTTIENI il ciclo di vita del bucket
+ a| 
+Questa operazione restituisce la configurazione del ciclo di vita del bucket.
+
+
+
+ a| 
+OTTIENI posizione bucket
+ a| 
+Questa operazione restituisce la regione impostata utilizzando `LocationConstraint` Elemento nella richiesta PUT bucket. Se l'area del bucket è `us-east-1`, viene restituita una stringa vuota per la regione.
+
+
+
+ a| 
+OTTIENI notifica bucket
+ a| 
+Questa operazione restituisce la configurazione di notifica allegata al bucket.
+
+
+
+ a| 
+SCARICA le versioni degli oggetti bucket
+ a| 
+Con l'accesso IN LETTURA su un bucket, questa operazione con `versions` la sottorisorsa elenca i metadati di tutte le versioni degli oggetti nel bucket.
+
+
+
+ a| 
+OTTIENI la policy bucket
+ a| 
+Questa operazione restituisce la policy allegata al bucket.
+
+
+
+ a| 
+OTTIENI la replica bucket
+ a| 
+Questa operazione restituisce la configurazione di replica collegata al bucket.
+
+
+
+ a| 
+OTTIENI il contrassegno bucket
+ a| 
+Questa operazione utilizza `tagging` sottorisorsa per restituire tutti i tag per un bucket.
+
+
+
+ a| 
+SCARICA la versione di bucket
+ a| 
+Questa implementazione utilizza `versioning` sottorisorsa per restituire lo stato di versione di un bucket. Lo stato di versione restituito indica se il bucket è "`Unversioned`" o se la versione del bucket è "`enabled`" o "`Suspended`".
+
+
+
+ a| 
+OTTIENI configurazione blocco oggetto
+ a| 
+Questa operazione determina se S3 Object Lock è attivato per un bucket. link:s3-rest-api-supported-operations-and-limitations.html["Utilizzo di S3 Object Lock"]
+
+
+
+ a| 
+BENNA PER LA TESTA
+ a| 
+Questa operazione determina se esiste un bucket e se si dispone dell'autorizzazione per accedervi.
+
+
+
+ a| 
+METTI bucket
+ a| 
+Questa operazione crea un nuovo bucket. Creando il bucket, diventerai il proprietario del bucket.
+
+* I nomi dei bucket devono rispettare le seguenti regole:
++
+** Deve essere unico in ogni sistema StorageGRID (non solo univoco all'interno dell'account tenant).
+** Deve essere conforme al DNS.
+** Deve contenere almeno 3 e non più di 63 caratteri.
+** Può essere una serie di una o più etichette, con etichette adiacenti separate da un punto. Ogni etichetta deve iniziare e terminare con una lettera minuscola o un numero e può utilizzare solo lettere minuscole, numeri e trattini.
+** Non deve essere simile a un indirizzo IP formattato con testo.
+** Non utilizzare i periodi nelle richieste di stile ospitate virtuali. I punti causano problemi con la verifica del certificato con caratteri jolly del server.
+
+
+* Per impostazione predefinita, i bucket vengono creati in `us-east-1` regione; tuttavia, è possibile utilizzare `LocationConstraint` elemento di richiesta nel corpo della richiesta per specificare un'area diversa. Quando si utilizza `LocationConstraint` È necessario specificare il nome esatto di una regione definita utilizzando Grid Manager o l'API Grid Management. Contattare l'amministratore di sistema se non si conosce il nome della regione da utilizzare. *Nota*: Si verifica un errore se la richiesta PUT bucket utilizza un'area non definita in StorageGRID.
+* È possibile includere `x-amz-bucket-object-lock-enabled` Richiedi intestazione per creare un bucket con blocco oggetti S3 attivato.
++
+È necessario attivare il blocco oggetti S3 quando si crea il bucket. Non è possibile aggiungere o disattivare il blocco oggetti S3 dopo la creazione di un bucket. S3 Object Lock richiede il controllo della versione del bucket, che viene attivato automaticamente quando si crea il bucket.
+
++
+link:s3-rest-api-supported-operations-and-limitations.html["Utilizzo di S3 Object Lock"]
+
+
+
+
+
+ a| 
+METTI cors bucket
+ a| 
+Questa operazione imposta la configurazione del CORS per un bucket in modo che il bucket possa gestire le richieste di origine incrociata. La condivisione delle risorse tra origini (CORS) è un meccanismo di sicurezza che consente alle applicazioni Web client di un dominio di accedere alle risorse di un dominio diverso. Si supponga, ad esempio, di utilizzare un bucket S3 denominato `images` per memorizzare le immagini. Impostando la configurazione CORS per `images` bucket, è possibile consentire la visualizzazione delle immagini in quel bucket sul sito web `+http://www.example.com+`.
+
+
+
+ a| 
+METTI la crittografia bucket
+ a| 
+Questa operazione imposta lo stato di crittografia predefinito di un bucket esistente. Quando la crittografia a livello di bucket è attivata, tutti i nuovi oggetti aggiunti al bucket vengono crittografati.StorageGRID supporta la crittografia lato server con le chiavi gestite da StorageGRID. Quando si specifica la regola di configurazione della crittografia lato server, impostare `SSEAlgorithm` parametro a. `AES256`e non utilizzare `KMSMasterKeyID` parametro.
+
+La configurazione della crittografia predefinita del bucket viene ignorata se la richiesta di caricamento degli oggetti specifica già la crittografia, ovvero se la richiesta include `x-amz-server-side-encryption-*` intestazione della richiesta).
+
+
+
+ a| 
+METTI IL ciclo di vita del bucket
+ a| 
+Questa operazione crea una nuova configurazione del ciclo di vita per il bucket o sostituisce una configurazione del ciclo di vita esistente. StorageGRID supporta fino a 1,000 regole del ciclo di vita in una configurazione del ciclo di vita. Ogni regola può includere i seguenti elementi XML:
+
+* Scadenza (giorni, data)
+* Non currentVersionExpiration (non currentDays)
+* Filtro (prefisso, tag)
+* Stato
+* ID
+
+
+StorageGRID non supporta queste azioni:
+
+* AbortIncompleteMultipartUpload
+* ExpiredObjectDeleteMarker
+* Transizione
+
+
+Per capire come l'azione di scadenza in un ciclo di vita del bucket interagisce con le istruzioni di posizionamento di ILM, consulta "`funzionamento di ILM durante la vita di un oggetto`" nelle istruzioni per la gestione degli oggetti con la gestione del ciclo di vita delle informazioni.
+
+*Nota*: La configurazione del ciclo di vita del bucket può essere utilizzata con bucket con blocco oggetti S3 attivato, ma la configurazione del ciclo di vita del bucket non è supportata per bucket conformi legacy.
+
+
+
+ a| 
+NOTIFICA DEL bucket
+ a| 
+Questa operazione configura le notifiche per il bucket utilizzando l'XML di configurazione delle notifiche incluso nel corpo della richiesta. È necessario conoscere i seguenti dettagli di implementazione:
+
+* StorageGRID supporta gli argomenti del servizio di notifica semplice (SNS) come destinazioni. Gli endpoint SQS (Simple Queue Service) o Amazon Lambda non sono supportati.
+* La destinazione delle notifiche deve essere specificata come URN di un endpoint StorageGRID. Gli endpoint possono essere creati utilizzando il tenant Manager o l'API di gestione tenant.
++
+L'endpoint deve esistere perché la configurazione della notifica abbia esito positivo. Se l'endpoint non esiste, un `400 Bad Request` viene restituito un errore con il codice `InvalidArgument`.
+
+* Non è possibile configurare una notifica per i seguenti tipi di eventi. Questi tipi di evento sono *non* supportati.
++
+** `s3:ReducedRedundancyLostObject`
+** `s3:ObjectRestore:Completed`
+
+
+* Le notifiche degli eventi inviate da StorageGRID utilizzano il formato JSON standard, ad eccezione del fatto che non includono alcune chiavi e utilizzano valori specifici per altre, come mostrato nell'elenco seguente:
+* *EventSource*
++
+`sgws:s3`
+
+* *AwsRegion*
++
+non incluso
+
+* *x-amz-id-2*
++
+non incluso
+
+* *arn*
++
+`urn:sgws:s3:::bucket_name`
+
+
+
+
+
+ a| 
+METTI la policy bucket
+ a| 
+Questa operazione imposta la policy associata al bucket.
+
+
+
+ a| 
+METTI la replica del bucket
+ a| 
+Questa operazione configura la replica di StorageGRID CloudMirror per il bucket utilizzando l'XML di configurazione della replica fornito nel corpo della richiesta. Per la replica di CloudMirror, è necessario conoscere i seguenti dettagli di implementazione:
+
+* StorageGRID supporta solo V1 della configurazione di replica. Ciò significa che StorageGRID non supporta l'utilizzo di `Filter` Per le regole e segue le convenzioni V1 per l'eliminazione delle versioni degli oggetti. Per ulteriori informazioni, consultare la documentazione di Amazon sulla configurazione della replica.
+* La replica del bucket può essere configurata su bucket con versione o senza versione.
+* È possibile specificare un bucket di destinazione diverso in ciascuna regola dell'XML di configurazione della replica. Un bucket di origine può replicare in più di un bucket di destinazione.
+* I bucket di destinazione devono essere specificati come URN degli endpoint StorageGRID, come specificato in Gestione tenant o nell'API di gestione tenant.
++
+L'endpoint deve esistere per il successo della configurazione della replica. Se l'endpoint non esiste, la richiesta fallisce come a. `400 Bad Request`. Il messaggio di errore indica: `Unable to save the replication policy. The specified endpoint URN does not exist: _URN_.`
+
+* Non è necessario specificare un `Role` Nel file XML di configurazione. Questo valore non viene utilizzato da StorageGRID e verrà ignorato se inviato.
+* Se si omette la classe di storage dall'XML di configurazione, StorageGRID utilizza `STANDARD` classe di storage per impostazione predefinita.
+* Se si elimina un oggetto dal bucket di origine o si elimina lo stesso bucket di origine, il comportamento della replica tra regioni è il seguente:
++
+** Se si elimina l'oggetto o il bucket prima che sia stato replicato, l'oggetto/bucket non viene replicato e non viene inviata alcuna notifica.
+** Se elimini l'oggetto o il bucket dopo che è stato replicato, StorageGRID segue il comportamento standard di eliminazione di Amazon S3 per V1 della replica tra regioni.
+
+
+
+
+
+
+ a| 
+INSERIRE il contrassegno bucket
+ a| 
+Questa operazione utilizza `tagging` sottorisorsa per aggiungere o aggiornare un set di tag per un bucket. Quando si aggiungono tag bucket, tenere presente le seguenti limitazioni:
+
+* StorageGRID e Amazon S3 supportano fino a 50 tag per ciascun bucket.
+* Le etichette associate a un bucket devono avere chiavi tag univoche. Una chiave tag può contenere fino a 128 caratteri Unicode.
+* I valori dei tag possono contenere fino a 256 caratteri Unicode.
+* Chiave e valori distinguono tra maiuscole e minuscole.
+
+
+
+
+ a| 
+METTERE il bucket in versione
+ a| 
+Questa implementazione utilizza `versioning` sottorisorsa per impostare lo stato di versione di un bucket esistente. È possibile impostare lo stato di versione con uno dei seguenti valori:
+
+* Enabled (attivato): Attiva il controllo delle versioni degli oggetti nel bucket. Tutti gli oggetti aggiunti al bucket ricevono un ID di versione univoco.
+* Suspended (sospeso): Disattiva il controllo delle versioni degli oggetti nel bucket. Tutti gli oggetti aggiunti al bucket ricevono l'ID versione `null`.
+
+
+|===
+.Informazioni correlate
+http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html["Documentazione Amazon Web Services (AWS): Replica tra regioni"]
+
+link:consistency-controls.html["Controlli di coerenza"]
+
+link:storagegrid-s3-rest-api-operations.html["OTTIENI la richiesta dell'ultimo accesso al bucket"]
+
+link:bucket-and-group-access-policies.html["Policy di accesso a bucket e gruppi"]
+
+link:s3-rest-api-supported-operations-and-limitations.html["Utilizzo di S3 Object Lock"]
+
+link:s3-operations-tracked-in-audit-logs.html["Operazioni S3 registrate nei registri di audit"]
+
+link:../ilm/index.html["Gestire gli oggetti con ILM"]
+
+link:../tenant/index.html["Utilizzare un account tenant"]
+
+
+
+== Creazione di una configurazione del ciclo di vita S3
+
+È possibile creare una configurazione del ciclo di vita S3 per controllare quando oggetti specifici vengono cancellati dal sistema StorageGRID.
+
+Il semplice esempio di questa sezione illustra come una configurazione del ciclo di vita S3 può controllare quando alcuni oggetti vengono cancellati (scaduti) da specifici bucket S3. L'esempio in questa sezione è a solo scopo illustrativo. Per i dettagli completi sulla creazione delle configurazioni del ciclo di vita S3, consulta la sezione sulla gestione del ciclo di vita degli oggetti nella _Amazon Simple Storage Service Developer Guide_. Nota: StorageGRID supporta solo le azioni di scadenza e non le azioni di transizione.
+
+https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html["Amazon Simple Storage Service Developer Guide: Gestione del ciclo di vita degli oggetti"]
+
+
+
+=== Che cos'è una configurazione del ciclo di vita
+
+Una configurazione del ciclo di vita è un insieme di regole applicate agli oggetti in specifici bucket S3. Ogni regola specifica quali oggetti sono interessati e quando scadranno (in una data specifica o dopo un certo numero di giorni).
+
+StorageGRID supporta fino a 1,000 regole del ciclo di vita in una configurazione del ciclo di vita. Ogni regola può includere i seguenti elementi XML:
+
+* Scadenza: Consente di eliminare un oggetto quando viene raggiunta una data specificata o quando viene raggiunto un numero di giorni specificato, a partire dalla data di acquisizione dell'oggetto.
+* NoncurrentVersionExpiration (NoncurrentExpiration versione): Consente di eliminare un oggetto quando viene raggiunto un numero di giorni specificato, a partire da quando l'oggetto è diventato non corrente.
+* Filtro (prefisso, tag)
+* Stato
+* ID
+
+
+Se si applica una configurazione del ciclo di vita a un bucket, le impostazioni del ciclo di vita del bucket sovrascrivono sempre le impostazioni ILM di StorageGRID. StorageGRID utilizza le impostazioni di scadenza per il bucket, non ILM, per determinare se eliminare o conservare oggetti specifici.
+
+Di conseguenza, un oggetto potrebbe essere rimosso dalla griglia anche se le istruzioni di posizionamento in una regola ILM sono ancora applicabili all'oggetto. Oppure, un oggetto potrebbe essere conservato sulla griglia anche dopo che sono scadute le istruzioni di posizionamento ILM per l'oggetto. Per ulteriori informazioni, vedere "`funzionamento di ILM durante la vita di un oggetto`" nelle istruzioni per la gestione degli oggetti con la gestione del ciclo di vita delle informazioni.
+
+
+NOTE: La configurazione del ciclo di vita del bucket può essere utilizzata con bucket con blocco oggetti S3 attivato, ma la configurazione del ciclo di vita del bucket non è supportata per bucket conformi legacy.
+
+StorageGRID supporta l'utilizzo delle seguenti operazioni bucket per gestire le configurazioni del ciclo di vita:
+
+* ELIMINA ciclo di vita bucket
+* OTTIENI il ciclo di vita del bucket
+* METTI IL ciclo di vita del bucket
+
+
+
+
+=== Creazione della configurazione del ciclo di vita
+
+Come primo passo nella creazione di una configurazione del ciclo di vita, è possibile creare un file JSON che includa una o più regole. Ad esempio, questo file JSON include tre regole, come segue:
+
+. La regola 1 si applica solo agli oggetti che corrispondono al prefisso `category1`/ e che hanno un `key2` valore di `tag2`. Il `Expiration` Il parametro specifica che gli oggetti corrispondenti al filtro scadranno alla mezzanotte del 22 agosto 2020.
+. La regola 2 si applica solo agli oggetti che corrispondono al prefisso `category2`/. Il `Expiration` parametro specifica che gli oggetti corrispondenti al filtro scadranno 100 giorni dopo l'acquisizione.
++
+
+IMPORTANT: Le regole che specificano un numero di giorni sono relative al momento in cui l'oggetto è stato acquisito. Se la data corrente supera la data di acquisizione più il numero di giorni, alcuni oggetti potrebbero essere rimossi dal bucket non appena viene applicata la configurazione del ciclo di vita.
+
+. La regola 3 si applica solo agli oggetti che corrispondono al prefisso `category3`/. Il `Expiration` parametro specifica che qualsiasi versione non corrente degli oggetti corrispondenti scadrà 50 giorni dopo che diventeranno non aggiornati.
+
+
+[listing]
+----
+{
+	"Rules": [
+        {
+		    "ID": "rule1",
+			"Filter": {
+                "And": {
+                    "Prefix": "category1/",
+                    "Tags": [
+                        {
+                            "Key": "key2",
+							"Value": "tag2"
+                        }
+                    ]
+                }
+            },
+			"Expiration": {
+                "Date": "2020-08-22T00:00:00Z"
+            },
+            "Status": "Enabled"
+        },
+		{
+            "ID": "rule2",
+			"Filter": {
+                "Prefix": "category2/"
+            },
+			"Expiration": {
+                "Days": 100
+            },
+            "Status": "Enabled"
+        },
+		{
+            "ID": "rule3",
+			"Filter": {
+                "Prefix": "category3/"
+            },
+			"NoncurrentVersionExpiration": {
+                "NoncurrentDays": 50
+            },
+            "Status": "Enabled"
+        }
+    ]
+}
+----
+
+
+=== Applicazione di una configurazione del ciclo di vita a un bucket
+
+Dopo aver creato il file di configurazione del ciclo di vita, lo si applica a un bucket inviando una richiesta DI ciclo di vita PUT bucket.
+
+Questa richiesta applica la configurazione del ciclo di vita nel file di esempio agli oggetti in un bucket denominato `testbucket`:bucket
+
+[listing]
+----
+aws s3api --endpoint-url <StorageGRID endpoint> put-bucket-lifecycle-configuration
+--bucket testbucket --lifecycle-configuration file://bktjson.json
+----
+Per verificare che una configurazione del ciclo di vita sia stata applicata correttamente al bucket, emettere una richiesta DI ciclo di vita GET Bucket. Ad esempio:
+
+[listing]
+----
+aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configuration
+ --bucket testbucket
+----
+Una risposta corretta elenca la configurazione del ciclo di vita appena applicata.
+
+
+
+=== La convalida della scadenza del ciclo di vita del bucket si applica a un oggetto
+
+È possibile determinare se una regola di scadenza nella configurazione del ciclo di vita si applica a un oggetto specifico quando si invia una richiesta DI oggetto PUT, HEAD o GET. Se si applica una regola, la risposta include un `Expiration` parametro che indica quando l'oggetto scade e quale regola di scadenza è stata associata.
+
+
+NOTE: Poiché il ciclo di vita del bucket ha la priorità su ILM, il sistema `expiry-date` viene visualizzata la data effettiva in cui l'oggetto verrà eliminato. Per ulteriori informazioni, vedere "`come viene determinata la conservazione degli oggetti`" nelle istruzioni per l'esecuzione dell'amministrazione di StorageGRID.
+
+Ad esempio, questa richiesta DI oggetti PUT è stata emessa il 22 giugno 2020 e inserisce un oggetto in `testbucket` bucket.
+
+[listing]
+----
+aws s3api --endpoint-url <StorageGRID endpoint> put-object
+--bucket testbucket --key obj2test2 --body bktjson.json
+----
+La risposta corretta indica che l'oggetto scadrà tra 100 giorni (01 ottobre 2020) e che corrisponde alla regola 2 della configurazione del ciclo di vita.
+
+[source, subs="specialcharacters,quotes"]
+----
+{
+      *"Expiration": "expiry-date=\"Thu, 01 Oct 2020 09:07:49 GMT\", rule-id=\"rule2\"",
+      "ETag": "\"9762f8a803bc34f5340579d4446076f7\""
+}
+----
+Ad esempio, questa richiesta di oggetto HEAD è stata utilizzata per ottenere metadati per lo stesso oggetto nel bucket testbucket.
+
+[listing]
+----
+aws s3api --endpoint-url <StorageGRID endpoint> head-object
+--bucket testbucket --key obj2test2
+----
+La risposta di successo include i metadati dell'oggetto e indica che l'oggetto scadrà tra 100 giorni e che corrisponde alla regola 2.
+
+[source, subs="specialcharacters,quotes"]
+----
+{
+      "AcceptRanges": "bytes",
+      *"Expiration": "expiry-date=\"Thu, 01 Oct 2020 09:07:48 GMT\", rule-id=\"rule2\"",
+      "LastModified": "2020-06-23T09:07:48+00:00",
+      "ContentLength": 921,
+      "ETag": "\"9762f8a803bc34f5340579d4446076f7\""
+      "ContentType": "binary/octet-stream",
+      "Metadata": {}
+}
+----
+.Informazioni correlate
+link:s3-rest-api-supported-operations-and-limitations.html["Operazioni sui bucket"]
+
+link:../ilm/index.html["Gestire gli oggetti con ILM"]

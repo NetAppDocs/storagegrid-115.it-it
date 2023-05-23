@@ -1,0 +1,22 @@
+---
+permalink: tenant/managing-s3-platform-services.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Se l"utilizzo dei servizi della piattaforma è consentito per l"account tenant S3, è possibile utilizzare i servizi della piattaforma per sfruttare i servizi esterni e configurare la replica, le notifiche e l"integrazione della ricerca di CloudMirror per i bucket S3.' 
+---
+= Gestione dei servizi della piattaforma S3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se l'utilizzo dei servizi della piattaforma è consentito per l'account tenant S3, è possibile utilizzare i servizi della piattaforma per sfruttare i servizi esterni e configurare la replica, le notifiche e l'integrazione della ricerca di CloudMirror per i bucket S3.
+
+* link:what-platform-services-are.html["Quali sono i servizi della piattaforma"]
+* link:considerations-for-using-platform-services.html["Considerazioni sull'utilizzo dei servizi della piattaforma"]
+* link:configuring-platform-services-endpoints.html["Configurazione degli endpoint dei servizi di piattaforma"]
+* link:configuring-cloudmirror-replication.html["Configurazione della replica di CloudMirror"]
+* link:configuring-event-notifications.html["Configurazione delle notifiche degli eventi"]
+* link:using-search-integration-service.html["Utilizzando il servizio di integrazione della ricerca"]
+

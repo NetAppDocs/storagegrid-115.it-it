@@ -1,0 +1,49 @@
+---
+permalink: monitor/managing-alerts-and-alarms.html 
+sidebar: sidebar 
+keywords: managing, alarms, alerts 
+summary: 'Il sistema di allerta StorageGRID è progettato per informare l"utente sui problemi operativi che richiedono attenzione. Se necessario, è possibile utilizzare anche il sistema di allarme legacy per monitorare il sistema.' 
+---
+= Gestione di avvisi e allarmi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il sistema di allerta StorageGRID è progettato per informare l'utente sui problemi operativi che richiedono attenzione. Se necessario, è possibile utilizzare anche il sistema di allarme legacy per monitorare il sistema. Questa sezione contiene le seguenti sottosezioni:
+
+* link:comparing-alerts-and-alarms.html["Confronto di avvisi e allarmi"]
+* link:managing-alerts.html["Gestione degli avvisi"]
+* link:managing-alarms.html["Gestione degli allarmi (sistema legacy)"]
+
+
+StorageGRID include due sistemi per informarti sui problemi.
+
+
+
+== Sistema di allerta
+
+Il sistema di allerta è progettato per essere lo strumento principale per il monitoraggio di eventuali problemi che potrebbero verificarsi nel sistema StorageGRID. Il sistema di allerta fornisce un'interfaccia di facile utilizzo per rilevare, valutare e risolvere i problemi.
+
+Gli avvisi vengono attivati a livelli di severità specifici quando le condizioni delle regole di avviso vengono valutate come vere. Quando viene attivato un avviso, si verificano le seguenti azioni:
+
+* Sul dashboard di Grid Manager viene visualizzata un'icona di severità degli avvisi e il numero di avvisi correnti viene incrementato.
+* L'avviso viene visualizzato nella scheda *Nodes* *_Node_* *Overview*.
+* Viene inviata una notifica e-mail, presupponendo che sia stato configurato un server SMTP e che siano stati forniti indirizzi e-mail per i destinatari.
+* Viene inviata una notifica SNMP (Simple Network Management Protocol), presupponendo che l'agente SNMP StorageGRID sia stato configurato.
+
+
+
+
+== Sistema di allarme legacy
+
+Il sistema di allarme è supportato, ma è considerato un sistema legacy. Analogamente agli avvisi, gli allarmi vengono attivati a livelli di severità specifici quando gli attributi raggiungono valori di soglia definiti. Tuttavia, a differenza degli avvisi, vengono attivati molti allarmi per gli eventi che è possibile ignorare in modo sicuro, il che potrebbe causare un numero eccessivo di notifiche e-mail o SNMP.
+
+Quando viene attivato un allarme, si verificano le seguenti azioni:
+
+* Il numero di allarmi legacy sulla dashboard viene incrementato.
+* L'allarme viene visualizzato nella pagina *supporto* *Allarmi (legacy)* *Allarmi correnti*.
+* Viene inviata una notifica via email, a condizione che sia stato configurato un server SMTP e siano state configurate una o più mailing list.
+* È possibile che venga inviata una notifica SNMP, purché sia stato configurato l'agente SNMP di StorageGRID. (Le notifiche SNMP non vengono inviate per tutti gli allarmi o le gravità degli allarmi).
+

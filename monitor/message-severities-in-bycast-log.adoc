@@ -1,0 +1,22 @@
+---
+permalink: monitor/message-severities-in-bycast-log.html 
+sidebar: sidebar 
+keywords: bycast, log, severities 
+summary: Ai messaggi di bycast.log sono assegnati livelli di severità. 
+---
+= Severità dei messaggi nel bycast.log
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I messaggi in `bycast.log` sono assegnati livelli di severità.
+
+Ad esempio:
+
+* *NOTA* -- si è verificato un evento da registrare. La maggior parte dei messaggi di log è a questo livello.
+* *ATTENZIONE* -- si è verificata una condizione imprevista.
+* *ERRORE* -- si è verificato un errore grave che ha un impatto sulle operazioni.
+* *CRITICO* -- si è verificata una condizione anomala che ha interrotto le normali operazioni. È necessario risolvere immediatamente la condizione sottostante. I messaggi critici vengono visualizzati anche in Grid Manager. Selezionare *supporto* *Strumenti* *topologia griglia*. Quindi selezionare *Sito* *nodo* *SSM* *Eventi*.
+

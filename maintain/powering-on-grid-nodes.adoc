@@ -1,0 +1,45 @@
+---
+permalink: maintain/powering-on-grid-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, start nodes 
+summary: Seguire questa sequenza per avviare i nodi della griglia dopo un arresto completo. 
+---
+= Avvio dei nodi della griglia
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Seguire questa sequenza per avviare i nodi della griglia dopo un arresto completo.
+
+
+CAUTION: Se l'intero grid è stato spento per più di 15 giorni, è necessario contattare il supporto tecnico prima di avviare qualsiasi grid node. Non tentare di eseguire le procedure di ripristino che ricostruiscono i dati Cassandra. Ciò potrebbe causare la perdita di dati.
+
+.A proposito di questa attività
+Se possibile, accendere i nodi della rete in questo ordine:
+
+* Prima di tutto, alimentare i nodi di amministrazione.
+* Alimentare per ultimo i nodi gateway.
+
+
+
+NOTE: Se un host include più nodi di rete, i nodi torneranno automaticamente in linea all'accensione dell'host.
+
+.Fasi
+. Accendere gli host per il nodo di amministrazione primario e tutti i nodi di amministrazione non primari.
++
+
+NOTE: Non sarà possibile accedere ai nodi di amministrazione fino a quando i nodi di storage non saranno stati riavviati.
+
+. Accendere gli host per tutti i nodi di archiviazione e i nodi di storage.
++
+È possibile accendere questi nodi in qualsiasi ordine.
+
+. Accendere gli host per tutti i nodi gateway.
+. Accedere a Grid Manager.
+. Fare clic su *Nodes* (nodi) e monitorare lo stato dei nodi della griglia. Verificare che tutti i nodi tornino allo stato "`green`".
++
+image::../media/nodes_page_all_nodes_green.png[Nodi pagina tutti i nodi verde]
+
+

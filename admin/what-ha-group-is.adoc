@@ -1,0 +1,38 @@
+---
+permalink: admin/what-ha-group-is.html 
+sidebar: sidebar 
+keywords:  
+summary: 'I gruppi ad alta disponibilità utilizzano indirizzi IP virtuali per fornire l"accesso di backup attivo ai servizi Gateway Node o Admin Node.' 
+---
+= Che cos'è un gruppo ha
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I gruppi ad alta disponibilità utilizzano indirizzi IP virtuali (VIP) per fornire l'accesso di backup attivo ai servizi Gateway Node o Admin Node.
+
+Un gruppo ha è costituito da una o più interfacce di rete sui nodi Admin e sui nodi Gateway. Quando si crea un gruppo ha, si selezionano le interfacce di rete appartenenti alla rete Grid (eth0) o alla rete client (eth2). Tutte le interfacce di un gruppo ha devono trovarsi all'interno della stessa subnet di rete.
+
+Un gruppo ha mantiene uno o più indirizzi IP virtuali aggiunti all'interfaccia attiva del gruppo. Se l'interfaccia attiva non è più disponibile, gli indirizzi IP virtuali vengono spostati in un'altra interfaccia. Questo processo di failover richiede in genere solo pochi secondi ed è abbastanza rapido da consentire alle applicazioni client di avere un impatto minimo e può fare affidamento sui normali comportamenti di ripetizione per continuare a funzionare.
+
+L'interfaccia attiva in un gruppo ha è designata come master. Tutte le altre interfacce sono designate come Backup. Per visualizzare queste designazioni, selezionare *Nodes* *_Node_* *Overview*.
+
+image::../media/ha_group_master_interface.png[Interfaccia master del gruppo HA]
+
+Quando si crea un gruppo ha, si specifica un'interfaccia come master preferito. Preferred Master è l'interfaccia attiva a meno che non si verifichi un errore che causa la riassegnazione degli indirizzi VIP a un'interfaccia di backup. Una volta risolto il problema, gli indirizzi VIP vengono automaticamente riportati al Master preferito.
+
+Il failover può essere attivato per uno dei seguenti motivi:
+
+* Il nodo su cui è configurata l'interfaccia non funziona.
+* Il nodo su cui è configurata l'interfaccia perde la connettività con tutti gli altri nodi per almeno 2 minuti
+* L'interfaccia attiva non funziona.
+* Il servizio Load Balancer si arresta.
+* Il servizio High Availability si interrompe.
+
+
+
+NOTE: Il failover potrebbe non essere attivato da guasti di rete esterni al nodo che ospita l'interfaccia attiva. Allo stesso modo, il failover non viene attivato dal guasto del servizio CLB (obsoleto) o dei servizi per Grid Manager o il tenant Manager.
+
+Se il gruppo ha include interfacce da più di due nodi, l'interfaccia attiva potrebbe spostarsi su qualsiasi altra interfaccia del nodo durante il failover.

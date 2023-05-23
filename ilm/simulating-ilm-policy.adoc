@@ -1,0 +1,104 @@
+---
+permalink: ilm/simulating-ilm-policy.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È necessario simulare una policy proposta sugli oggetti di test prima di attivare la policy e applicarla ai dati di produzione. La finestra di simulazione offre un ambiente standalone sicuro per le policy di test prima che vengano attivate e applicate ai dati nell"ambiente di produzione.' 
+---
+= Simulazione di un criterio ILM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario simulare una policy proposta sugli oggetti di test prima di attivare la policy e applicarla ai dati di produzione. La finestra di simulazione offre un ambiente standalone sicuro per le policy di test prima che vengano attivate e applicate ai dati nell'ambiente di produzione.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre di autorizzazioni di accesso specifiche.
+* È necessario conoscere il bucket S3/object-key o il container Swift/object-name per ciascun oggetto che si desidera sottoporre a test e che tali oggetti siano già stati acquisiti.
+
+
+.A proposito di questa attività
+È necessario selezionare attentamente gli oggetti per i quali si desidera sottoporre a test il criterio proposto. Per simulare un criterio in maniera approfondita, è necessario testare almeno un oggetto per ciascun filtro in ogni regola.
+
+Ad esempio, se un criterio include una regola per la corrispondenza degli oggetti nel bucket A e un'altra regola per la corrispondenza degli oggetti nel bucket B, è necessario selezionare almeno un oggetto dal bucket A e un oggetto dal bucket B per eseguire un test completo del criterio. Se il criterio include una regola predefinita per posizionare tutti gli altri oggetti, è necessario testare almeno un oggetto da un altro bucket.
+
+Quando si simula un criterio, si applicano le seguenti considerazioni:
+
+* Dopo aver apportato modifiche a un criterio, salvare il criterio proposto. Quindi, simulare il comportamento della policy proposta salvata.
+* Quando si simula un criterio, le regole ILM del criterio filtrano gli oggetti di test, in modo da poter vedere quale regola è stata applicata a ciascun oggetto. Tuttavia, non vengono create copie di oggetti e non vengono posizionati oggetti. L'esecuzione di una simulazione non modifica in alcun modo i dati, le regole o i criteri.
+* La pagina Simulation conserva gli oggetti testati fino alla chiusura, all'allontanamento o all'aggiornamento della pagina ILM Policies.
+* Simulation restituisce il nome della regola corrispondente. Per determinare quale pool di storage o profilo di codifica Erasure è in vigore, è possibile visualizzare il diagramma di conservazione facendo clic sul nome della regola o sull'icona ulteriori dettagli image:../media/icon_nms_more_details.gif["ulteriori dettagli"].
+* Se è attivata la versione S3, il criterio viene simulato solo rispetto alla versione corrente dell'oggetto.
+
+
+.Fasi
+. Selezionare e organizzare le regole e salvare la policy proposta.
++
+La policy in questo esempio ha tre regole:
+
++
+[cols="1a,1a,1a,1a"]
+|===
+| Nome regola | Filtro | Tipo di copie | Conservazione 
+
+
+ a| 
+X-men
+ a| 
+** Tenant A.
+** Metadati dell'utente (serie=x-men)
+
+ a| 
+2 copie in due data center
+ a| 
+2 anni
+
+
+
+ a| 
+PNG
+ a| 
+La chiave termina con .png
+ a| 
+2 copie in due data center
+ a| 
+5 anni
+
+
+
+ a| 
+Due copie di due data center
+ a| 
+_Nessuno_
+ a| 
+2 copie in due data center
+ a| 
+Per sempre
+
+|===
++
+image:../media/ilm_policies_viewing_proposed.png["Proposta di visualizzazione delle policy ILM"]
+
+. Fare clic su *simulate*.
++
+Viene visualizzata la finestra di dialogo Simulation ILM Policy (Criteri ILM di Simulation).
+
+. Nel campo *oggetto*, immettere il bucket S3/object-key o il container Swift/object-name per un oggetto di test e fare clic su *simulate*.
++
+[NOTE]
+====
+Se si specifica un oggetto non acquisito, viene visualizzato un messaggio.
+
+image::../media/object_not_available_for_simulation.gif[Se si specifica l'oggetto mancante]
+
+====
+. In *risultati di simulazione*, confermare che ogni oggetto è stato associato dalla regola corretta.
++
+Nell'esempio, il `Havok.png` e. `Warpath.jpg` Gli oggetti sono stati associati correttamente dalla regola X-MEN. Il `Fullsteam.png` oggetto, che non include `series=x-men` Metadati dell'utente, non corrispondenti alla regola X-MEN ma corrispondenti correttamente alla regola PNG. La regola predefinita non è stata utilizzata perché tutti e tre gli oggetti erano associati da altre regole.
+
++
+image::../media/ilm_policy_simulation_results.gif[Risultati della simulazione]
+
+

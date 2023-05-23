@@ -1,0 +1,43 @@
+---
+permalink: maintain/pausing-and-resuming-decommission-process-for-storage-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, decommission, storage node 
+summary: 'Se necessario, è possibile sospendere la procedura di decommissionamento per un nodo di storage durante determinate fasi. È necessario sospendere lo smantellamento su un nodo di storage prima di poter avviare una seconda procedura di manutenzione. Al termine dell"altra procedura, è possibile riprendere la decommissionamento.' 
+---
+= Mettere in pausa e riprendere il processo di decommissionamento per i nodi di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se necessario, è possibile sospendere la procedura di decommissionamento per un nodo di storage durante determinate fasi. È necessario sospendere lo smantellamento su un nodo di storage prima di poter avviare una seconda procedura di manutenzione. Al termine dell'altra procedura, è possibile riprendere la decommissionamento.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre dell'autorizzazione Maintenance (manutenzione) o Root Access (accesso root).
+
+
+.Fasi
+. Selezionare *manutenzione* *attività di manutenzione* *smantellamento*.
++
+Viene visualizzata la pagina Decommission.
+
+. Fare clic su *Decommission Nodes*.
++
+Viene visualizzata la pagina nodi di decommissionazione. Quando la procedura di decommissionamento raggiunge una delle seguenti fasi, il pulsante *Pause* (Pausa) viene attivato.
+
++
+** Valutazione di ILM
+** Decommissionamento Erasure coded data (Cancella dati codificati)
+
+
+. Fare clic su *Pause* (Pausa) per sospendere la procedura.
++
+La fase corrente viene messa in pausa e il pulsante *Riprendi* viene attivato.
+
++
+image::../media/decommission_nodes_procedure_paused.png[Decommissionare nodi procedura in pausa]
+
+. Al termine dell'altra procedura di manutenzione, fare clic su *Riprendi* per procedere con la decommissionazione.
+

@@ -1,0 +1,19 @@
+---
+permalink: ilm/configuring-erasure-coding-profiles.html 
+sidebar: sidebar 
+keywords:  
+summary: È possibile configurare i profili di codifica Erasure associando un pool di storage a uno schema di codifica erasure, ad esempio 6+3. Quindi, quando si configurano le istruzioni di posizionamento per una regola ILM, è possibile selezionare il profilo di codifica Erasure. Se un oggetto corrisponde alla regola, i frammenti di dati e parità vengono creati e distribuiti nelle posizioni di storage nel pool di storage in base allo schema di erasure coding. 
+---
+= Configurazione dei profili di codifica Erasure
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile configurare i profili di codifica Erasure associando un pool di storage a uno schema di codifica erasure, ad esempio 6+3. Quindi, quando si configurano le istruzioni di posizionamento per una regola ILM, è possibile selezionare il profilo di codifica Erasure. Se un oggetto corrisponde alla regola, i frammenti di dati e parità vengono creati e distribuiti nelle posizioni di storage nel pool di storage in base allo schema di erasure coding.
+
+* link:creating-erasure-coding-profile.html["Creazione di un profilo di codifica Erasure"]
+* link:renaming-erasure-coding-profile.html["Ridenominazione di un profilo di codifica Erasure"]
+* link:deactivating-erasure-coding-profile.html["Disattivazione di un profilo di codifica Erasure"]
+

@@ -1,0 +1,26 @@
+---
+permalink: ubuntu/configuring-grid-and-completing-installation.html 
+sidebar: sidebar 
+keywords: storagegrid, ubuntu, debian, completing installation, configuring grid 
+summary: 'Per completare l"installazione, configurare il sistema StorageGRID dal gestore della griglia sul nodo di amministrazione principale.' 
+---
+= Configurazione della griglia e completamento dell'installazione
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per completare l'installazione, configurare il sistema StorageGRID dal gestore della griglia sul nodo di amministrazione principale.
+
+* link:navigating-to-grid-manager.html["Accedere a Grid Manager"]
+* link:specifying-storagegrid-license-information.html["Specifica delle informazioni di licenza StorageGRID"]
+* link:adding-sites.html["Aggiunta di siti"]
+* link:specifying-grid-network-subnets.html["Specifica delle subnet Grid Network"]
+* link:approving-pending-grid-nodes.html["Approvazione dei nodi griglia in sospeso"]
+* link:specifying-network-time-protocol-server-information.html["Specifica delle informazioni del server Network Time Protocol"]
+* link:specifying-domain-name-system-server-information.html["Specifica delle informazioni sul server Domain Name System"]
+* link:specifying-storagegrid-system-passwords.html["Specifica delle password di sistema di StorageGRID"]
+* link:reviewing-your-configuration-and-completing-installation.html["Verifica della configurazione e completamento dell'installazione"]
+* link:post-installation-guidelines.html["Linee guida per la post-installazione"]
+

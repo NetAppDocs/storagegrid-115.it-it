@@ -1,0 +1,20 @@
+---
+permalink: expand/planning-expansion.html 
+sidebar: sidebar 
+keywords: expand, expansion, planning 
+summary: 'È possibile espandere StorageGRID per aumentare la capacità di storage, aggiungere capacità di metadati, aggiungere ridondanza o nuove funzionalità o aggiungere un nuovo sito. Il numero, il tipo e la posizione dei nodi da aggiungere dipendono dal motivo dell"espansione.' 
+---
+= Pianificazione di un'espansione di StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile espandere StorageGRID per aumentare la capacità di storage, aggiungere capacità di metadati, aggiungere ridondanza o nuove funzionalità o aggiungere un nuovo sito. Il numero, il tipo e la posizione dei nodi da aggiungere dipendono dal motivo dell'espansione.
+
+* link:adding-storage-capacity.html["Aggiunta di capacità di storage"]
+* link:adding-metadata-capacity.html["Aggiunta di capacità di metadati"]
+* link:adding-grid-nodes-to-add-capabilities.html["Aggiunta di nodi grid per aggiungere funzionalità al sistema"]
+* link:adding-new-site.html["Aggiunta di un nuovo sito"]
+

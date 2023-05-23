@@ -1,0 +1,18 @@
+---
+permalink: admin/what-arc-service-is.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Il servizio Archive Node (ARC) fornisce l"interfaccia di gestione che è possibile utilizzare per configurare le connessioni allo storage di archiviazione esterno, come ad esempio il nastro tramite il middleware TSM.' 
+---
+= Che cos'è il servizio ARC
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il servizio Archive Node's Archive (ARC) fornisce l'interfaccia di gestione che è possibile utilizzare per configurare le connessioni allo storage di archiviazione esterno, ad esempio su nastro, tramite il middleware TSM.
+
+È il servizio ARC che interagisce con un sistema di storage di archiviazione esterno, inviando dati a oggetti per lo storage nearline ed eseguendo recuperi quando un'applicazione client richiede un oggetto archiviato. Quando un'applicazione client richiede un oggetto archiviato, un nodo di storage richiede i dati dell'oggetto al servizio ARC. Il servizio ARC invia una richiesta al sistema di storage di archiviazione esterno, che recupera i dati dell'oggetto richiesti e li invia al servizio ARC. Il servizio ARC verifica i dati dell'oggetto e li inoltra al nodo di storage, che a sua volta restituisce l'oggetto all'applicazione client richiedente.
+
+Le richieste di dati a oggetti archiviati su nastro tramite il middleware TSM vengono gestite per garantire l'efficienza dei recuperi. Le richieste possono essere ordinate in modo che gli oggetti memorizzati in ordine sequenziale su nastro vengano richiesti nello stesso ordine sequenziale. Le richieste vengono quindi messe in coda per l'invio al dispositivo di storage. A seconda del dispositivo di archiviazione, è possibile elaborare contemporaneamente più richieste di oggetti su diversi volumi.

@@ -1,0 +1,22 @@
+---
+permalink: primer/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Primer griglia
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Scopri le nozioni di base di un sistema NetApp StorageGRID.
+
+* link:about-storagegrid.html["A proposito di StorageGRID"]
+* link:storagegrid-architecture-and-network-topology.html["Architettura StorageGRID e topologia di rete"]
+* link:how-storagegrid-manages-data.html["Come StorageGRID gestisce i dati"]
+* link:exploring-grid-manager.html["Analisi di Grid Manager"]
+* link:exploring-tenant-manager.html["Analisi del tenant manager"]
+* link:using-storagegrid.html["Utilizzando StorageGRID"]
+

@@ -1,0 +1,112 @@
+---
+permalink: s3/custom-operations-on-buckets.html 
+sidebar: sidebar 
+keywords: operations, buckets, custom, custom operations on buckets 
+summary: 'Il sistema StorageGRID supporta operazioni bucket personalizzate aggiunte all"API REST S3 e specifiche del sistema.' 
+---
+= Operazioni personalizzate sui bucket
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il sistema StorageGRID supporta operazioni bucket personalizzate aggiunte all'API REST S3 e specifiche del sistema.
+
+La seguente tabella elenca le operazioni di bucket personalizzate supportate da StorageGRID.
+
+|===
+| Operazione | Descrizione | Per ulteriori informazioni 
+
+
+ a| 
+COERENZA del bucket
+ a| 
+Restituisce il livello di coerenza applicato a un determinato bucket.
+ a| 
+link:storagegrid-s3-rest-api-operations.html["OTTIENI una richiesta di coerenza bucket"]
+
+
+
+ a| 
+METTI la coerenza del bucket
+ a| 
+Imposta il livello di coerenza applicato a un bucket specifico.
+ a| 
+link:storagegrid-s3-rest-api-operations.html["INSERIRE la richiesta di coerenza del bucket"]
+
+
+
+ a| 
+OTTIENI l'ultimo tempo di accesso a bucket
+ a| 
+Restituisce se gli ultimi aggiornamenti dell'ora di accesso sono attivati o disattivati per un bucket specifico.
+ a| 
+link:storagegrid-s3-rest-api-operations.html["OTTIENI la richiesta dell'ultimo accesso al bucket"]
+
+
+
+ a| 
+TEMPO ULTIMO accesso bucket
+ a| 
+Consente di attivare o disattivare gli ultimi aggiornamenti dell'orario di accesso per un determinato bucket.
+ a| 
+link:storagegrid-s3-rest-api-operations.html["METTI richiesta dell'ultimo tempo di accesso al bucket"]
+
+
+
+ a| 
+ELIMINA la configurazione di notifica dei metadati del bucket
+ a| 
+Elimina l'XML di configurazione della notifica dei metadati associato a un bucket specifico.
+ a| 
+link:storagegrid-s3-rest-api-operations.html["ELIMINA la richiesta di configurazione della notifica dei metadati del bucket"]
+
+
+
+ a| 
+OTTIENI la configurazione della notifica dei metadati del bucket
+ a| 
+Restituisce l'XML di configurazione della notifica dei metadati associato a un bucket specifico.
+ a| 
+link:storagegrid-s3-rest-api-operations.html["OTTIENI una richiesta di configurazione per la notifica dei metadati del bucket"]
+
+
+
+ a| 
+INSERIRE la configurazione della notifica dei metadati del bucket
+ a| 
+Configura il servizio di notifica dei metadati per un bucket.
+ a| 
+link:storagegrid-s3-rest-api-operations.html["INSERIRE la richiesta di configurazione della notifica dei metadati del bucket"]
+
+
+
+ a| 
+APPORTARE modifiche al bucket per la conformità
+ a| 
+Obsoleto e non supportato: Non è più possibile creare nuovi bucket con Compliance abilitata.
+ a| 
+link:storagegrid-s3-rest-api-operations.html["Deprecato: APPORTARE modifiche alla richiesta di conformità al bucket"]
+
+
+
+ a| 
+OTTIENI la compliance del bucket
+ a| 
+Obsoleto ma supportato: Restituisce le impostazioni di conformità attualmente in vigore per un bucket compatibile esistente.
+ a| 
+link:storagegrid-s3-rest-api-operations.html["Deprecato: OTTIENI una richiesta di conformità bucket"]
+
+
+
+ a| 
+METTI la compliance del bucket
+ a| 
+Obsoleto ma supportato: Consente di modificare le impostazioni di conformità per un bucket compatibile esistente.
+ a| 
+link:storagegrid-s3-rest-api-operations.html["Deprecato: INSERIRE la richiesta di conformità del bucket"]
+
+|===
+.Informazioni correlate
+link:s3-operations-tracked-in-audit-logs.html["Operazioni S3 registrate nei registri di audit"]

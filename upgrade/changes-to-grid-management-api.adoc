@@ -1,0 +1,72 @@
+---
+permalink: upgrade/changes-to-grid-management-api.html 
+sidebar: sidebar 
+keywords: grid management api, api, api version, swagger, rest api 
+summary: 'StorageGRID 11.5 utilizza la versione 3 dell"API per la gestione dei grid. La versione 3 è obsoleta della versione 2; tuttavia, la versione 1 e la versione 2 sono ancora supportate.' 
+---
+= Modifiche all'API Grid Management
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 11.5 utilizza la versione 3 dell'API per la gestione dei grid. La versione 3 è obsoleta della versione 2; tuttavia, la versione 1 e la versione 2 sono ancora supportate.
+
+
+IMPORTANT: È possibile continuare a utilizzare la versione 1 e la versione 2 dell'API di gestione con StorageGRID 11.5; tuttavia, il supporto per queste versioni dell'API verrà rimosso in una release futura di StorageGRID. Dopo l'aggiornamento a StorageGRID 11.5, le API v1 e v2 obsolete possono essere disattivate utilizzando `PUT /grid/config/management` API.
+
+
+
+== Nuova sezione certificati-client
+
+La nuova sezione, `/grid/client-certificates`, Consente di configurare i certificati client per fornire un accesso sicuro e autenticato al database StorageGRID Prometheus. Ad esempio, è possibile monitorare StorageGRID esternamente utilizzando Grafana.
+
+
+
+== Gli endpoint di compliance legacy sono stati spostati nella nuova sezione s3-Object-lock
+
+Con l'introduzione del blocco a oggetti StorageGRID S3, le API utilizzate per gestire le impostazioni di conformità legacy per la griglia sono state spostate in una nuova sezione dell'interfaccia utente di Swagger. La sezione *s3-Object-lock* include i due elementi `/grid/compliance-global` Endpoint API, che ora controllano l'impostazione globale S3 Object Lock. Gli URI degli endpoint rimangono invariati per la compatibilità con le applicazioni esistenti.
+
+
+
+== Endpoint Swift-admin-password account rimosso
+
+Il seguente endpoint API degli account, obsoleto in StorageGRID 10.4, è stato rimosso:
+
+[listing]
+----
+https://<IP-Address>/api/v1/grid/accounts/<AccountID>/swift-admin-password
+----
+
+
+== Nuova sezione Grid-password
+
+La sezione *grid-password* consente di gestire le password grid. La sezione include due `/grid/change-provisioning-passphrase` Endpoint API. Gli endpoint consentono agli utenti di modificare la passphrase di provisioning StorageGRID e recuperare lo stato della modifica della passphrase.
+
+
+
+== Autorizzazione storageAdmin aggiunta all'API gruppi
+
+Il `/grid/groups` API ora include l'autorizzazione storageAdmin.
+
+
+
+== Nuovo parametro per l'API di utilizzo dello storage
+
+Il `+GET /grid/accounts/{id}/usage+` L'API ora dispone di un `strictConsistency` parametro. Per applicare una coerenza forte e globale durante il recupero delle informazioni sull'utilizzo dello storage nei nodi di storage, impostare questo parametro su `true`. Quando questo parametro è impostato su `false` (Impostazione predefinita), StorageGRID tenta di recuperare le informazioni di utilizzo utilizzando una coerenza globale forte, ma ritorna alla coerenza del sito forte se non è possibile soddisfare una coerenza globale forte.
+
+
+
+== Nuova API Node Health
+
+Un nuovo `/grid/node-health` è stato aggiunto l'endpoint. Questa API restituisce lo stato corrente di ciascun nodo controllando i _alert_ attivi sui nodi. Il `/grid/health/topology` L'API, che verifica la presenza di _allarmi_ attivi sui nodi, è obsoleta.
+
+
+
+== Passare all'ID della regola di avviso "ApplianceStorageShelvesPowerSupplyDebraded"
+
+L'ID della regola di avviso "ApplianceStorageShelvesPowerSupplyDebraded" è stato rinominato "ApplianceStorageShelvesDebraded" per riflettere meglio il comportamento effettivo dell'avviso.
+
+.Informazioni correlate
+link:../admin/index.html["Amministrare StorageGRID"]

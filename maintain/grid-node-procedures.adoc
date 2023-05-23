@@ -1,0 +1,43 @@
+---
+permalink: maintain/grid-node-procedures.html 
+sidebar: sidebar 
+keywords: storagegrid, grid node procedure 
+summary: 'Potrebbe essere necessario eseguire procedure su un nodo di griglia specifico. Sebbene sia possibile eseguire alcune di queste procedure da Grid Manager, la maggior parte delle procedure richiede l"accesso a Server Manager dalla riga di comando del nodo.' 
+---
+= Procedure del nodo di rete
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Potrebbe essere necessario eseguire procedure su un nodo di griglia specifico. Sebbene sia possibile eseguire alcune di queste procedure da Grid Manager, la maggior parte delle procedure richiede l'accesso a Server Manager dalla riga di comando del nodo.
+
+Server Manager viene eseguito su ogni nodo grid per supervisionare l'avvio e l'arresto dei servizi e per garantire che i servizi si uniscano e abbandonino correttamente il sistema StorageGRID. Server Manager monitora inoltre i servizi su ogni nodo grid e tenta automaticamente di riavviare tutti i servizi che segnalano gli errori.
+
+
+IMPORTANT: L'accesso a Server Manager deve essere effettuato solo se il supporto tecnico lo ha richiesto.
+
+
+NOTE: Al termine dell'operazione con Server Manager, chiudere la sessione corrente della shell dei comandi e disconnettersi. Inserire: `exit`
+
+.Scelte
+* link:viewing-server-manager-status-and-version.html["Visualizzazione dello stato e della versione di Server Manager"]
+* link:viewing-current-status-of-all-services.html["Visualizzazione dello stato corrente di tutti i servizi"]
+* link:starting-server-manager-and-all-services.html["Avvio di Server Manager e di tutti i servizi"]
+* link:restarting-server-manager-and-all-services.html["Riavvio di Server Manager e di tutti i servizi"]
+* link:stopping-server-manager-and-all-services.html["Interruzione di Server Manager e di tutti i servizi"]
+* link:viewing-current-status-of-service.html["Visualizzazione dello stato corrente di un servizio"]
+* link:stopping-service.html["Interruzione di un servizio"]
+* link:placing-appliance-into-maintenance-mode.html["Attivazione della modalità di manutenzione dell'appliance"]
+* link:forcing-service-to-terminate.html["Forzare l'interruzione di un servizio"]
+* link:starting-or-restarting-service.html["Avvio o riavvio di un servizio"]
+* link:removing-port-remaps.html["Rimozione dei rimaps delle porte"]
+* link:removing-port-remaps-on-bare-metal-hosts.html["Rimozione dei rimaps delle porte sugli host bare metal"]
+* link:rebooting-grid-node.html["Riavvio di un nodo Grid"]
+* link:shutting-down-grid-node.html["Chiusura di un nodo di rete"]
+* link:powering-down-host.html["Spegnere un host"]
+* link:powering-off-and-on-all-nodes-in-grid.html["Spegnere e accendere tutti i nodi della griglia"]
+* link:using-donotstart-file.html["Utilizzo di un file DoNotStart"]
+* link:troubleshooting-server-manager.html["Risoluzione dei problemi di Server Manager"]
+

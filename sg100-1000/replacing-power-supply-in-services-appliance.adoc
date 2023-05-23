@@ -1,0 +1,52 @@
+---
+permalink: sg100-1000/replacing-power-supply-in-services-appliance.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, Replacing, replace, power supply, remove, removing, removal, install, installing, installation 
+summary: 'L"appliance di servizi dispone di due alimentatori per la ridondanza. Se uno degli alimentatori si guasta, è necessario sostituirlo il prima possibile per assicurarsi che l"apparecchio disponga di un"alimentazione ridondante.' 
+---
+= Sostituzione di un alimentatore nell'appliance di servizi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'appliance di servizi dispone di due alimentatori per la ridondanza. Se uno degli alimentatori si guasta, è necessario sostituirlo il prima possibile per assicurarsi che l'apparecchio disponga di un'alimentazione ridondante.
+
+.Di cosa hai bisogno
+* L'alimentatore sostitutivo è stato disimballato.
+* L'apparecchio è stato fisicamente posizionato nel punto in cui si sta sostituendo l'alimentatore del data center.
++
+link:locating-controller-in-data-center.html["Individuazione del controller in un data center"]
+
+* È possibile verificare che l'altro alimentatore sia installato e funzionante.
+
+
+.A proposito di questa attività
+La figura mostra le due unità di alimentazione per SG100, accessibili dal retro dell'apparecchio.
+
+image::../media/sg1000_power_supplies.png[Retro di SG100 con due alimentatori]
+
+
+NOTE: Gli alimentatori del sistema SG1000 sono identici.
+
+.Fasi
+. Scollegare il cavo di alimentazione dall'alimentatore.
+. Sollevare la maniglia della camma.
++
+image::../media/sg6000_cn_lift_cam_handle_psu.gif[Sollevare la maniglia della camma per rimuovere l'alimentatore SG1000]
+
+. Premere il fermo blu ed estrarre l'alimentatore.
++
+image::../media/sg6000_cn_remove_power_supply.gif[Rimozione di un alimentatore SG1000]
+
+. Inserire l'alimentatore sostitutivo nello chassis.
++
+Assicurarsi che il fermo blu si trovi sul lato destro quando si inserisce l'unità.
+
++
+image::../media/sg6000_cn_insert_power_supply.gif[Inserimento dell'alimentatore in SG1000]
+
+. Spingere la maniglia della camma verso il basso per fissare l'alimentatore.
+. Collegare il cavo di alimentazione all'alimentatore e verificare che il LED verde si accendo.
+

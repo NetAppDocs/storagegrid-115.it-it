@@ -1,0 +1,76 @@
+---
+permalink: upgrade/downloading-storagegrid-upgrade-files.html 
+sidebar: sidebar 
+keywords: download, upgrade files 
+summary: Prima di aggiornare il sistema StorageGRID, è necessario scaricare i file richiesti su un laptop di assistenza. 
+---
+= Download dei file di aggiornamento di StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di aggiornare il sistema StorageGRID, è necessario scaricare i file richiesti su un laptop di assistenza.
+
+.Di cosa hai bisogno
+È necessario aver installato tutti gli hotfix necessari per la versione del software StorageGRID che si sta aggiornando. Consultare la procedura di hotfix nelle istruzioni di ripristino e manutenzione.
+
+.A proposito di questa attività
+È necessario scaricare `.upgrade` archiviazione per qualsiasi piattaforma. Se vengono implementati nodi su host Linux, è necessario scaricare anche un archivio RPM o DEB, che verrà installato prima di avviare l'aggiornamento.
+
+.Fasi
+. Vai alla pagina dei download NetApp per StorageGRID.
++
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["Download NetApp: StorageGRID"^]
+
+. Selezionare il pulsante per scaricare l'ultima versione oppure selezionare un'altra versione dal menu a discesa e selezionare *Go*.
++
+Le versioni del software StorageGRID hanno questo formato: 11._x.y_. Le hotfix StorageGRID hanno questo formato: 11._x.a. .z_.
+
+. Accedi con il nome utente e la password del tuo account NetApp.
+. Se viene visualizzata un'istruzione Caution/MustRead, leggerla e selezionare la casella di controllo.
++
+Questa istruzione viene visualizzata se è necessaria una correzione rapida per la release.
+
+. Leggere il Contratto di licenza con l'utente finale, selezionare la casella di controllo, quindi selezionare *Accept & Continue* (Accetta e continua).
++
+Viene visualizzata la pagina dei download per la versione selezionata. La pagina contiene tre colonne:
+
++
+** Installare StorageGRID
+** Aggiornare StorageGRID
+** File di supporto per appliance StorageGRID
+
+
+. Nella colonna *Upgrade StorageGRID*, selezionare e scaricare `.upgrade` archiviare.
++
+Ogni piattaforma richiede `.upgrade` archiviare.
+
+. Se vengono implementati nodi su host Linux, scaricare anche l'archivio RPM o DEB in entrambi `.tgz` oppure `.zip` formato.
++
+È necessario installare l'archivio RPM o DEB su tutti i nodi Linux prima di avviare l'aggiornamento.
+
++
+
+NOTE: Non sono richiesti file aggiuntivi per SG100 o SG1000.
+
++
+
+NOTE: Selezionare `.zip` File se si esegue Windows sul laptop di assistenza.
+
++
+** Red Hat Enterprise Linux o CentOS +
+`StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip` +
+`StorageGRID-Webscale-_version_-RPM-_uniqueID_.tgz`
+** Ubuntu o Debian +
+`StorageGRID-Webscale-_version_-DEB-_uniqueID_.zip` +
+`StorageGRID-Webscale-_version_-DEB-_uniqueID_.tgz`
+
+
+
+
+.Informazioni correlate
+link:linux-installing-rpm-or-deb-package-on-all-hosts.html["Linux: Installazione del pacchetto RPM o DEB su tutti gli host"]
+
+link:../maintain/index.html["Mantieni  Ripristina"]

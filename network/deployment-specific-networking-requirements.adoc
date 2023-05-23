@@ -1,0 +1,26 @@
+---
+permalink: network/deployment-specific-networking-requirements.html 
+sidebar: sidebar 
+keywords:  
+summary: A seconda delle piattaforme di implementazione utilizzate, potrebbero essere disponibili considerazioni aggiuntive per la progettazione della rete StorageGRID. 
+---
+= Considerazioni di rete specifiche per l'implementazione
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A seconda delle piattaforme di implementazione utilizzate, potrebbero essere disponibili considerazioni aggiuntive per la progettazione della rete StorageGRID.
+
+I nodi della griglia possono essere implementati come:
+
+* Nodi grid basati su software implementati come macchine virtuali in VMware vSphere Web Client
+* Nodi grid basati su software implementati all'interno di container Docker su host Linux
+* Nodi basati su appliance
+
+
+Per ulteriori informazioni sui nodi della griglia, consulta la _Grid primer_.
+
+.Informazioni correlate
+link:../primer/index.html["Primer griglia"]

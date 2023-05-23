@@ -1,0 +1,19 @@
+---
+permalink: ilm/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Gestire gli oggetti con ILM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Scopri come gestire gli oggetti con le regole e le policy del ciclo di vita delle informazioni e come utilizzare S3 Object Lock per rispettare le normative per la conservazione degli oggetti.
+
+* link:managing-objects-with-information-lifecycle-management.html["Gestione degli oggetti con la gestione del ciclo di vita delle informazioni"]
+* link:managing-objects-with-s3-object-lock.html["Gestione degli oggetti con S3 Object Lock"]
+* link:example-ilm-rules-and-policies.html["Esempio di regole e policy ILM"]
+

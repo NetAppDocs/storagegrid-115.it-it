@@ -1,0 +1,21 @@
+---
+permalink: ilm/how-objects-are-stored-replication-erasure-coding.html 
+sidebar: sidebar 
+keywords:  
+summary: StorageGRID è in grado di proteggere gli oggetti dalla perdita memorizzando copie replicate o copie codificate per la cancellazione. Specificare il tipo di copie da creare nelle istruzioni di posizionamento delle regole ILM. 
+---
+= Modalità di archiviazione degli oggetti (replica o erasure coding)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID è in grado di proteggere gli oggetti dalla perdita memorizzando copie replicate o copie codificate per la cancellazione. Specificare il tipo di copie da creare nelle istruzioni di posizionamento delle regole ILM.
+
+* link:what-replication-is.html["Che cos'è la replica"]
+* link:why-you-should-not-use-single-copy-replication.html["Perché non utilizzare la replica a copia singola"]
+* link:what-erasure-coding-is.html["Che cos'è la cancellazione dei codici"]
+* link:what-erasure-coding-schemes-are.html["Quali sono gli schemi di erasure coding"]
+* link:advantages-disadvantages-and-requirements-for-ec.html["Vantaggi, svantaggi e requisiti per l'erasure coding"]
+

@@ -1,0 +1,42 @@
+---
+permalink: maintain/introduction-to-storagegrid-recovery-and-maintenance.html 
+sidebar: sidebar 
+keywords: storagegrid, recovery, maintenance 
+summary: 'Le procedure di ripristino e manutenzione per StorageGRID includono l"applicazione di una correzione rapida del software, il ripristino dei nodi della griglia, il ripristino di un sito guasto, la disattivazione dei nodi della griglia o di un intero sito, l"esecuzione della manutenzione della rete, l"esecuzione di procedure di manutenzione middleware e a livello di host e l"esecuzione di procedure dei nodi della griglia.' 
+---
+= Introduzione al ripristino e alla manutenzione di StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le procedure di ripristino e manutenzione per StorageGRID includono l'applicazione di una correzione rapida del software, il ripristino dei nodi della griglia, il ripristino di un sito guasto, la disattivazione dei nodi della griglia o di un intero sito, l'esecuzione della manutenzione della rete, l'esecuzione di procedure di manutenzione middleware e a livello di host e l'esecuzione di procedure dei nodi della griglia.
+
+Tutte le attività di ripristino e manutenzione richiedono una conoscenza approfondita del sistema StorageGRID. Esaminare la topologia del sistema StorageGRID per assicurarsi di comprendere la configurazione della griglia.
+
+Attenersi scrupolosamente a tutte le istruzioni e a tutte le avvertenze.
+
+Le procedure di manutenzione non descritte non sono supportate o richiedono un intervento di assistenza.
+
+Per le procedure relative all'hardware, consultare le istruzioni di installazione e manutenzione dell'appliance StorageGRID.
+
+
+NOTE: "`Linux`" si riferisce a una distribuzione Red Hat® Enterprise Linux®, Ubuntu®, CentOS o Debian®. Utilizza NetApp Interoperability Matrix Tool per ottenere un elenco delle versioni supportate.
+
+.Informazioni correlate
+link:../primer/index.html["Primer griglia"]
+
+link:../network/index.html["Linee guida per la rete"]
+
+link:../admin/index.html["Amministrare StorageGRID"]
+
+link:../sg100-1000/index.html["SG100  SG1000 Services appliance"]
+
+link:../sg6000/index.html["Appliance di storage SG6000"]
+
+link:../sg5700/index.html["Appliance di storage SG5700"]
+
+link:../sg5600/index.html["Appliance di storage SG5600"]
+
+https://mysupport.netapp.com/matrix["Tool di matrice di interoperabilità NetApp"]

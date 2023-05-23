@@ -1,0 +1,33 @@
+---
+permalink: maintain/recovering-from-system-drive-failure.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, system drive failure 
+summary: Se il disco di sistema su un nodo di storage basato su software si è guastato, il nodo di storage non è disponibile per il sistema StorageGRID. È necessario completare una serie specifica di attività per eseguire il ripristino da un guasto al disco di sistema. 
+---
+= Ripristino in caso di guasto al disco di sistema
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se il disco di sistema su un nodo di storage basato su software si è guastato, il nodo di storage non è disponibile per il sistema StorageGRID. È necessario completare una serie specifica di attività per eseguire il ripristino da un guasto al disco di sistema.
+
+.A proposito di questa attività
+Utilizzare questa procedura per eseguire il ripristino da un guasto del disco di sistema su un nodo di storage basato su software. Questa procedura include i passaggi da seguire se anche i volumi di storage non sono riusciti o non possono essere rimontati.
+
+
+NOTE: Questa procedura si applica solo ai nodi di storage basati su software. Per ripristinare un nodo di storage dell'appliance, è necessario seguire un'altra procedura.
+
+link:recovering-storagegrid-appliance-storage-node.html["Ripristino di un nodo di storage dell'appliance StorageGRID"]
+
+image::../media/storage_node_recovery_system_drive.gif[Procedure di ripristino per il disco di sistema guasto su un nodo di storage basato su software]
+
+.Fasi
+* link:reviewing-warnings-for-system-drive-recovery.html["Revisione degli avvisi per il ripristino del disco di sistema di Storage Node"]
+* link:replacing-storage-node.html["Sostituzione del nodo di storage"]
+* link:selecting-start-recovery-to-configure-storage-node.html["Selezionare Start Recovery (Avvia ripristino) per configurare un nodo di storage"]
+* link:remounting-and-reformatting-storage-volumes-manual-steps.html["Rimontaggio e riformattazione dei volumi di storage ("`Mpassaggi anomali`")"]
+* link:restoring-object-data-to-storage-volume-if-required.html["Ripristino dei dati degli oggetti in un volume di storage, se necessario"]
+* link:checking-storage-state-after-recovering-storage-node-system-drive.html["Verifica dello stato dello storage dopo il ripristino di un disco di sistema Storage Node"]
+

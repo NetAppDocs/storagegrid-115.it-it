@@ -1,0 +1,89 @@
+---
+permalink: admin/configuring-s3-api-endpoint-domain-names.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Per supportare le richieste in stile host virtuale S3, è necessario utilizzare Grid Manager per configurare l"elenco dei nomi di dominio degli endpoint a cui si connettono i client S3.' 
+---
+= Configurazione dei nomi di dominio degli endpoint S3 API
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per supportare le richieste in stile host virtuale S3, è necessario utilizzare Grid Manager per configurare l'elenco dei nomi di dominio degli endpoint a cui si connettono i client S3.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre di autorizzazioni di accesso specifiche.
+* Devi aver confermato che non è in corso un aggiornamento della griglia.
++
+
+CAUTION: Non apportare modifiche alla configurazione del nome di dominio quando è in corso un aggiornamento della griglia.
+
+
+
+.A proposito di questa attività
+Per consentire ai client di utilizzare i nomi di dominio degli endpoint S3, è necessario eseguire tutte le seguenti operazioni:
+
+* Utilizzare Grid Manager per aggiungere i nomi di dominio degli endpoint S3 al sistema StorageGRID.
+* Assicurarsi che il certificato utilizzato dal client per le connessioni HTTPS a StorageGRID sia firmato per tutti i nomi di dominio richiesti dal client.
++
+Ad esempio, se l'endpoint è `s3.company.com`, È necessario assicurarsi che il certificato utilizzato per le connessioni HTTPS includa `s3.company.com` Endpoint e SAN (Subject alternative Name) con caratteri jolly dell'endpoint: `*.s3.company.com`.
+
+* Configurare il server DNS utilizzato dal client. Includere i record DNS per gli indirizzi IP utilizzati dai client per effettuare le connessioni e assicurarsi che i record riferiscano a tutti i nomi di dominio degli endpoint richiesti, inclusi i nomi con caratteri jolly.
++
+
+NOTE: I client possono connettersi a StorageGRID utilizzando l'indirizzo IP di un nodo gateway, di un nodo amministratore o di un nodo di storage oppure connettendosi all'indirizzo IP virtuale di un gruppo ad alta disponibilità. È necessario comprendere il modo in cui le applicazioni client si connettono alla griglia in modo da includere gli indirizzi IP corretti nei record DNS.
+
+
+
+Il certificato utilizzato da un client per le connessioni HTTPS dipende dal modo in cui il client si connette alla griglia:
+
+* Se un client si connette utilizzando il servizio Load Balancer, utilizza il certificato per uno specifico endpoint di bilanciamento del carico.
++
+
+NOTE: Ogni endpoint di bilanciamento del carico dispone di un proprio certificato e ciascun endpoint può essere configurato in modo da riconoscere nomi di dominio degli endpoint diversi.
+
+* Se il client si connette a un nodo di storage o al servizio CLB su un nodo gateway, il client utilizza un certificato del server personalizzato Grid che è stato aggiornato per includere tutti i nomi di dominio endpoint richiesti.
++
+
+NOTE: Il servizio CLB è obsoleto.
+
+
+
+.Fasi
+. Selezionare *Configurazione* *Impostazioni di rete* *nomi di dominio*.
++
+Viene visualizzata la pagina Endpoint Domain Names (nomi dominio endpoint).
+
++
+image::../media/configure_endpoint_domain_names.png[Schermata della finestra di dialogo Endpoint Domain Names (nomi dominio endpoint)]
+
+. Utilizzando l'icona (+) per aggiungere altri campi, inserire l'elenco dei nomi di dominio degli endpoint API S3 nei campi *Endpoint*.
++
+Se l'elenco è vuoto, il supporto per le richieste di tipo host virtuale S3 viene disattivato.
+
+. Fare clic su *Save* (Salva).
+. Assicurarsi che i certificati server utilizzati dai client corrispondano ai nomi di dominio degli endpoint richiesti.
++
+** Per i client che utilizzano il servizio Load Balancer, aggiornare il certificato associato all'endpoint del bilanciamento del carico a cui si connette il client.
+** Per i client che si connettono direttamente ai nodi di storage o che utilizzano il servizio CLB sui nodi gateway, aggiornare il certificato del server personalizzato per la griglia.
+
+
+. Aggiungere i record DNS necessari per garantire che le richieste dei nomi di dominio degli endpoint possano essere risolte.
+
+
+.Risultato
+Ora, quando i client utilizzano l'endpoint `bucket.s3.company.com`, Il server DNS si risolve nell'endpoint corretto e il certificato autentica l'endpoint come previsto.
+
+.Informazioni correlate
+link:../s3/index.html["Utilizzare S3"]
+
+link:viewing-ip-addresses.html["Visualizzazione degli indirizzi IP"]
+
+link:creating-high-availability-group.html["Creazione di un gruppo ad alta disponibilità"]
+
+link:configuring-custom-server-certificate-for-storage-node-or-clb.html["Configurazione di un certificato server personalizzato per le connessioni al nodo di storage o al servizio CLB"]
+
+link:configuring-load-balancer-endpoints.html["Configurazione degli endpoint del bilanciamento del carico"]

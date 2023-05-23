@@ -1,0 +1,25 @@
+---
+permalink: admin/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Amministrare StorageGRID
+:allow-uri-read: 
+
+
+[role="lead"]
+Scopri come configurare il sistema StorageGRID.
+
+* link:administering-storagegrid-system.html["Amministrazione di un sistema StorageGRID"]
+* link:controlling-administrator-access-to-storagegrid.html["Controllo dell'accesso amministratore a StorageGRID"]
+* link:kms-configuring.html["Configurazione dei server di gestione delle chiavi"]
+* link:managing-tenants.html["Gestione dei tenant"]
+* link:configuring-client-connections.html["Configurazione delle connessioni dei client S3 e Swift"]
+* link:managing-storagegrid-networks-and-connections.html["Gestione delle reti e delle connessioni StorageGRID"]
+* link:configuring-autosupport.html["Configurazione di AutoSupport"]
+* link:managing-storage-nodes.html["Gestione dei nodi di storage"]
+* link:managing-admin-nodes.html["Gestione dei nodi di amministrazione"]
+* link:managing-archive-nodes.html["Gestione dei nodi di archiviazione"]
+* link:migrating-data-into-storagegrid.html["Migrazione dei dati in StorageGRID"]
+

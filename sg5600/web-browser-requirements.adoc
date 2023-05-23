@@ -1,0 +1,58 @@
+---
+permalink: sg5600/web-browser-requirements.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, browser, web browser, internet 
+summary: È necessario utilizzare un browser Web supportato. 
+---
+= Requisiti del browser Web
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario utilizzare un browser Web supportato.
+
+|===
+| Browser Web | Versione minima supportata 
+
+
+ a| 
+Google Chrome
+ a| 
+87
+
+
+
+ a| 
+Microsoft Edge
+ a| 
+87
+
+
+
+ a| 
+Mozilla Firefox
+ a| 
+84
+
+|===
+Impostare la larghezza consigliata per la finestra del browser.
+
+|===
+| Larghezza del browser | Pixel 
+
+
+ a| 
+Minimo
+ a| 
+1024
+
+
+
+ a| 
+Ottimale
+ a| 
+1280
+
+|===

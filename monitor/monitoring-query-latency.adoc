@@ -1,0 +1,42 @@
+---
+permalink: monitor/monitoring-query-latency.html 
+sidebar: sidebar 
+keywords: monitoring, query latency 
+summary: 'Le azioni del client, come la memorizzazione, il recupero o l"eliminazione di oggetti, creano query nel database distribuito della griglia di metadati di oggetti. È necessario monitorare i trend di latenza delle query per garantire che le risorse grid siano adeguate al carico corrente.' 
+---
+= Monitoraggio della latenza delle query
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le azioni del client, come l'archiviazione, il recupero o l'eliminazione di oggetti, creano query nel database distribuito della griglia di metadati di oggetti. È necessario monitorare i trend di latenza delle query per garantire che le risorse grid siano adeguate al carico corrente.
+
+.Di cosa hai bisogno
+È necessario accedere a Grid Manager utilizzando un browser supportato.
+
+.A proposito di questa attività
+Gli aumenti temporanei della latenza delle query sono normali e possono essere causati da un improvviso aumento delle richieste di acquisizione. Anche le query non riuscite sono normali e possono derivare da problemi di rete transitori o nodi temporaneamente non disponibili. Tuttavia, se il tempo medio di esecuzione di una query aumenta, le prestazioni complessive della griglia diminuono.
+
+Se notate che la latenza delle query aumenta nel tempo, dovreste prendere in considerazione l'aggiunta di ulteriori nodi di storage in una procedura di espansione per soddisfare i carichi di lavoro futuri.
+
+L'avviso *High Latency for metadata Query* viene attivato se il tempo medio per le query è troppo lungo.
+
+.Fasi
+. Selezionare *nodi* *_nodo di storage_* *oggetti*.
+. Scorrere verso il basso fino alla tabella Query e visualizzare il valore della latenza media.
++
+image::../media/queries_table.png[Tabella Query]
+
+. Fare clic sull'icona del grafico image:../media/icon_chart_new.gif["Icona del grafico"] per inserire il valore nel tempo.
++
+image::../media/average_query_latency_chart.png[Grafico della latenza media delle query]
+
++
+Il grafico di esempio mostra i picchi nella latenza della query durante il normale funzionamento della griglia.
+
+
+
+.Informazioni correlate
+link:../expand/index.html["Espandi il tuo grid"]

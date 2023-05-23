@@ -1,0 +1,43 @@
+---
+permalink: monitor/generating-charts.html 
+sidebar: sidebar 
+keywords: charts, generating 
+summary: I grafici visualizzano una rappresentazione grafica dei valori dei dati degli attributi. È possibile creare report su un sito del data center, un nodo grid, un componente o un servizio. 
+---
+= Generazione di grafici
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I grafici visualizzano una rappresentazione grafica dei valori dei dati degli attributi. È possibile creare report su un sito del data center, un nodo grid, un componente o un servizio.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre di autorizzazioni di accesso specifiche.
+
+
+.Fasi
+. Selezionare *supporto* > *Strumenti* > *topologia griglia*.
+. Selezionare *_grid node_* *_component o service_* *Report* *grafici*.
+. Selezionare l'attributo da segnalare dall'elenco a discesa *attributo*.
+. Per forzare l'inizio dell'asse Y a zero, deselezionare la casella di controllo *Vertical Scaling* (Scala verticale).
+. Per visualizzare i valori con la massima precisione, selezionare la casella di controllo *dati non elaborati* oppure, per arrotondare i valori a un massimo di tre cifre decimali (ad esempio, per gli attributi riportati come percentuali), deselezionare la casella di controllo *dati non elaborati*.
+. Selezionare il periodo di tempo per il quale si desidera creare un report dall'elenco a discesa *Query rapida*.
++
+Selezionare l'opzione Custom Query (Query personalizzata) per selezionare un intervallo di tempo specifico.
+
++
+Il grafico viene visualizzato dopo alcuni istanti. Attendere alcuni minuti per la tabulazione di intervalli di tempo lunghi.
+
+. Se si seleziona Custom Query (Query personalizzata), personalizzare il periodo di tempo per il grafico inserendo *Data di inizio* e *Data di fine*.
++
+Utilizzare il formato `_YYYY/MM/DDHH:MM:SS_` in ora locale. Gli zeri iniziali devono corrispondere al formato. Ad esempio, 2017/4/6 7:30:00 non supera la convalida. Il formato corretto è: 2017/04/06 07:30:00.
+
+. Fare clic su *Aggiorna*.
++
+Dopo alcuni istanti viene generato un grafico. Attendere alcuni minuti per la tabulazione di intervalli di tempo lunghi. A seconda del periodo di tempo impostato per la query, viene visualizzato un report di testo raw o aggregato.
+
+. Se si desidera stampare il grafico, fare clic con il pulsante destro del mouse e selezionare *Stampa*, quindi modificare le impostazioni della stampante necessarie e fare clic su *Stampa*.
+

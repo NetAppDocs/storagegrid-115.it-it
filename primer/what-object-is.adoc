@@ -1,0 +1,41 @@
+---
+permalink: primer/what-object-is.html 
+sidebar: sidebar 
+keywords: object, metadata 
+summary: 'Con lo storage a oggetti, l"unità di storage è un oggetto, piuttosto che un file o un blocco. A differenza della gerarchia ad albero di un file system o di uno storage a blocchi, lo storage a oggetti organizza i dati in un layout piatto e non strutturato. Lo storage a oggetti separa la posizione fisica dei dati dal metodo utilizzato per memorizzare e recuperare tali dati.' 
+---
+= Che cos'è un oggetto
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Con lo storage a oggetti, l'unità di storage è un oggetto, piuttosto che un file o un blocco. A differenza della gerarchia ad albero di un file system o di uno storage a blocchi, lo storage a oggetti organizza i dati in un layout piatto e non strutturato. Lo storage a oggetti separa la posizione fisica dei dati dal metodo utilizzato per memorizzare e recuperare tali dati.
+
+Ogni oggetto in un sistema di storage basato su oggetti ha due parti: Dati oggetto e metadati oggetto.
+
+image::../media/object_conceptual_drawing.png[Oggetto]
+
+
+
+== Dati dell'oggetto
+
+I dati degli oggetti possono essere qualsiasi cosa, ad esempio una fotografia, un filmato o un documento medico.
+
+
+
+== Metadati dell'oggetto
+
+I metadati degli oggetti sono informazioni che descrivono un oggetto. StorageGRID utilizza i metadati degli oggetti per tenere traccia delle posizioni di tutti gli oggetti nella griglia e gestire il ciclo di vita di ciascun oggetto nel tempo.
+
+I metadati dell'oggetto includono informazioni come:
+
+* Metadati di sistema, tra cui un ID univoco per ciascun oggetto (UUID), il nome dell'oggetto, il nome del bucket S3 o del container Swift, il nome o l'ID dell'account tenant, la dimensione logica dell'oggetto, la data e l'ora in cui l'oggetto è stato creato per la prima volta, e la data e l'ora dell'ultima modifica dell'oggetto.
+* La posizione di storage corrente di ogni copia di oggetto o frammento con codifica di cancellazione.
+* Qualsiasi metadati utente associato all'oggetto.
+
+
+I metadati degli oggetti sono personalizzabili ed espandibili, il che lo rende flessibile per l'utilizzo da parte delle applicazioni.
+
+Per informazioni dettagliate su come e dove StorageGRID memorizza i metadati degli oggetti, visitare il sito link:../admin/managing-object-metadata-storage.html["Gestione dello storage dei metadati degli oggetti"].

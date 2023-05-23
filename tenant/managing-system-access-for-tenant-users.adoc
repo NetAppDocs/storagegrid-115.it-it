@@ -1,0 +1,19 @@
+---
+permalink: tenant/managing-system-access-for-tenant-users.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Gli utenti possono accedere a un account tenant importando i gruppi da un"origine di identità federata e assegnando le autorizzazioni di gestione. È inoltre possibile creare utenti e gruppi di tenant locali, a meno che non sia in vigore il Single Sign-on per l"intero sistema StorageGRID.' 
+---
+= Gestione dell'accesso al sistema per gli utenti tenant
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gli utenti possono accedere a un account tenant importando i gruppi da un'origine di identità federata e assegnando le autorizzazioni di gestione. È inoltre possibile creare utenti e gruppi di tenant locali, a meno che non sia attivo il Single Sign-on (SSO) per l'intero sistema StorageGRID.
+
+* link:using-identity-federation.html["Utilizzo della federazione delle identità"]
+* link:managing-groups.html["Gestione dei gruppi"]
+* link:managing-local-users.html["Gestione degli utenti locali"]
+

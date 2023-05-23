@@ -1,0 +1,21 @@
+---
+permalink: ilm/creating-storage-grades-storage-pools-ec-profiles-regions.html 
+sidebar: sidebar 
+keywords:  
+summary: Prima di poter creare le regole ILM per il sistema StorageGRID, è necessario definire le posizioni di archiviazione degli oggetti, determinare i tipi di copie desiderati e, facoltativamente, configurare le aree S3. 
+---
+= Creazione di livelli di storage, pool di storage, profili EC e regioni
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di poter creare le regole ILM per il sistema StorageGRID, è necessario definire le posizioni di archiviazione degli oggetti, determinare i tipi di copie desiderati e, facoltativamente, configurare le aree S3.
+
+* link:creating-and-assigning-storage-grades.html["Creazione e assegnazione dei gradi di storage"]
+* link:configuring-storage-pools.html["Configurazione dei pool di storage"]
+* link:using-cloud-storage-pools.html["Utilizzo dei Cloud Storage Pools"]
+* link:configuring-erasure-coding-profiles.html["Configurazione dei profili di codifica Erasure"]
+* link:configuring-regions-optional-and-s3-only.html["Configurazione delle regioni (opzionale e solo S3)"]
+

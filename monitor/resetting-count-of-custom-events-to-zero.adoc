@@ -1,0 +1,26 @@
+---
+permalink: monitor/resetting-count-of-custom-events-to-zero.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Se si desidera reimpostare il contatore solo per eventi personalizzati, è necessario utilizzare la pagina Grid Topology (topologia griglia) nel menu Support (supporto).' 
+---
+= Azzeramento del numero di eventi personalizzati
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se si desidera reimpostare il contatore solo per eventi personalizzati, è necessario utilizzare la pagina Grid Topology (topologia griglia) nel menu Support (supporto).
+
+.A proposito di questa attività
+La reimpostazione di un contatore provoca l'attivazione dell'allarme all'evento successivo. Al contrario, quando si riconosce un allarme, questo viene riattivato solo se viene raggiunto il livello di soglia successivo.
+
+. Selezionare *supporto* > *Strumenti* > *topologia griglia*.
+. Selezionare *_grid node_* *SSM* *Eventi* *Configurazione* *principale*.
+. Selezionare la casella di controllo *Reset* per gli eventi personalizzati.
++
+image::../media/custom_events_reset.gif[Schermata nella pagina principale di configurazione eventi SSM]
+
+. Fare clic su *Applica modifiche*.
+

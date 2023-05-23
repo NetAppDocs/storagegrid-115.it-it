@@ -1,0 +1,37 @@
+---
+permalink: ilm/what-ilm-rule-filtering-is.html 
+sidebar: sidebar 
+keywords:  
+summary: Quando si crea una regola ILM, si specificano i filtri per identificare gli oggetti a cui si applica la regola. 
+---
+= Che cos'è il filtraggio delle regole ILM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando si crea una regola ILM, si specificano i filtri per identificare gli oggetti a cui si applica la regola.
+
+Nel caso più semplice, una regola potrebbe non utilizzare alcun filtro. Qualsiasi regola che non utilizza filtri si applica a tutti gli oggetti, quindi deve essere l'ultima regola (predefinita) in un criterio ILM. La regola predefinita fornisce istruzioni di archiviazione per gli oggetti che non corrispondono ai filtri di un'altra regola.
+
+I filtri di base consentono di applicare regole diverse a gruppi di oggetti distinti e di grandi dimensioni. I filtri di base nella pagina Define Basics della procedura guidata Create ILM Rule consentono di applicare una regola a specifici account tenant, bucket S3 specifici o container Swift o entrambi.
+
+image::../media/ilm_create_ilm_rule_wizard_1.png[Procedura guidata ILM: Passaggio 1 di 3]
+
+Questi filtri di base offrono un modo semplice per applicare regole diverse a un numero elevato di oggetti. Ad esempio, potrebbe essere necessario memorizzare i record finanziari della tua azienda per soddisfare i requisiti normativi, mentre potrebbe essere necessario memorizzare i dati del reparto di marketing per facilitare le operazioni quotidiane. Dopo aver creato account tenant separati per ciascun reparto o aver separato i dati dai diversi reparti in bucket S3 separati, è possibile creare facilmente una regola che si applica a tutti i record finanziari e una seconda regola che si applica a tutti i dati di marketing.
+
+La pagina *Advanced Filtering* della procedura guidata Create ILM Rule offre un controllo granulare. È possibile creare filtri per selezionare gli oggetti in base alle seguenti proprietà dell'oggetto:
+
+* Tempo di acquisizione
+* Ora dell'ultimo accesso
+* Nome completo o parziale dell'oggetto (Key)
+* Regione bucket S3 (vincolo di posizione)
+* Dimensione dell'oggetto
+* Metadati dell'utente
+* Tag oggetti S3
+
+
+È possibile filtrare gli oggetti in base a criteri molto specifici. Ad esempio, gli oggetti memorizzati dal reparto di imaging di un ospedale potrebbero essere utilizzati frequentemente quando hanno meno di 30 giorni e poco tempo dopo, mentre gli oggetti che contengono informazioni sulle visite dei pazienti potrebbero dover essere copiati nel reparto di fatturazione della sede centrale della rete sanitaria. È possibile creare filtri che identifichino ciascun tipo di oggetto in base al nome dell'oggetto, alle dimensioni, ai tag di oggetto S3 o a qualsiasi altro criterio pertinente, quindi creare regole separate per memorizzare ciascun set di oggetti in modo appropriato.
+
+È inoltre possibile combinare filtri di base e avanzati in base alle esigenze in una singola regola. Ad esempio, il reparto marketing potrebbe voler memorizzare file di immagini di grandi dimensioni in modo diverso dai record dei vendor, mentre il reparto risorse umane potrebbe dover memorizzare i record del personale in un'area geografica specifica e le informazioni sulle policy a livello centrale. In questo caso, è possibile creare regole che filtrino in base all'account tenant per separare i record da ciascun reparto, utilizzando filtri avanzati in ciascuna regola per identificare il tipo specifico di oggetti a cui si applica la regola.

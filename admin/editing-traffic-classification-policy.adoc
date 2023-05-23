@@ -1,0 +1,49 @@
+---
+permalink: admin/editing-traffic-classification-policy.html 
+sidebar: sidebar 
+keywords:  
+summary: È possibile modificare un criterio di classificazione del traffico per modificarne il nome o la descrizione oppure per creare, modificare o eliminare eventuali regole o limiti per il criterio. 
+---
+= Modifica di una policy di classificazione del traffico
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile modificare un criterio di classificazione del traffico per modificarne il nome o la descrizione oppure per creare, modificare o eliminare eventuali regole o limiti per il criterio.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre dell'autorizzazione di accesso root.
+
+
+.Fasi
+. Selezionare *Configurazione* > *Impostazioni di rete* > *classificazione del traffico*.
++
+Viene visualizzata la pagina Traffic Classification Policies (Criteri di classificazione del traffico) e i criteri esistenti sono elencati nella tabella.
+
++
+image::../media/traffic_classification_policies_main_screen_w_examples.png[Esempi di policy di classificazione del traffico]
+
+. Selezionare il pulsante di opzione a sinistra del criterio che si desidera modificare.
+. Fare clic su *Edit* (Modifica).
++
+Viene visualizzata la finestra di dialogo Modifica policy di classificazione del traffico.
+
++
+image::../media/traffic_classification_policy_edit.png[Modifica policy di classificazione del traffico]
+
+. Creare, modificare o rimuovere regole e limiti corrispondenti in base alle esigenze.
++
+.. Per creare una regola o un limite corrispondente, fare clic su *Crea* e seguire le istruzioni per creare una regola o un limite.
+.. Per modificare una regola o un limite corrispondente, selezionare il pulsante di opzione corrispondente alla regola o al limite, fare clic su *Edit* nella sezione *Matching Rules* (regole corrispondenti) o nella sezione *Limits* (limiti) e seguire le istruzioni per creare una regola o un limite.
+.. Per rimuovere una regola o un limite corrispondente, selezionare il pulsante di opzione corrispondente alla regola o al limite e fare clic su *Rimuovi*. Quindi, fare clic su *OK* per confermare che si desidera rimuovere la regola o il limite.
+
+
+. Una volta creata o modificata una regola o un limite, fare clic su *Apply* (Applica).
+. Una volta terminata la modifica del criterio, fare clic su *Save* (Salva).
++
+Le modifiche apportate alla policy vengono salvate e il traffico di rete viene gestito in base alle policy di classificazione del traffico. È possibile visualizzare i diagrammi di traffico e verificare che i criteri stiano applicando i limiti di traffico previsti.
+
+

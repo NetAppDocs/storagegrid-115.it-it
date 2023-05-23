@@ -1,0 +1,26 @@
+---
+permalink: monitor/file-rotation-for-bycast-log.html 
+sidebar: sidebar 
+keywords: file rotation, bycast, log, file rotation, bycast.log 
+summary: 'Quando il `bycast.log` Il file raggiunge 1 GB, il file esistente viene salvato e viene avviato un nuovo file di log.' 
+---
+= Rotazione del file per bycast.log
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando il `bycast.log` Il file raggiunge 1 GB, il file esistente viene salvato e viene avviato un nuovo file di log.
+
+Il file salvato viene rinominato `bycast.log.1`e il nuovo file viene denominato `bycast.log`. Quando il nuovo `bycast.log` Raggiunge 1 GB, `bycast.log.1` viene rinominato e compresso come `bycast.log.2.gz`, e. `bycast.log` viene rinominato `bycast.log.1`.
+
+Il limite di rotazione per `bycast.log` è di 21 file. Quando la ventiduesima versione di `bycast.log` il file viene creato, il file meno recente viene cancellato.
+
+Il limite di rotazione per `bycast-err.log` sono sette file.
+
+
+NOTE: Se un file di log è stato compresso, non è necessario decomprimerlo nella stessa posizione in cui è stato scritto. La decompressione del file nella stessa posizione può interferire con gli script di rotazione del log.
+
+.Informazioni correlate
+link:collecting-log-files-and-system-data.html["Raccolta di file di log e dati di sistema"]

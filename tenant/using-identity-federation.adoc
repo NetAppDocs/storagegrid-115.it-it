@@ -1,0 +1,19 @@
+---
+permalink: tenant/using-identity-federation.html 
+sidebar: sidebar 
+keywords:  
+summary: 'L"utilizzo della federazione delle identità rende più rapida la configurazione di gruppi e utenti tenant e consente agli utenti tenant di accedere all"account tenant utilizzando credenziali familiari.' 
+---
+= Utilizzo della federazione delle identità
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'utilizzo della federazione delle identità rende più rapida la configurazione di gruppi e utenti tenant e consente agli utenti tenant di accedere all'account tenant utilizzando credenziali familiari.
+
+* link:configuring-federated-identity-source.html["Configurazione di un'origine di identità federata"]
+* link:forcing-synchronization-with-identity-source.html["Forzare la sincronizzazione con l'origine dell'identità"]
+* link:disabling-identity-federation.html["Disattivazione della federazione delle identità"]
+

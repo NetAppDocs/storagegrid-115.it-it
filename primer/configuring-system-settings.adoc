@@ -1,0 +1,51 @@
+---
+permalink: primer/configuring-system-settings.html 
+sidebar: sidebar 
+keywords: system settings, grid manager, configure, configuration, display options, grid options, key management server, S3 object lock, storage options 
+summary: È possibile configurare diverse impostazioni di sistema da Gestione griglia per ottimizzare il funzionamento del sistema StorageGRID. 
+---
+= Configurazione delle impostazioni di sistema
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile configurare diverse impostazioni di sistema da Gestione griglia per ottimizzare il funzionamento del sistema StorageGRID.
+
+
+
+== Opzioni di visualizzazione
+
+Le opzioni di visualizzazione consentono di specificare il periodo di timeout per le sessioni utente e di eliminare le notifiche e-mail per gli allarmi legacy e i messaggi AutoSupport attivati dagli eventi.
+
+
+
+== Opzioni della griglia
+
+È possibile utilizzare Opzioni griglia per configurare le impostazioni per tutti gli oggetti memorizzati nel sistema StorageGRID, inclusa la compressione degli oggetti memorizzati e la crittografia degli oggetti memorizzati. e l'hashing degli oggetti memorizzati.
+
+È inoltre possibile utilizzare queste opzioni per specificare le impostazioni globali per le operazioni dei client S3 e Swift.
+
+
+
+== Server di gestione delle chiavi
+
+È possibile configurare uno o più server di gestione delle chiavi esterni (KMS) per fornire chiavi di crittografia ai servizi StorageGRID e alle appliance di storage. Ogni cluster KMS o KMS utilizza il protocollo KMIP (Key Management Interoperability Protocol) per fornire una chiave di crittografia ai nodi appliance nel sito StorageGRID associato. L'utilizzo di server di gestione delle chiavi consente di proteggere i dati StorageGRID anche se un'appliance viene rimossa dal data center. Una volta crittografati i volumi dell'appliance, non è possibile accedere ai dati dell'appliance a meno che il nodo non sia in grado di comunicare con il KMS.
+
+
+NOTE: Per utilizzare la gestione delle chiavi di crittografia, è necessario attivare l'impostazione *Node Encryption* per ogni appliance durante l'installazione, prima di aggiungere l'appliance alla griglia.
+
+
+
+== Blocco oggetti S3
+
+La funzione blocco oggetti StorageGRID S3 è una soluzione di protezione degli oggetti equivalente a blocco oggetti S3 in Amazon Simple Storage Service (Amazon S3). È possibile attivare l'impostazione di blocco oggetti S3 globale per un sistema StorageGRID per consentire agli account tenant S3 di creare bucket con blocco oggetti S3 attivato. Il tenant può quindi utilizzare un'applicazione client S3 per specificare facoltativamente le impostazioni di conservazione (conserva fino alla data, conservazione legale o entrambe) per gli oggetti in tali bucket.
+
+image::../media/s3_object_lock_architecture.png[Architettura di blocco oggetti S3]
+
+
+
+== Opzioni di storage
+
+Le opzioni di storage consentono di controllare la segmentazione degli oggetti e di definire le filigrane dello storage per gestire lo spazio di storage utilizzabile di un nodo di storage.

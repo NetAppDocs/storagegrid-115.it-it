@@ -1,0 +1,32 @@
+---
+permalink: admin/kms-adding.html 
+sidebar: sidebar 
+keywords:  
+summary: Utilizzare la procedura guidata del server di gestione delle chiavi StorageGRID per aggiungere ogni cluster KMS o KMS. 
+---
+= Aggiunta di un server di gestione delle chiavi (KMS)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Utilizzare la procedura guidata del server di gestione delle chiavi StorageGRID per aggiungere ogni cluster KMS o KMS.
+
+.Di cosa hai bisogno
+* È necessario aver esaminato link:kms-considerations-and-requirements.html["considerazioni e requisiti per l'utilizzo di un server di gestione delle chiavi"].
+* Devi avere link:kms-configuring-storagegrid-as-client.html["StorageGRID configurato come client nel KMS"]E devono essere disponibili le informazioni richieste per ciascun cluster KMS o KMS
+* È necessario disporre dell'autorizzazione di accesso root.
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+
+
+.A proposito di questa attività
+Se possibile, configurare qualsiasi server di gestione delle chiavi specifico del sito prima di configurare un KMS predefinito che si applica a tutti i siti non gestiti da un altro KMS. Se si crea prima il KMS predefinito, tutte le appliance crittografate con nodo nella griglia verranno crittografate con il KMS predefinito. Se si desidera creare un KMS specifico del sito in un secondo momento, è necessario prima copiare la versione corrente della chiave di crittografia dal KMS predefinito al nuovo KMS.
+
+link:kms-considerations-for-changing-for-site.html["Considerazioni per la modifica del KMS per un sito"]
+
+.Fasi
+. link:kms-adding-enter-kms-details.html["Fase 1: Inserire i dettagli KMS"]
+. link:kms-adding-upload-server-certificate.html["Fase 2: Caricare il certificato del server"]
+. link:kms-adding-upload-client-certificates.html["Fase 3: Caricare i certificati client"]
+

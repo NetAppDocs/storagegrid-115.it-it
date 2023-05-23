@@ -1,0 +1,24 @@
+---
+permalink: maintain/storagegrid-hotfix-procedure.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Potrebbe essere necessario applicare una hotfix al sistema StorageGRID se vengono rilevati e risolti problemi relativi al software tra una versione e l"altra.' 
+---
+= Procedura di hotfix StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Potrebbe essere necessario applicare una hotfix al sistema StorageGRID se vengono rilevati e risolti problemi relativi al software tra una versione e l'altra.
+
+Le hotfix StorageGRID contengono modifiche software rese disponibili al di fuori di una release di funzionalità o patch. Le stesse modifiche sono incluse in una release futura. Inoltre, ogni release di hotfix contiene un rolup di tutti gli hotfix precedenti all'interno della funzionalità o della release di patch.
+
+* link:considerations-for-applying-hotfix.html["Considerazioni per l'applicazione di una correzione rapida"]
+* link:how-your-system-is-affected-when-you-apply-hotfix.html["Impatto del sistema quando si applica una correzione rapida"]
+* link:obtaining-required-materials-for-hotfix.html["Ottenere il materiale necessario per una correzione rapida"]
+* link:downloading-hotfix-file.html["Download del file della correzione rapida in corso"]
+* link:checking-systems-condition-before-applying-hotfix.html["Verifica delle condizioni del sistema prima di applicare una correzione rapida"]
+* link:applying-hotfix.html["Applicazione della correzione rapida"]
+

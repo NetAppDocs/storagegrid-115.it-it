@@ -1,0 +1,22 @@
+---
+permalink: admin/managing-archive-nodes.html 
+sidebar: sidebar 
+keywords:  
+summary: 'In alternativa, è possibile implementare ciascun sito del data center del sistema StorageGRID con un nodo di archiviazione, che consente di connettersi a un sistema di storage di archiviazione esterno di destinazione, ad esempio Tivoli Storage Manager (TSM).' 
+---
+= Gestione dei nodi di archiviazione
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In alternativa, è possibile implementare ciascun sito del data center del sistema StorageGRID con un nodo di archiviazione, che consente di connettersi a un sistema di storage di archiviazione esterno di destinazione, ad esempio Tivoli Storage Manager (TSM).
+
+Dopo aver configurato le connessioni alla destinazione esterna, è possibile configurare il nodo di archiviazione in modo da ottimizzare le prestazioni del TSM, disattivare un nodo di archiviazione quando un server TSM si avvicina alla capacità o non è disponibile e configurare le impostazioni di replica e recupero. È inoltre possibile impostare allarmi personalizzati per il nodo di archiviazione.
+
+* link:what-archive-node-is.html["Che cos'è un nodo di archivio"]
+* link:configuring-archive-node-connections-to-archival-storage.html["Configurazione delle connessioni del nodo di archiviazione allo storage di archiviazione"]
+* link:setting-custom-alarms-for-archive-node.html["Impostazione di allarmi personalizzati per il nodo di archiviazione"]
+* link:integrating-tivoli-storage-manager.html["Integrazione di Tivoli Storage Manager"]
+

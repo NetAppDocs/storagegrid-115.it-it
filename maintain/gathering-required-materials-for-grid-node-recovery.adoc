@@ -1,0 +1,71 @@
+---
+permalink: maintain/gathering-required-materials-for-grid-node-recovery.html 
+sidebar: sidebar 
+keywords: storagegrid, recovery, grid node recovery, node recovery 
+summary: Prima di eseguire le procedure di manutenzione, assicurarsi di disporre dei materiali necessari per ripristinare un nodo della griglia guasto. 
+---
+= Raccolta dei materiali necessari per il ripristino dei nodi grid
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di eseguire le procedure di manutenzione, assicurarsi di disporre dei materiali necessari per ripristinare un nodo della griglia guasto.
+
+[cols="1a,2a"]
+|===
+| Elemento | Note 
+
+
+ a| 
+Archivio di installazione di StorageGRID
+ a| 
+Per ripristinare un nodo grid, è necessario disporre dell'archivio di installazione di StorageGRID per la piattaforma.
+
+*Nota:* non è necessario scaricare i file se si stanno ripristinando volumi di storage guasti su un nodo di storage.
+
+
+
+ a| 
+Pacchetto di ripristino `.zip` file
+ a| 
+Ottenere una copia del pacchetto di ripristino più recente `.zip` file:
+`sgws-recovery-package-_id-revision_.zip`
+
+Il contenuto di `.zip` i file vengono aggiornati ogni volta che si modifica il sistema. Dopo aver apportato tali modifiche, viene richiesto di memorizzare la versione più recente del pacchetto di ripristino in una posizione sicura. Utilizzare la copia più recente per eseguire il ripristino in caso di errori della griglia.
+
+Se il nodo di amministrazione primario funziona normalmente, è possibile scaricare il pacchetto di ripristino da Grid Manager. Selezionare *manutenzione* *sistema* *pacchetto di ripristino*.
+
+Se non è possibile accedere a Grid Manager, è possibile trovare copie crittografate del pacchetto di ripristino su alcuni nodi di storage che contengono il servizio ADC. Su ciascun nodo di storage, esaminare questa posizione per il pacchetto di ripristino: `/var/local/install/sgws-recovery-package-_grid-id_-_revision_.zip.gpg` Utilizzare il pacchetto di ripristino con il numero di revisione più alto.
+
+
+
+ a| 
+`Passwords.txt` file
+ a| 
+Contiene le password necessarie per accedere ai nodi della griglia sulla riga di comando. Incluso nel pacchetto di ripristino.
+
+
+
+ a| 
+Passphrase di provisioning
+ a| 
+La passphrase viene creata e documentata al momento dell'installazione del sistema StorageGRID. La passphrase di provisioning non si trova in `Passwords.txt` file.
+
+
+
+ a| 
+Documentazione aggiornata per la piattaforma
+ a| 
+Per le versioni correnti supportate della piattaforma, consultare il tool Interoperability Matrix.
+
+https://mysupport.netapp.com/matrix["Tool di matrice di interoperabilità NetApp"]
+
+Per la documentazione, visitare il sito Web del vendor della piattaforma.
+
+|===
+.Informazioni correlate
+link:downloading-and-extracting-storagegrid-installation-files.html["Download ed estrazione dei file di installazione di StorageGRID"]
+
+link:web-browser-requirements.html["Requisiti del browser Web"]

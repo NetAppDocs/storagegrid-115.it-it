@@ -1,0 +1,28 @@
+---
+permalink: sg5600/maintaining-sg5600-appliance.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, maintain, maintaining, hardware, procedures, tasks 
+summary: 'Potrebbe essere necessario aggiornare il software del sistema operativo SANtricity sul controller E2700, sostituire il controller E2700 o il controller E5600 SG o sostituire componenti specifici. Le procedure descritte in questa sezione presuppongono che l"appliance sia già stata implementata come nodo di storage in un sistema StorageGRID.' 
+---
+= Manutenzione dell'appliance SG5600
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Potrebbe essere necessario aggiornare il software del sistema operativo SANtricity sul controller E2700, sostituire il controller E2700 o il controller E5600 SG o sostituire componenti specifici. Le procedure descritte in questa sezione presuppongono che l'appliance sia già stata implementata come nodo di storage in un sistema StorageGRID.
+
+.Fasi
+* link:placing-appliance-into-maintenance-mode.html["Attivazione della modalità di manutenzione dell'appliance"]
+* link:upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg5600.html["Aggiornamento del sistema operativo SANtricity sui controller di storage mediante Grid Manager"]
+* link:upgrading-santricity-os-on-e2700-controller-using-maintenance-mode.html["Aggiornamento del sistema operativo SANtricity sul controller E2700 utilizzando la modalità di manutenzione"]
+* link:upgrading-drive-firmware-using-santricity-storage-manager.html["Aggiornamento del firmware del disco mediante Gestione storage SANtricity"]
+* link:replacing-e2700-controller.html["Sostituzione del controller E2700"]
+* link:replacing-e5600sg-controller.html["Sostituzione della centralina E5600SG"]
+* link:replacing-other-hardware-components-sg5600.html["Sostituzione di altri componenti hardware"]
+* link:changing-link-configuration-of-e5600sg-controller.html["Modifica della configurazione del collegamento del controller E5600SG"]
+* link:changing-mtu-setting.html["Modifica dell'impostazione MTU"]
+* link:checking-dns-server-configuration.html["Verifica della configurazione del server DNS"]
+* link:monitoring-node-encryption-in-maintenance-mode.html["Monitoraggio della crittografia dei nodi in modalità di manutenzione"]
+

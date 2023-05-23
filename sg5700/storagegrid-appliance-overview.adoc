@@ -1,0 +1,159 @@
+---
+permalink: sg5700/storagegrid-appliance-overview.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, overview, models, features 
+summary: 'L"appliance SG5700 StorageGRID è una piattaforma di storage e calcolo integrata che opera come nodo di storage in un grid StorageGRID. L"appliance può essere utilizzata in un ambiente di grid ibrido che combina nodi di storage dell"appliance e nodi di storage virtuali (basati su software).' 
+---
+= Panoramica dell'appliance StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'appliance SG5700 StorageGRID è una piattaforma di storage e calcolo integrata che opera come nodo di storage in un grid StorageGRID. L'appliance può essere utilizzata in un ambiente di grid ibrido che combina nodi storage dell'appliance e nodi storage virtuali (basati su software).
+
+L'appliance StorageGRID SG5700 offre le seguenti funzionalità:
+
+* Integra gli elementi di storage e calcolo per un nodo di storage StorageGRID.
+* Include il programma di installazione dell'appliance StorageGRID per semplificare l'implementazione e la configurazione del nodo di storage.
+* Include Gestione di sistema SANtricity e-Series per la gestione e il monitoraggio dell'hardware.
+* Supporta fino a quattro connessioni 10 GbE o 25 GbE alla rete grid e alla rete client StorageGRID.
+* Supporta dischi FDE (Full Disk Encryption) o FIPS (Federal Information Processing Standard). Quando questi dischi vengono utilizzati con la funzione di protezione del disco in Gestione di sistema di SANtricity, viene impedito l'accesso non autorizzato ai dati.
+
+
+L'appliance SG5700 è disponibile in due modelli: SG5712 e SG5760. Entrambi i modelli includono i seguenti componenti:
+
+|===
+| Componente | SG5712 | SG5760 
+
+
+ a| 
+Controller di calcolo
+ a| 
+Controller E5700SG
+ a| 
+Controller E5700SG
+
+
+
+ a| 
+Controller dello storage
+ a| 
+Controller e-Series E2800
+ a| 
+Controller e-Series E2800
+
+
+
+ a| 
+Chassis
+ a| 
+Enclosure e-Series DE212C, un enclosure a due unità rack (2U)
+ a| 
+Enclosure e-Series DE460C, un enclosure a quattro unità rack (4U)
+
+
+
+ a| 
+Dischi
+ a| 
+12 unità NL-SAS (3.5")
+ a| 
+60 unità NL-SAS (3.5")
+
+
+
+ a| 
+Alimentatori e ventole ridondanti
+ a| 
+Due contenitori per ventole di alimentazione
+ a| 
+Due contenitori di alimentazione e due contenitori per ventole
+
+|===
+Lo storage raw massimo disponibile nell'appliance StorageGRID è fisso, in base al numero di dischi in ogni enclosure. Non è possibile espandere lo storage disponibile aggiungendo uno shelf con dischi aggiuntivi.
+
+
+
+== Modello SG5712
+
+Questa figura mostra la parte anteriore e posteriore del modello SG5712, un enclosure 2U in grado di contenere 12 dischi.
+
+image::../media/sg5712_front_and_back_views.gif[La parte anteriore e posteriore dell'appliance SG5712]
+
+SG5712 include due controller e due contenitori per ventole di alimentazione.
+
+image::../media/sg5712_with_callouts.gif[Controller e contenitori per ventole di alimentazione nell'appliance SG5712]
+
+[cols="1a,5a"]
+|===
+|  | Descrizione 
+
+
+ a| 
+1
+ a| 
+Controller E2800 (controller storage)
+
+
+
+ a| 
+2
+ a| 
+Controller E5700SG (controller di calcolo)
+
+
+
+ a| 
+3
+ a| 
+Contenitori per ventole di alimentazione
+
+|===
+
+
+== Modello SG5760
+
+Questa figura mostra la parte anteriore e posteriore del modello SG5760, un enclosure 4U in grado di contenere 60 unità in 5 cassetti.
+
+image::../media/sg5760_front_and_back_views.gif[Parte anteriore e posteriore dell'appliance SG5760]
+
+Il modello SG5760 include due controller, due contenitori per ventole e due contenitori di alimentazione.
+
+image::../media/sg5760_with_callouts.gif[Controller,fan canisters,and power canisters in SG5760 appliance]
+
+[cols="1a,5a"]
+|===
+|  | Descrizione 
+
+
+ a| 
+1
+ a| 
+Controller E2800 (controller storage)
+
+
+
+ a| 
+2
+ a| 
+Controller E5700SG (controller di calcolo)
+
+
+
+ a| 
+3
+ a| 
+Filtro a carboni attivi della ventola (1 di 2)
+
+
+
+ a| 
+4
+ a| 
+Filtro a carboni attivi (1 di 2)
+
+|===
+.Informazioni correlate
+http://mysupport.netapp.com/info/web/ECMP1658252.html["Sito di documentazione dei sistemi NetApp e-Series"^]

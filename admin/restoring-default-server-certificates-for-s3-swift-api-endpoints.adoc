@@ -1,0 +1,24 @@
+---
+permalink: admin/restoring-default-server-certificates-for-s3-swift-api-endpoints.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile ripristinare l"utilizzo dei certificati server predefiniti per gli endpoint S3 e Swift REST API.' 
+---
+= Ripristino dei certificati server predefiniti per gli endpoint S3 e Swift REST API
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile ripristinare l'utilizzo dei certificati server predefiniti per gli endpoint S3 e Swift REST API.
+
+.Fasi
+. Selezionare *Configurazione* *Impostazioni di rete* *certificati server*.
+. Nella sezione Object Storage API Service Endpoints Server Certificate, fare clic su *Use Default Certificates* (Usa certificati predefiniti).
+. Fare clic su *OK* nella finestra di dialogo di conferma.
++
+Quando si ripristinano i certificati server predefiniti per gli endpoint API dello storage a oggetti, i file di certificato del server personalizzati configurati vengono cancellati e non possono essere ripristinati dal sistema. I certificati server predefiniti vengono utilizzati per tutte le nuove connessioni client API successive.
+
+. Aggiornare la pagina per assicurarsi che il browser Web sia aggiornato.
+

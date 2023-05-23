@@ -1,0 +1,33 @@
+---
+permalink: sg100-1000/unable-to-connect-to-appliance-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, troubleshoot, troubleshooting, connect, connection, unable to connect, no connection 
+summary: 'Se non si riesce a connettersi all"appliance di servizi, potrebbe esserci un problema di rete o l"installazione dell"hardware potrebbe non essere stata completata correttamente.' 
+---
+= Impossibile connettersi all'appliance
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se non si riesce a connettersi all'appliance di servizi, potrebbe esserci un problema di rete o l'installazione dell'hardware potrebbe non essere stata completata correttamente.
+
+.Fasi
+. Provare a eseguire il ping dell'appliance utilizzando l'indirizzo IP dell'appliance: +
+`*ping _services_appliance_IP_*`
+. Se il comando ping non risponde, verificare di utilizzare l'indirizzo IP corretto.
++
+È possibile utilizzare l'indirizzo IP del dispositivo su Grid Network, Admin Network o Client Network.
+
+. Se l'indirizzo IP è corretto, controllare il cablaggio dell'appliance, i ricetrasmettitori QSFP o SFP e la configurazione di rete.
++
+Se il problema persiste, contattare il supporto tecnico.
+
+. Se il ping ha avuto esito positivo, aprire un browser Web.
+. Inserire l'URL del programma di installazione dell'appliance StorageGRID: +
+`*https://_appliances_controller_IP_:8443*`
++
+Viene visualizzata la pagina iniziale.
+
+

@@ -1,0 +1,36 @@
+---
+permalink: admin/kms-adding-upload-server-certificate.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Nel passaggio 2 della procedura guidata Aggiungi un server di gestione delle chiavi, caricare il certificato del server (o bundle di certificati) per il KMS. Il certificato del server consente al KMS esterno di autenticarsi su StorageGRID.' 
+---
+= Fase 2: Caricare il certificato del server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nella fase 2 (carica certificato server) della procedura guidata Add a Key Management Server (Aggiungi un server di gestione delle chiavi), viene caricato il certificato del server (o bundle di certificati) per il KMS. Il certificato del server consente al KMS esterno di autenticarsi su StorageGRID.
+
+.Fasi
+. Dal *passaggio 2 (carica certificato server)*, individuare la posizione del certificato server o del bundle di certificati salvato.
++
+image::../media/kms_step_2_upload_server_certificate.png[KMS fase 2 carica certificato server]
+
+. Caricare il file del certificato.
++
+Vengono visualizzati i metadati del certificato del server.
+
++
+image::../media/kms_step_2_server_certificate_metadata.png[metadati del certificato server kms fase 2]
+
++
+
+NOTE: Se hai caricato un bundle di certificati, i metadati di ciascun certificato vengono visualizzati nella relativa scheda.
+
+. Selezionare *Avanti*.
++
+Viene visualizzata la fase 3 (carica certificati client) della procedura guidata Add a Key Management Server (Aggiungi un server di gestione delle chiavi).
+
+

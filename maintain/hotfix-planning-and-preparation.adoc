@@ -1,0 +1,21 @@
+---
+permalink: maintain/hotfix-planning-and-preparation.html 
+sidebar: sidebar 
+keywords: storagegrid, hotfix 
+summary: 'È necessario pianificare prima di applicare una correzione rapida per garantire un"interruzione minima del sistema StorageGRID.' 
+---
+= Pianificazione e preparazione della correzione rapida
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario pianificare prima di applicare una correzione rapida per garantire un'interruzione minima del sistema StorageGRID.
+
+.Fasi
+* link:how-your-system-is-affected-when-you-apply-hotfix.html["Impatto del sistema quando si applica una correzione rapida"]
+* link:obtaining-required-materials-for-hotfix.html["Ottenere il materiale necessario per una correzione rapida"]
+* link:downloading-hotfix-file.html["Download del file della correzione rapida in corso"]
+* link:checking-systems-condition-before-applying-hotfix.html["Verifica delle condizioni del sistema prima di applicare una correzione rapida"]
+

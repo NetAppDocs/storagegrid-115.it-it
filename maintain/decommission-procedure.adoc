@@ -1,0 +1,32 @@
+---
+permalink: maintain/decommission-procedure.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission 
+summary: È possibile eseguire una procedura di decommissionamento per rimuovere in modo permanente i nodi della griglia o un intero sito dal sistema StorageGRID. 
+---
+= Procedura di decommissionamento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile eseguire una procedura di decommissionamento per rimuovere in modo permanente i nodi della griglia o un intero sito dal sistema StorageGRID.
+
+Per rimuovere un nodo della griglia o un sito, eseguire una delle seguenti procedure di decommissionamento:
+
+* Eseguire una *decommissionazione del nodo* per rimuovere uno o più nodi, che possono trovarsi in uno o più siti. I nodi rimossi possono essere online e connessi al sistema StorageGRID oppure offline e disconnessi.
+* Eseguire una *decommissionazione del sito connesso* per rimuovere un sito in cui tutti i nodi sono connessi a StorageGRID.
+* Eseguire una *decommissionazione sito disconnessa* per rimuovere un sito in cui tutti i nodi sono disconnessi da StorageGRID.
++
+
+IMPORTANT: Prima di eseguire la decommissionazione di un sito disconnesso, è necessario contattare il rappresentante commerciale NetApp. NetApp esaminerà i tuoi requisiti prima di attivare tutte le fasi della procedura guidata Decommission Site. Non tentare di decommissionare un sito disconnesso se si ritiene possibile ripristinare il sito o i dati degli oggetti dal sito.
+
+
+
+Se un sito contiene una combinazione diimage:../media/icon_alert_green_checkmark.png["Icona Avviso segno di spunta verde"]) e nodi disconnessi (image:../media/icon_alarm_gray_administratively_down.png["Icona Alarm Grey amministrativamente in basso"] oppure image:../media/icon_alarm_blue_unknown.png["Icona allarme blu sconosciuto"]), è necessario riportare tutti i nodi offline in linea.
+
+.Informazioni correlate
+link:grid-node-decommissioning.html["Disattivazione del nodo Grid"]
+
+link:site-decommissioning.html["Disattivazione del sito"]

@@ -1,0 +1,35 @@
+---
+section: troubleshoot
+title: Risolvere i problemi di un sistema StorageGRID
+url: "/troubleshoot/troubleshooting-storagegrid-system.html"
+entries:
+- title: Risoluzione dei problemi relativi a oggetti e storage
+  url: "/troubleshoot/troubleshooting-object-and-storage-issues.html"
+  entries:
+  - title: Verifica dell'integrità degli oggetti
+    url: "/troubleshoot/verifying-object-integrity.html"
+  - title: Risoluzione dei problemi relativi ai dati degli oggetti persi e mancanti
+    url: "/troubleshoot/troubleshooting-lost-and-missing-object-data.html"
+    entries:
+    - title: Analisi degli oggetti smarriti
+      url: "/troubleshoot/investigating-lost-objects.html"
+    - title: Ricerca e ripristino di oggetti potenzialmente persi
+      url: "/troubleshoot/searching-for-and-restoring-potentially-lost-objects.html"
+    - title: Reimpostazione dei conteggi degli oggetti persi e mancanti
+      url: "/troubleshoot/resetting-lost-and-missing-object-counts.html"
+  - title: Risoluzione dei problemi relativi all'avviso di storage dei dati a oggetti
+      in esaurimento
+    url: "/troubleshoot/troubleshooting-low-object-data-storage-alert.html"
+  - title: Risoluzione dei problemi relativi all'allarme Storage Status (SST)
+    url: "/troubleshoot/troubleshooting-storage-status-alarm.html"
+  - title: Troubleshooting delivery of platform Services messages (allarme SMTT)
+    url: "/troubleshoot/troubleshooting-delivery-platform-services-messages.html"
+- title: Risoluzione dei problemi relativi ai metadati
+  url: "/troubleshoot/troubleshooting-metadata-issues.html"
+- title: Risoluzione degli errori del certificato
+  url: "/troubleshoot/troubleshooting-certificate-errors.html"
+- title: Risoluzione dei problemi relativi al nodo di amministrazione e all'interfaccia
+    utente
+  url: "/troubleshoot/troubleshooting-admin-node-and-user-interface-issues.html"
+- title: Risoluzione dei problemi di rete, hardware e piattaforma
+  url: "/troubleshoot/troubleshooting-network-hardware-and-platform-issues.html"

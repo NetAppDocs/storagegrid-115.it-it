@@ -1,0 +1,17 @@
+---
+permalink: ubuntu/preparing-hosts.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Per preparare gli host fisici o virtuali per StorageGRID, attenersi alla procedura riportata di seguito. Nota: È possibile automatizzare molte o tutte queste fasi utilizzando framework di configurazione server standard come Ansible, Puppet o Chef.' 
+---
+= Preparazione degli host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per preparare gli host fisici o virtuali per StorageGRID, attenersi alla procedura riportata di seguito. Nota: È possibile automatizzare molte o tutte queste fasi utilizzando framework di configurazione server standard come Ansible, Puppet o Chef.
+
+.Informazioni correlate
+link:automating-installation-and-configuration-of-storagegrid-host-service.html["Automazione dell'installazione e della configurazione del servizio host StorageGRID"]

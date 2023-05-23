@@ -1,0 +1,34 @@
+---
+permalink: admin/creating-custom-notifications-for-migration-alarms.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile che StorageGRID invii notifiche di avviso o notifiche di allarme (sistema legacy) all"amministratore di sistema responsabile del monitoraggio della migrazione se determinati valori superano le soglie consigliate.' 
+---
+= Creazione di notifiche personalizzate per gli allarmi di migrazione
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile che StorageGRID invii notifiche di avviso o notifiche di allarme (sistema legacy) all'amministratore di sistema responsabile del monitoraggio della migrazione se determinati valori superano le soglie consigliate.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre di autorizzazioni di accesso specifiche.
+* È necessario aver configurato le impostazioni e-mail per le notifiche di avviso (o allarme).
+
+
+.Fasi
+. Creare una regola di avviso personalizzata o un allarme personalizzato globale per ogni metrica Prometheus o attributo StorageGRID che si desidera monitorare durante la migrazione dei dati.
++
+Gli avvisi vengono attivati in base ai valori delle metriche Prometheus. Gli allarmi vengono attivati in base ai valori degli attributi. Per ulteriori informazioni, consultare le istruzioni per il monitoraggio e la risoluzione dei problemi di StorageGRID.
+
+. Disattivare la regola di avviso personalizzata o l'allarme Global Custom al termine della migrazione dei dati.
++
+Gli allarmi Global Custom hanno la precedenza su quelli predefiniti.
+
+
+
+.Informazioni correlate
+link:../monitor/index.html["Monitor  risoluzione dei problemi"]

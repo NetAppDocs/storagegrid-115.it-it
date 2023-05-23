@@ -1,0 +1,30 @@
+---
+permalink: ilm/how-s3-versioned-objects-are-deleted.html 
+sidebar: sidebar 
+keywords:  
+summary: Quando il controllo delle versioni è attivato per un bucket S3, StorageGRID segue il comportamento di Amazon S3 quando risponde alle richieste di eliminazione, sia che provengano da un client S3, dalla scadenza di un ciclo di vita del bucket S3 o dai requisiti della policy ILM. 
+---
+= Modalità di eliminazione degli oggetti con versione S3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando il controllo delle versioni è attivato per un bucket S3, StorageGRID segue il comportamento di Amazon S3 quando risponde alle richieste di eliminazione, sia che provengano da un client S3, dalla scadenza di un ciclo di vita del bucket S3 o dai requisiti della policy ILM.
+
+Quando gli oggetti sono sottoposti a versione, le richieste di eliminazione degli oggetti non eliminano la versione corrente dell'oggetto e non liberano spazio. Invece, una richiesta di eliminazione di un oggetto crea semplicemente un indicatore di eliminazione come versione corrente dell'oggetto, rendendo la versione precedente dell'oggetto "`non aggiornata`".
+
+Anche se l'oggetto non è stato rimosso, StorageGRID si comporta come se la versione corrente dell'oggetto non fosse più disponibile. Le richieste a quell'oggetto restituiscono 404 non trovato. Tuttavia, poiché i dati dell'oggetto non correnti non sono stati rimossi, le richieste che specificano una versione non corrente dell'oggetto possono avere successo.
+
+Per liberare spazio durante l'eliminazione degli oggetti con versione, è necessario effettuare una delle seguenti operazioni:
+
+* *S3 client request*: Specificare il numero di versione dell'oggetto nella richiesta S3 DELETE Object (`DELETE /object?versionId=ID`). Tenere presente che questa richiesta rimuove solo le copie degli oggetti per la versione specificata (le altre versioni occupano ancora spazio).
+* *Ciclo di vita del bucket*: Utilizzare `NoncurrentVersionExpiration` azione nella configurazione del ciclo di vita del bucket. Quando viene raggiunto il numero di giorni non correnti specificato, StorageGRID rimuove in modo permanente tutte le copie delle versioni degli oggetti non correnti. Queste versioni degli oggetti non possono essere ripristinate.
+* *ILM*: Aggiungi due regole ILM al tuo criterio ILM. Utilizzare *tempo non corrente* come tempo di riferimento nella prima regola per far corrispondere le versioni non correnti dell'oggetto. Utilizzare *Ingest Time* nella seconda regola per corrispondere alla versione corrente. La regola *ora non corrente* deve essere visualizzata nel criterio sopra la regola *ora di acquisizione*.
+
+
+.Informazioni correlate
+link:../s3/index.html["Utilizzare S3"]
+
+link:example-4-ilm-rules-and-policy-for-s3-versioned-objects.html["Esempio 4: Regole ILM e policy per gli oggetti con versione S3"]

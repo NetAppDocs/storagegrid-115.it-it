@@ -1,0 +1,29 @@
+---
+permalink: maintain/site-decommissioning.html 
+sidebar: sidebar 
+keywords:  
+summary: Potrebbe essere necessario rimuovere un sito del data center dal sistema StorageGRID. Per rimuovere un sito, è necessario decommissionarlo. 
+---
+= Disattivazione del sito
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Potrebbe essere necessario rimuovere un sito del data center dal sistema StorageGRID. Per rimuovere un sito, è necessario decommissionarlo.
+
+Il diagramma di flusso mostra le fasi di alto livello per la disattivazione di un sito.
+
+image::../media/overview_decommission_site.png[Panoramica: Decommissionare il sito]
+
+.Fasi
+* link:considerations-for-removing-site.html["Considerazioni per la rimozione di un sito"]
+* link:gathering-required-materials-site-decom.html["Raccolta dei materiali richiesti"]
+* link:step-1-select-site.html["Fase 1: Selezionare Site (Sito)"]
+* link:step-2-view-details.html["Fase 2: Visualizzare i dettagli"]
+* link:step-3-revise-ilm-policy.html["Fase 3: Revisione della policy ILM"]
+* link:step-4-remove-ilm-references.html["Fase 4: Rimuovere i riferimenti ILM"]
+* link:step-5-resolve-node-conflicts.html["Fase 5: Risolvere i conflitti dei nodi (e avviare la decommissionazione)"]
+* link:step-6-monitor-decommission.html["Fase 6: Rimozione del monitor"]
+

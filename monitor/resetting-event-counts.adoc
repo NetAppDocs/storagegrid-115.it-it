@@ -1,0 +1,28 @@
+---
+permalink: monitor/resetting-event-counts.html 
+sidebar: sidebar 
+keywords:  
+summary: Dopo aver risolto gli eventi di sistema, è possibile azzerare i conteggi degli eventi. 
+---
+= Reimpostazione dei conteggi degli eventi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dopo aver risolto gli eventi di sistema, è possibile azzerare i conteggi degli eventi.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre dell'autorizzazione Grid Topology Page Configuration (Configurazione pagina topologia griglia).
+
+
+.Fasi
+. Selezionare *Nodes* *_Grid Node_* *Events*.
+. Assicurarsi che qualsiasi evento con un numero maggiore di 0 sia stato risolto.
+. Fare clic su *Reset event count* (Ripristina conteggi eventi).
++
+image::../media/reset_event_counts.png[Azzera conteggi eventi]
+
+

@@ -1,0 +1,43 @@
+---
+permalink: admin/enabling-autosupport-on-demand.html 
+sidebar: sidebar 
+keywords:  
+summary: 'AutoSupport on Demand può aiutare a risolvere i problemi sui quali il supporto tecnico sta lavorando attivamente. Attivando AutoSupport on Demand, il supporto tecnico può richiedere l"invio di messaggi AutoSupport senza richiedere alcun intervento da parte dell"utente.' 
+---
+= Abilitazione di AutoSupport on-demand
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport on Demand può aiutare a risolvere i problemi sui quali il supporto tecnico sta lavorando attivamente. Attivando AutoSupport on Demand, il supporto tecnico può richiedere l'invio di messaggi AutoSupport senza richiedere alcun intervento da parte dell'utente.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre dell'autorizzazione Root Access o Other Grid Configuration.
+* È necessario aver attivato i messaggi AutoSupport settimanali.
+* È necessario impostare il protocollo di trasporto su HTTPS.
+
+
+.A proposito di questa attività
+Quando si attiva questa funzione, il supporto tecnico può richiedere che il sistema StorageGRID invii automaticamente messaggi AutoSupport. Il supporto tecnico può anche impostare l'intervallo di tempo di polling per le query AutoSupport on Demand.
+
+Il supporto tecnico non può attivare o disattivare AutoSupport on Demand.
+
+.Fasi
+. Selezionare *supporto* *Strumenti* *AutoSupport*.
++
+Viene visualizzata la pagina AutoSupport (Impostazioni) con la scheda *Settings* (Impostazioni) selezionata.
+
+. Selezionare il pulsante di opzione HTTPS nella sezione *Protocol Details* (Dettagli protocollo) della pagina.
++
+image::../media/autosupport_on_demand.png[ASUP on Demand (ASUP su richiesta)]
+
+. Selezionare la casella di controllo *Enable Weekly AutoSupport* (attiva impostazioni settimanali).
+. Selezionare la casella di controllo *attiva AutoSupport su richiesta*.
+. Selezionare *Salva*.
++
+AutoSupport on Demand è attivato e il supporto tecnico può inviare richieste AutoSupport on Demand a StorageGRID.
+
+

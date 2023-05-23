@@ -1,0 +1,20 @@
+---
+permalink: audit/index.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, logs, messages, log, message 
+summary: Scopri i registri di controllo del sistema StorageGRID e visualizza un elenco di tutti i messaggi di controllo. 
+---
+= Esaminare i registri di audit
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Scopri i registri di controllo del sistema StorageGRID e visualizza un elenco di tutti i messaggi di controllo.
+
+* link:audit-message-overview.html["Panoramica dei messaggi di audit"]
+* link:audit-file-and-message-formats.html["File di log di audit e formati dei messaggi"]
+* link:audit-messages-and-object-lifecycle.html["Messaggi di audit e ciclo di vita degli oggetti"]
+* link:audit-messages-main.html["Messaggi di audit"]
+

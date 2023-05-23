@@ -1,0 +1,143 @@
+---
+section: tenant
+title: Utilizzare un account tenant
+url: "/tenant/index.html"
+entries:
+- title: Utilizzo di Tenant Manager
+  url: "/tenant/using-tenant-manager.html"
+  entries:
+  - title: Requisiti del browser Web
+    url: "/tenant/web-browser-requirements.html"
+  - title: Accesso al tenant manager
+    url: "/tenant/signing-in-to-tenant-manager.html"
+  - title: Disconnessione dal tenant manager
+    url: "/tenant/signing-out-of-tenant-manager.html"
+  - title: Informazioni sulla dashboard di Tenant Manager
+    url: "/tenant/understanding-tenant-manager-dashboard.html"
+  - title: Informazioni sull'API di gestione del tenant
+    url: "/tenant/understanding-tenant-management-api.html"
+    entries:
+    - title: Versione dell'API di gestione tenant
+      url: "/tenant/tenant-management-api-versioning.html"
+    - title: Protezione contro la contraffazione delle richieste (CSRF)
+      url: "/tenant/protecting-against-cross-site-request-forgery-csrf.html"
+- title: Gestione dell'accesso al sistema per gli utenti tenant
+  url: "/tenant/managing-system-access-for-tenant-users.html"
+  entries:
+  - title: Utilizzo della federazione delle identità
+    url: "/tenant/using-identity-federation.html"
+    entries:
+    - title: Configurazione di un'origine di identità federata
+      url: "/tenant/configuring-federated-identity-source.html"
+      entries:
+      - title: Linee guida per la configurazione di un server OpenLDAP
+        url: "/tenant/guidelines-for-configuring-openldap-server.html"
+    - title: Forzare la sincronizzazione con l'origine dell'identità
+      url: "/tenant/forcing-synchronization-with-identity-source.html"
+    - title: Disattivazione della federazione delle identità
+      url: "/tenant/disabling-identity-federation.html"
+  - title: Gestione dei gruppi
+    url: "/tenant/managing-groups.html"
+    entries:
+    - title: Creazione di gruppi per un tenant S3
+      url: "/tenant/creating-groups-for-s3-tenant.html"
+    - title: Creazione di gruppi per un tenant Swift
+      url: "/tenant/creating-groups-for-swift-tenant.html"
+    - title: Visualizzazione e modifica dei dettagli del gruppo
+      url: "/tenant/viewing-and-editing-group-details.html"
+    - title: Aggiunta di utenti a un gruppo locale
+      url: "/tenant/adding-users-to-local-group.html"
+    - title: Modifica del nome di un gruppo
+      url: "/tenant/editing-group-name.html"
+    - title: Duplicazione di un gruppo
+      url: "/tenant/duplicating-group.html"
+    - title: Eliminazione di un gruppo
+      url: "/tenant/deleting-group.html"
+  - title: Gestione degli utenti locali
+    url: "/tenant/managing-local-users.html"
+- title: Gestione degli account tenant S3
+  url: "/tenant/managing-s3-tenant-accounts.html"
+  entries:
+  - title: Gestione delle chiavi di accesso S3
+    url: "/tenant/managing-s3-access-keys.html"
+    entries:
+    - title: Creazione di chiavi di accesso S3 personalizzate
+      url: "/tenant/creating-your-own-s3-access-keys.html"
+    - title: Visualizzazione delle chiavi di accesso S3
+      url: "/tenant/viewing-your-s3-access-keys.html"
+    - title: Eliminazione delle proprie chiavi di accesso S3
+      url: "/tenant/deleting-your-own-s3-access-keys.html"
+    - title: Creazione delle chiavi di accesso S3 di un altro utente
+      url: "/tenant/creating-another-users-s3-access-keys.html"
+    - title: Visualizzazione delle chiavi di accesso S3 di un altro utente
+      url: "/tenant/viewing-another-users-s3-access-keys.html"
+    - title: Eliminazione delle chiavi di accesso S3 di un altro utente
+      url: "/tenant/deleting-another-users-s3-access-keys.html"
+  - title: Gestione dei bucket S3
+    url: "/tenant/managing-s3-buckets.html"
+    entries:
+    - title: Utilizzo di S3 Object Lock
+      url: "/tenant/using-s3-object-lock.html"
+      entries:
+      - title: Workflow di blocco oggetti S3
+        url: "/tenant/s3-object-lock-workflow.html"
+      - title: Requisiti per il blocco oggetti S3
+        url: "/tenant/requirements-for-s3-object-lock.html"
+    - title: Creazione di un bucket S3
+      url: "/tenant/creating-s3-bucket.html"
+    - title: Visualizzazione dei dettagli del bucket S3
+      url: "/tenant/viewing-s3-bucket-details.html"
+    - title: Modifica del livello di coerenza
+      url: "/tenant/changing-consistency-level.html"
+    - title: Attivazione o disattivazione degli ultimi aggiornamenti dell'orario di
+        accesso
+      url: "/tenant/enabling-or-disabling-last-access-time-updates.html"
+    - title: Configurazione di Cross-Origin Resource Sharing (CORS)
+      url: "/tenant/configuring-cross-origin-resource-sharing-cors.html"
+    - title: Eliminazione di un bucket S3
+      url: "/tenant/deleting-s3-bucket.html"
+- title: Gestione dei servizi della piattaforma S3
+  url: "/tenant/managing-s3-platform-services.html"
+  entries:
+  - title: Quali sono i servizi della piattaforma
+    url: "/tenant/what-platform-services-are.html"
+    entries:
+    - title: Informazioni sul servizio di replica CloudMirror
+      url: "/tenant/understanding-cloudmirror-replication-service.html"
+    - title: Informazioni sulle notifiche per i bucket
+      url: "/tenant/understanding-notifications-for-buckets.html"
+    - title: Informazioni sul servizio di integrazione della ricerca
+      url: "/tenant/understanding-search-integration-service.html"
+  - title: Considerazioni sull'utilizzo dei servizi della piattaforma
+    url: "/tenant/considerations-for-using-platform-services.html"
+  - title: Configurazione degli endpoint dei servizi di piattaforma
+    url: "/tenant/configuring-platform-services-endpoints.html"
+    entries:
+    - title: Specifica dell'URN per un endpoint di servizi di piattaforma
+      url: "/tenant/specifying-urn-for-platform-services-endpoint.html"
+    - title: Creazione di un endpoint di servizi di piattaforma
+      url: "/tenant/creating-platform-services-endpoint.html"
+    - title: Verifica della connessione per un endpoint di servizi di piattaforma
+      url: "/tenant/testing-connection-for-platform-services-endpoint.html"
+    - title: Modifica di un endpoint di servizi di piattaforma
+      url: "/tenant/editing-platform-services-endpoint.html"
+    - title: Eliminazione di un endpoint dei servizi della piattaforma
+      url: "/tenant/deleting-platform-services-endpoint.html"
+    - title: Risoluzione dei problemi relativi agli errori degli endpoint dei servizi
+        della piattaforma
+      url: "/tenant/troubleshooting-platform-services-endpoint-errors.html"
+  - title: Configurazione della replica di CloudMirror
+    url: "/tenant/configuring-cloudmirror-replication.html"
+  - title: Configurazione delle notifiche degli eventi
+    url: "/tenant/configuring-event-notifications.html"
+  - title: Utilizzando il servizio di integrazione della ricerca
+    url: "/tenant/using-search-integration-service.html"
+    entries:
+    - title: XML di configurazione per l'integrazione della ricerca
+      url: "/tenant/configuration-xml-for-search-configuration.html"
+    - title: Configurazione del servizio di integrazione della ricerca
+      url: "/tenant/configuring-search-integration-service.html"
+    - title: JSON generato dal servizio di integrazione della ricerca
+      url: "/tenant/json-generated-by-search-integration-service.html"
+    - title: Metadati degli oggetti inclusi nelle notifiche dei metadati
+      url: "/tenant/object-metadata-included-in-metadata-notifications.html"

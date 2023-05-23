@@ -1,0 +1,99 @@
+---
+permalink: upgrade/starting-upgrade.html 
+sidebar: sidebar 
+keywords: upgrade, start, starting 
+summary: 'Quando si è pronti per eseguire l"aggiornamento, selezionare il file scaricato e immettere la passphrase di provisioning. Come opzione, è possibile eseguire i controlli preliminari dell"aggiornamento prima di eseguire l"aggiornamento effettivo.' 
+---
+= Avvio dell'aggiornamento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando si è pronti per eseguire l'aggiornamento, selezionare il file scaricato e immettere la passphrase di provisioning. Come opzione, è possibile eseguire i controlli preliminari dell'aggiornamento prima di eseguire l'aggiornamento effettivo.
+
+.Di cosa hai bisogno
+Hai esaminato tutte le considerazioni e completato tutte le fasi della link:upgrade-planning-and-preparation.html["Pianificazione e preparazione dell'upgrade"].
+
+.Fasi
+. Accedere a Grid Manager utilizzando un browser supportato.
+. Selezionare *manutenzione* > *sistema* > *aggiornamento software*.
++
+Viene visualizzata la pagina Software Update (aggiornamento software).
+
+. Selezionare *aggiornamento StorageGRID*.
++
+Viene visualizzata la pagina aggiornamento StorageGRID che mostra la data e l'ora dell'ultimo aggiornamento completato, a meno che il nodo di amministrazione primario non sia stato riavviato o l'API di gestione non sia stata riavviata dall'esecuzione dell'aggiornamento.
+
+. Selezionare `.upgrade` file scaricato.
++
+.. Selezionare *Sfoglia*.
+.. Individuare e selezionare il file: `NetApp_StorageGRID_version_Software_uniqueID.upgrade`
+.. Selezionare *Apri*.
++
+Il file viene caricato e validato. Al termine del processo di convalida, viene visualizzato un segno di spunta verde accanto al nome del file di aggiornamento.
+
+
+
+. Inserire la passphrase di provisioning nella casella di testo.
++
+I pulsanti *Esegui pre-controlli* e *Avvia aggiornamento* diventano abilitati.
+
++
+image::../media/storagegrid_upgrade_buttons_enabled.png[Pulsanti di aggiornamento StorageGRID attivati]
+
+. Se si desidera convalidare la condizione del sistema prima di avviare l'aggiornamento effettivo, selezionare *Esegui controlli preliminari*. Quindi, risolvere eventuali errori di pre-controllo segnalati.
++
+
+IMPORTANT: Se sono state aperte porte firewall personalizzate, viene inviata una notifica durante la convalida del controllo preliminare. È necessario contattare il supporto tecnico prima di procedere con l'aggiornamento.
+
++
+
+NOTE: Le stesse verifiche preliminari vengono eseguite selezionando *Avvia aggiornamento*. Selezionando *Esegui pre-controlli* è possibile rilevare e risolvere i problemi prima di avviare l'aggiornamento.
+
+. Quando si è pronti per eseguire l'aggiornamento, selezionare *Avvia aggiornamento*.
++
+Viene visualizzato un avviso per ricordare che la connessione del browser viene persa quando viene riavviato il nodo di amministrazione principale. Quando il nodo di amministrazione primario è nuovamente disponibile, è necessario cancellare la cache del browser Web e ricaricare la pagina di aggiornamento del software.
+
++
+image::../media/software_upgrade_connection_will_be_lost.png[La connessione per l'aggiornamento del software verrà persa]
+
+. Selezionare *OK* per confermare l'avviso e avviare il processo di aggiornamento.
++
+All'avvio dell'aggiornamento:
+
++
+.. Vengono eseguiti i controlli preliminari per l'aggiornamento.
++
+
+NOTE: Se vengono segnalati errori di pre-controllo, risolverli e selezionare di nuovo *Avvia aggiornamento*.
+
+.. Viene aggiornato il nodo di amministrazione principale, che include l'interruzione dei servizi, l'aggiornamento del software e il riavvio dei servizi. Non sarà possibile accedere a Grid Manager durante l'aggiornamento del nodo di amministrazione primario. Anche i registri di controllo non saranno disponibili. L'aggiornamento può richiedere fino a 30 minuti.
++
+
+NOTE: Durante l'aggiornamento del nodo di amministrazione primario, vengono visualizzate più copie dei seguenti messaggi di errore, che è possibile ignorare.
+
++
+image::../media/software_upgrade_problem_connecting_error.png[Problema di aggiornamento software errore di connessione]
+
++
+image::../media/software_upgrade_503_error.png[Errore aggiornamento software 503]
+
++
+image::../media/software_upgrade_400_error.png[Errore aggiornamento software 400]
+
+
+
+. Una volta aggiornato il nodo di amministrazione principale, cancellare la cache del browser Web, accedere nuovamente e ricaricare la pagina di aggiornamento del software.
++
+Per istruzioni, consultare la documentazione del browser Web.
+
++
+
+IMPORTANT: È necessario cancellare la cache del browser Web per rimuovere le risorse obsolete utilizzate dalla versione precedente del software.
+
+
+
+.Informazioni correlate
+link:upgrade-planning-and-preparation.html["Pianificazione e preparazione dell'upgrade"]

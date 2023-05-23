@@ -1,0 +1,51 @@
+---
+permalink: sg6000/changing-mtu-setting.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, mtu, set, setting, change, changing, modify 
+summary: 'È possibile modificare l"impostazione MTU assegnata durante la configurazione degli indirizzi IP per il nodo dell"appliance.' 
+---
+= Modifica dell'impostazione MTU
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile modificare l'impostazione MTU assegnata durante la configurazione degli indirizzi IP per il nodo dell'appliance.
+
+.Di cosa hai bisogno
+L'apparecchio è stato impostato sulla modalità di manutenzione.
+
+link:placing-appliance-into-maintenance-mode.html["Attivazione della modalità di manutenzione dell'appliance"]
+
+.Fasi
+. Dal programma di installazione dell'appliance StorageGRID, selezionare *Configura rete* > *Configurazione IP*.
+. Apportare le modifiche desiderate alle impostazioni MTU per Grid Network, Admin Network e Client Network.
++
+image::../media/grid_network_static.png[Grid Network IP (IP rete griglia)]
+
++
+
+IMPORTANT: Il valore MTU della rete deve corrispondere al valore configurato sulla porta dello switch a cui è connesso il nodo. In caso contrario, potrebbero verificarsi problemi di performance di rete o perdita di pacchetti.
+
++
+
+IMPORTANT: Per ottenere le migliori performance di rete, tutti i nodi devono essere configurati con valori MTU simili sulle interfacce Grid Network. L'avviso *Grid Network MTU mismatch* (mancata corrispondenza MTU rete griglia) viene attivato se si verifica una differenza significativa nelle impostazioni MTU per Grid Network su singoli nodi. I valori MTU non devono essere uguali per tutti i tipi di rete.
+
+. Quando si è soddisfatti delle impostazioni, selezionare *Save* (Salva).
+. Riavviare il nodo. Dal programma di installazione dell'appliance StorageGRID, selezionare *Avanzate* > *Riavvia controller*, quindi selezionare una delle seguenti opzioni:
++
+** Selezionare *Riavvia in StorageGRID* per riavviare il controller con il nodo che si ricongiunge alla griglia. Selezionare questa opzione se si è terminato di lavorare in modalità di manutenzione e si è pronti per ripristinare il normale funzionamento del nodo.
+** Selezionare *Reboot into Maintenance Mode* (Riavvia in modalità di manutenzione) per riavviare il controller con il nodo in modalità di manutenzione. Selezionare questa opzione se sono necessarie ulteriori operazioni di manutenzione sul nodo prima di ricongiungersi alla griglia.image:../media/reboot_controller_from_maintenance_mode.png["Riavviare il controller in modalità di manutenzione"]
++
+Il riavvio dell'appliance e il ricongiungersi alla griglia possono richiedere fino a 20 minuti. Per confermare che il riavvio è stato completato e che il nodo ha ricongiungersi alla griglia, tornare a Grid Manager. La scheda *Nodes* dovrebbe visualizzare uno stato normale image:../media/icon_alert_green_checkmark.png["icona di avviso segno di spunta verde"] per il nodo appliance, che indica che non sono attivi avvisi e che il nodo è connesso alla griglia.
+
++
+image::../media/node_rejoin_grid_confirmation.png[Nodo appliance riconentrato in Grid]
+
+
+
+
+
+.Informazioni correlate
+link:../admin/index.html["Amministrare StorageGRID"]

@@ -1,0 +1,127 @@
+---
+permalink: ilm/example-3-ilm-rules-and-policy-for-better-protection-for-image-files.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Esempio 3: Regole e policy ILM per una migliore protezione dei file di immagine
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare le seguenti regole e policy di esempio per garantire che le immagini di dimensioni superiori a 200 KB vengano erasure coded e che vengano eseguite tre copie di immagini più piccole.
+
+
+CAUTION: Le seguenti regole e policy ILM sono solo esempi. Esistono diversi modi per configurare le regole ILM. Prima di attivare una nuova policy, simulare la policy proposta per confermare che funzionerà come previsto per proteggere il contenuto dalla perdita.
+
+
+
+== ILM regola 1 per esempio 3: Utilizzare EC per file di immagine di dimensioni superiori a 200 KB
+
+Questa regola ILM di esempio utilizza un filtro avanzato per eseguire la cancellazione di tutti i file di immagine di dimensioni superiori a 200 KB.
+
+[cols="1a,2a"]
+|===
+| Definizione della regola | Valore di esempio 
+
+
+ a| 
+Nome regola
+ a| 
+File immagine EC > 200 KB
+
+
+
+ a| 
+Tempo di riferimento
+ a| 
+Tempo di acquisizione
+
+
+
+ a| 
+Filtro avanzato per i metadati utente
+ a| 
+Il tipo di metadati utente equivale ai file di immagine
+
+
+
+ a| 
+Filtro avanzato per le dimensioni dell'oggetto
+ a| 
+Dimensione oggetto (MB) maggiore di 0.2
+
+
+
+ a| 
+Posizionamento dei contenuti
+ a| 
+Creare una copia 2+1 con codifica per la cancellazione utilizzando tre siti
+
+|===
+image:../media/policy_3_rule_1_ec_images_adv_filtering.gif["ILM regola 1 per esempio 3: Utilizzare EC per file di immagine di dimensioni superiori a 200 KB"]
+
+Poiché questa regola è configurata come prima regola del criterio, l'istruzione di posizionamento della codifica di cancellazione si applica solo alle immagini di dimensioni superiori a 200 KB.
+
+image::../media/policy_2_rule_1_ec_objects_placements.png[ILM regola 1 per esempio 3: Utilizzare EC per file di immagine di dimensioni superiori a 200 KB]
+
+
+
+== ILM regola 2 per esempio 3: Replica 3 copie per tutti i file immagine rimanenti
+
+Questa regola ILM di esempio utilizza un filtro avanzato per specificare che i file di immagine devono essere replicati.
+
+[cols="1a,2a"]
+|===
+| Definizione della regola | Valore di esempio 
+
+
+ a| 
+Nome regola
+ a| 
+3 copie per i file di immagine
+
+
+
+ a| 
+Tempo di riferimento
+ a| 
+Tempo di acquisizione
+
+
+
+ a| 
+Filtro avanzato per i metadati utente
+ a| 
+Il tipo di metadati utente equivale ai file di immagine
+
+
+
+ a| 
+Posizionamento dei contenuti
+ a| 
+Creare 3 copie replicate in tutti i nodi di storage
+
+|===
+image:../media/policy_3_rule_2_copies_for_images_adv_filtering.gif["ILM regola 2 per esempio 3: Replica 3 copie per tutti i file immagine rimanenti"]
+
+Poiché la prima regola del criterio ha già trovato corrispondenza con file di immagine di dimensioni superiori a 200 KB, queste istruzioni di posizionamento si applicano solo ai file di immagine di dimensioni pari o inferiori a 200 KB.
+
+image::../media/policy_3_rule_2_copies_for_images_placements.png[ILM regola 2 per esempio 3: Replica 3 copie per tutti i file immagine rimanenti]
+
+
+
+== Policy ILM per esempio 3: Migliore protezione per i file di immagine
+
+In questo esempio, il criterio ILM utilizza tre regole ILM per creare un criterio che erasure i file immagine di dimensioni superiori a 200 KB (0.2 MB), crea copie replicate per i file immagine di dimensioni pari o inferiori a 200 KB e crea due copie replicate per i file non immagine.
+
+Questo esempio di policy ILM include regole che eseguono le seguenti operazioni:
+
+* Erasure coding tutti i file di immagine di dimensioni superiori a 200 KB.
+* Creare tre copie dei file immagine rimanenti (ovvero, immagini di dimensioni pari o inferiori a 200 KB).
+* Applicare la regola predefinita a tutti gli oggetti rimanenti (ovvero tutti i file non immagine).
+
+
+image::../media/policy_3_configured_policy.gif[Policy ILM per esempio 3: Migliore protezione per i file di immagine]

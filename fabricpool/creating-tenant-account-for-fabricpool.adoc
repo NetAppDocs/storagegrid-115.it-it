@@ -1,0 +1,43 @@
+---
+permalink: fabricpool/creating-tenant-account-for-fabricpool.html 
+sidebar: sidebar 
+keywords: fabricPool, tenant, SSO 
+summary: 'È necessario creare un account tenant in Grid Manager per l"utilizzo con FabricPool.' 
+---
+= Creazione di un account tenant per FabricPool
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario creare un account tenant in Grid Manager per l'utilizzo con FabricPool.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre di autorizzazioni di accesso specifiche.
+
+
+.A proposito di questa attività
+Gli account tenant consentono alle applicazioni client di memorizzare e recuperare oggetti su StorageGRID. Ogni account tenant dispone di un proprio ID account, gruppi e utenti autorizzati, bucket e oggetti.
+
+È possibile utilizzare lo stesso account tenant per più cluster ONTAP. In alternativa, è possibile creare un account tenant dedicato per ciascun cluster ONTAP, in base alle esigenze.
+
+[NOTE]
+====
+Queste istruzioni presuppongono che sia stato configurato il Single Sign-on (SSO) per Grid Manager. Se non si utilizza SSO, seguire le istruzioni per link:../admin/creating-tenant-account-if-storagegrid-is-not-using-sso.html["Creazione di un account tenant se StorageGRID non utilizza SSO"].
+
+====
+.Fasi
+. Selezionare *tenant*.
+. Selezionare *Crea*.
+. Immettere un nome da visualizzare per l'account tenant FabricPool.
+. Selezionare *S3*.
+. Lasciare selezionata la casella di controllo *Allow Platform Services* (Consenti servizi piattaforma) per abilitare l'utilizzo dei servizi della piattaforma.
++
+Se i servizi della piattaforma sono attivati, un tenant può utilizzare funzionalità, come la replica CloudMirror, che accedono ai servizi esterni.
+
+. Lasciare vuoto il campo *quota di storage*.
+. Nel campo *Root Access Group*, selezionare un gruppo federated esistente da Grid Manager per ottenere l'autorizzazione di accesso root iniziale per il tenant.
+. Selezionare *Salva*.
+

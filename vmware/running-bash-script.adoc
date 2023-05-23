@@ -1,0 +1,77 @@
+---
+permalink: vmware/running-bash-script.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile utilizzare lo script deploy-vsphere-ovftool.sh Bash e il file di configurazione deploy-vsphere-ovftool.ini modificato per automatizzare l"implementazione dei nodi grid StorageGRID in VMware vSphere.' 
+---
+= Esecuzione dello script Bash
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare `deploy-vsphere-ovftool.sh` Lo script bash e il file di configurazione deploy-vsphere-ovftool.ini modificati per automatizzare l'implementazione dei nodi grid StorageGRID in VMware vSphere.
+
+.Di cosa hai bisogno
+* È stato creato un file di configurazione deploy-vsphere-ovftool.ini per il proprio ambiente.
+
+
+È possibile utilizzare la guida disponibile con lo script Bash immettendo i comandi della guida (`-h/--help`). Ad esempio:
+
+[listing]
+----
+./deploy-vsphere-ovftool.sh -h
+----
+oppure
+
+[listing]
+----
+./deploy-vsphere-ovftool.sh --help
+----
+.Fasi
+. Accedere alla macchina Linux in uso per eseguire lo script Bash.
+. Passare alla directory in cui è stato estratto l'archivio di installazione.
++
+Ad esempio:
+
++
+[listing]
+----
+cd StorageGRID-Webscale-version/vsphere
+----
+. Per implementare tutti i nodi grid, eseguire lo script Bash con le opzioni appropriate per il proprio ambiente.
++
+Ad esempio:
+
++
+[listing]
+----
+./deploy-vsphere-ovftool.sh --username=user --password=pwd ./deploy-vsphere-ovftool.ini
+----
+. Se un nodo Grid non è riuscito a implementare a causa di un errore, risolvere l'errore ed eseguire nuovamente lo script Bash solo per quel nodo.
++
+Ad esempio:
+
++
+[listing]
+----
+./deploy-vsphere-ovftool.sh --username=user --password=pwd --single-node="DC1-S3" ./deploy-vsphere-ovftool.ini
+----
+
+
+L'implementazione è completa quando lo stato di ciascun nodo è "`passed`".
+
+[listing]
+----
+Deployment Summary
++-----------------------------+----------+----------------------+
+| node                        | attempts | status               |
++-----------------------------+----------+----------------------+
+| DC1-ADM1                    |        1 | Passed               |
+| DC1-G1                      |        1 | Passed               |
+| DC1-S1                      |        1 | Passed               |
+| DC1-S2                      |        1 | Passed               |
+| DC1-S3                      |        1 | Passed               |
++-----------------------------+----------+----------------------+
+----

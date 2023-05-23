@@ -1,0 +1,105 @@
+---
+permalink: tenant/creating-s3-bucket.html 
+sidebar: sidebar 
+keywords: storagegrid, tenant, S3 bucket, S3 Object Lock, create s3 bucket, creating s3 bucket 
+summary: 'È possibile utilizzare Tenant Manager per creare bucket S3 per i dati dell"oggetto. Quando si crea un bucket, è necessario specificare il nome e la regione del bucket. Se per il sistema StorageGRID è attivata l"impostazione blocco oggetti S3 globale, è possibile attivare il blocco oggetti S3 per il bucket.' 
+---
+= Creazione di un bucket S3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare Tenant Manager per creare bucket S3 per i dati dell'oggetto. Quando si crea un bucket, è necessario specificare il nome e l'area del bucket. Se per il sistema StorageGRID è attivata l'impostazione blocco oggetti S3 globale, è possibile attivare il blocco oggetti S3 per il bucket.
+
+.Di cosa hai bisogno
+* È necessario accedere a tenant Manager utilizzando un browser supportato.
+* È necessario appartenere a un gruppo di utenti che disponga dell'autorizzazione Manage All Bucket (Gestisci tutti i bucket) o Root Access (accesso root). Queste autorizzazioni sovrascrivono le impostazioni delle autorizzazioni nelle policy di gruppo o bucket.
+* Se si prevede di creare un bucket con blocco oggetti S3, l'impostazione globale blocco oggetti S3 deve essere stata attivata per il sistema StorageGRID ed è necessario esaminare i requisiti per i bucket e gli oggetti blocco oggetti S3.
++
+link:using-s3-object-lock.html["Utilizzo di S3 Object Lock"]
+
+
+
+.Fasi
+. Selezionare *STORAGE (S3)* > *Bucket*.
++
+Viene visualizzata la pagina bucket che elenca i bucket già creati.
+
++
+image::../media/buckets_page.png[Pagina bucket]
+
+. Selezionare *Crea bucket*.
++
+Viene visualizzata la procedura guidata Create bucket.
+
++
+image::../media/bucket_create_compliance_disabled.png[Compliance creazione bucket disattivata]
+
++
+
+NOTE: Se l'impostazione globale S3 Object Lock (blocco oggetti S3) è attivata, Create bucket (Crea bucket) include una seconda fase per la gestione del blocco oggetti S3 per il bucket.
+
+. Immettere un nome univoco per il bucket.
++
+
+IMPORTANT: Non è possibile modificare il nome del bucket dopo averlo creato.
+
++
+I nomi dei bucket devono essere conformi alle seguenti regole:
+
++
+** Deve essere unico in ogni sistema StorageGRID (non solo univoco all'interno dell'account tenant).
+** Deve essere conforme al DNS.
+** Deve contenere almeno 3 e non più di 63 caratteri.
+** Può essere una serie di una o più etichette, con etichette adiacenti separate da un punto. Ogni etichetta deve iniziare e terminare con una lettera minuscola o un numero e può utilizzare solo lettere minuscole, numeri e trattini.
+** Non deve essere simile a un indirizzo IP formattato con testo.
+** Non utilizzare i periodi nelle richieste di stile ospitate virtuali. I punti causano problemi con la verifica del certificato con caratteri jolly del server.
+
+
++
+
+NOTE: Per ulteriori informazioni, consultare la documentazione di Amazon Web Services (AWS).
+
+. Selezionare la regione per questo bucket.
++
+L'amministratore di StorageGRID gestisce le regioni disponibili. L'area di un bucket può influire sulla policy di protezione dei dati applicata agli oggetti. Per impostazione predefinita, tutti i bucket vengono creati in `us-east-1` regione.
+
++
+
+IMPORTANT: Non è possibile modificare la regione dopo aver creato il bucket.
+
+. Selezionare *Crea bucket* o *continua*.
++
+** Se l'impostazione globale S3 Object Lock (blocco oggetti S3) non è attivata, selezionare *Create bucket* (Crea bucket). Il bucket viene creato e aggiunto alla tabella nella pagina Bucket.
+** Se l'impostazione globale S3 Object Lock (blocco oggetti S3) è attivata, selezionare *Continue* (continua). Fase 2, viene visualizzato il messaggio Manage S3 Object Lock (Gestisci blocco oggetti S3).
++
+image::../media/bucket_create_s3_object_lock_enabled.png[Bucket Create S3 Object Lock abilitato]
+
+
+
+. Facoltativamente, selezionare la casella di controllo per attivare il blocco oggetti S3 per questo bucket.
++
+S3 Object Lock deve essere attivato per il bucket prima che un'applicazione client S3 possa specificare le impostazioni di conservazione fino alla data e conservazione legale per gli oggetti aggiunti al bucket.
+
++
+
+IMPORTANT: Non è possibile attivare o disattivare il blocco oggetti S3 dopo aver creato il bucket.
+
++
+
+NOTE: Se si attiva il blocco oggetti S3 per un bucket, il controllo della versione del bucket viene attivato automaticamente.
+
+. Selezionare *Crea bucket*.
++
+Il bucket viene creato e aggiunto alla tabella nella pagina Bucket.
+
+
+
+.Informazioni correlate
+link:../ilm/index.html["Gestire gli oggetti con ILM"]
+
+link:understanding-tenant-management-api.html["Informazioni sull'API di gestione del tenant"]
+
+link:../s3/index.html["Utilizzare S3"]

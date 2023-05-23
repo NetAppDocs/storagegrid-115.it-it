@@ -1,0 +1,74 @@
+---
+permalink: admin/editing-tenant-account.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile modificare un account tenant per modificare il nome visualizzato, modificare l"impostazione dell"origine dell"identità, consentire o non consentire i servizi della piattaforma o immettere una quota di storage.' 
+---
+= Modifica di un account tenant
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile modificare un account tenant per modificare il nome visualizzato, modificare l'impostazione dell'origine dell'identità, consentire o non consentire i servizi della piattaforma o immettere una quota di storage.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre di autorizzazioni di accesso specifiche.
+
+
+.Fasi
+. Selezionare *tenant*.
++
+Viene visualizzata la pagina account tenant che elenca tutti gli account tenant esistenti.
+
++
+image::../media/tenant_accounts_page.png[Pagina account tenant]
+
+. Selezionare l'account tenant che si desidera modificare.
++
+Se il sistema include più di 20 elementi, è possibile specificare quante righe vengono visualizzate su ogni pagina contemporaneamente. Utilizzare la casella di ricerca per cercare un account tenant in base al nome visualizzato o all'ID tenant.
+
+. Selezionare *Modifica*.
++
+Viene visualizzata la pagina Edit tenant account (Modifica account tenant). Questo esempio si intende per una griglia che non utilizza SSO (Single Sign-on). Questo account tenant non ha configurato la propria origine di identità.
+
++
+image::../media/edit_tenant_account.png[Modifica account tenant]
+
+. Modificare i valori dei campi come richiesto.
++
+.. Modificare il nome visualizzato per questo account tenant.
+.. Modificare l'impostazione della casella di controllo *Allow Platform Services* (Consenti servizi piattaforma) per determinare se l'account tenant può utilizzare i servizi della piattaforma per i bucket S3.
++
+
+IMPORTANT: Se si disattivano i servizi della piattaforma per un tenant che li sta già utilizzando, i servizi configurati per i bucket S3 smetteranno di funzionare. Non viene inviato alcun messaggio di errore al tenant. Ad esempio, se il tenant ha configurato la replica CloudMirror per un bucket S3, può comunque memorizzare oggetti nel bucket, ma le copie di tali oggetti non verranno più eseguite nel bucket S3 esterno configurato come endpoint.
+
+.. Per *quota di storage*, modificare il numero massimo di gigabyte, terabyte o petabyte disponibili per gli oggetti del tenant oppure lasciare vuoto il campo se si desidera che il tenant abbia una quota illimitata.
++
+La quota di storage di un tenant rappresenta una quantità logica (dimensione dell'oggetto), non una quantità fisica (dimensione sul disco). Le copie ILM e la codifica di cancellazione non contribuiscono alla quantità di quota utilizzata.
+
++
+
+NOTE: Per monitorare l'utilizzo dello storage di ciascun account tenant, selezionare *Usage* (utilizzo). Gli account tenant possono anche monitorare il proprio utilizzo dalla dashboard in Tenant Manager o con l'API di gestione tenant. Si noti che i valori di utilizzo dello storage di un tenant potrebbero non essere aggiornati se i nodi sono isolati da altri nodi nella griglia. I totali verranno aggiornati al ripristino della connettività di rete.
+
+.. Modificare l'impostazione della casella di controllo *Use Own Identity Source* (utilizza origine identità propria) per determinare se l'account tenant utilizzerà la propria origine identità o l'origine identità configurata per Grid Manager.
++
+
+NOTE: Se la casella di controllo *utilizza origine identità* è:
+
++
+*** Disattivato e selezionato, il tenant ha già attivato la propria origine di identità. Un tenant deve disattivare l'origine dell'identità prima di poter utilizzare l'origine dell'identità configurata per Grid Manager.
+*** Disattivato e deselezionato, SSO è attivato per il sistema StorageGRID. Il tenant deve utilizzare l'origine dell'identità configurata per Grid Manager.
+
+
+
+
+. Selezionare *Salva*.
+
+
+.Informazioni correlate
+link:managing-platform-services-for-s3-tenant-accounts.html["Gestione dei servizi della piattaforma per gli account tenant S3"]
+
+link:../tenant/index.html["Utilizzare un account tenant"]

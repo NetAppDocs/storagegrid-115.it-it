@@ -1,0 +1,23 @@
+---
+permalink: sg5700/configuring-storagegrid-connections.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, storagegrid connections, connections, configure, setup, set up 
+summary: 'Prima di implementare un"appliance StorageGRID come nodo di storage in una griglia StorageGRID, è necessario configurare le connessioni tra l"appliance e le reti che si intende utilizzare. È possibile configurare la rete consultando il programma di installazione dell"appliance StorageGRID, incluso nel controller E5700SG (il controller di calcolo dell"appliance).' 
+---
+= Configurazione delle connessioni StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di implementare un'appliance StorageGRID come nodo di storage in una griglia StorageGRID, è necessario configurare le connessioni tra l'appliance e le reti che si intende utilizzare. È possibile configurare la rete consultando il programma di installazione dell'appliance StorageGRID, incluso nel controller E5700SG (il controller di calcolo dell'appliance).
+
+.Fasi
+* link:accessing-storagegrid-appliance-installer-sg5700.html["Accesso al programma di installazione dell'appliance StorageGRID"]
+* link:verifying-and-upgrading-storagegrid-appliance-installer-version.html["Verifica e aggiornamento della versione del programma di installazione dell'appliance StorageGRID"]
+* link:configuring-network-links-sg5700.html["Configurazione dei collegamenti di rete (SG5700)"]
+* link:setting-ip-configuration-sg5700.html["Impostazione della configurazione IP"]
+* link:verifying-network-connections.html["Verifica delle connessioni di rete"]
+* link:verifying-port-level-network-connections.html["Verifica delle connessioni di rete a livello di porta"]
+

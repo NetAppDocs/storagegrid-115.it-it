@@ -1,0 +1,42 @@
+---
+permalink: vmware/planning-and-preparation.html 
+sidebar: sidebar 
+keywords:  
+summary: Prima di implementare i nodi grid e configurare la griglia StorageGRID, è necessario conoscere i passaggi e i requisiti per completare la procedura. 
+---
+= Pianificazione e preparazione
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di implementare i nodi grid e configurare la griglia StorageGRID, è necessario conoscere i passaggi e i requisiti per completare la procedura.
+
+Le procedure di implementazione e configurazione di StorageGRID presuppongono una certa familiarità con l'architettura e le funzionalità operative del sistema StorageGRID.
+
+È possibile implementare uno o più siti contemporaneamente; tuttavia, tutti i siti devono soddisfare il requisito minimo di avere almeno tre nodi di storage.
+
+Prima di avviare la procedura di implementazione del nodo e di configurazione della griglia, è necessario:
+
+* Pianificare l'implementazione di StorageGRID.
+* Installazione, connessione e configurazione di tutto l'hardware richiesto, incluse eventuali appliance StorageGRID, in base alle specifiche.
++
+
+NOTE: Le istruzioni di installazione e integrazione specifiche dell'hardware non sono incluse nella procedura di installazione di StorageGRID. Per informazioni su come installare le appliance StorageGRID, consultare le istruzioni di installazione e manutenzione dell'appliance.
+
+* Comprendere le opzioni di rete disponibili e il modo in cui ciascuna opzione di rete deve essere implementata sui nodi di rete. Consultare le linee guida per il collegamento in rete di StorageGRID.
+* Raccogliere tutte le informazioni di rete in anticipo. A meno che non si utilizzi DHCP, raccogliere gli indirizzi IP da assegnare a ciascun nodo della griglia e gli indirizzi IP dei server DNS (Domain Name System) e NTP (Network Time Protocol) che verranno utilizzati.
+* Decidere quali strumenti di implementazione e configurazione si desidera utilizzare.
+
+
+.Informazioni correlate
+link:../network/index.html["Linee guida per la rete"]
+
+link:../sg100-1000/index.html["SG100  SG1000 Services appliance"]
+
+link:../sg6000/index.html["Appliance di storage SG6000"]
+
+link:../sg5700/index.html["Appliance di storage SG5700"]
+
+link:../sg5600/index.html["Appliance di storage SG5600"]

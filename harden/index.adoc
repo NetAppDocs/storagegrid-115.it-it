@@ -1,0 +1,22 @@
+---
+permalink: harden/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Protezione avanzata del sistema
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Scopri le impostazioni di sistema, le Best practice e i consigli per proteggere un sistema StorageGRID dalle minacce alla sicurezza.
+
+* link:hardening-storagegrid-system.html["Protezione avanzata di un sistema StorageGRID"]
+* link:hardening-guidelines-for-software-upgrades.html["Linee guida per la protezione avanzata degli aggiornamenti software"]
+* link:hardening-guidelines-for-storagegrid-networks.html["Linee guida per la protezione avanzata delle reti StorageGRID"]
+* link:hardening-guidelines-for-storagegrid-nodes.html["Linee guida per la protezione avanzata dei nodi StorageGRID"]
+* link:hardening-guideline-for-server-certificates.html["Linee guida per la protezione avanzata dei certificati server"]
+* link:other-hardening-guidelines.html["Altre linee guida per la protezione avanzata"]]
+

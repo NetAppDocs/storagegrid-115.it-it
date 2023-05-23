@@ -1,0 +1,22 @@
+---
+permalink: admin/managing-high-availability-groups.html 
+sidebar: sidebar 
+keywords:  
+summary: I gruppi ad alta disponibilità possono essere utilizzati per fornire connessioni dati altamente disponibili per i client S3 e Swift. I gruppi HA possono anche essere utilizzati per fornire connessioni altamente disponibili al Grid Manager e al tenant Manager. 
+---
+= Gestione di gruppi ad alta disponibilità
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I gruppi ad alta disponibilità (ha) possono essere utilizzati per fornire connessioni dati ad alta disponibilità per i client S3 e Swift. I gruppi HA possono anche essere utilizzati per fornire connessioni altamente disponibili al Grid Manager e al tenant Manager.
+
+* link:what-ha-group-is.html["Che cos'è un gruppo ha"]
+* link:how-ha-groups-are-used.html["Come vengono utilizzati i gruppi ha"]
+* link:configuration-options-for-ha-groups.html["Opzioni di configurazione per i gruppi ha"]
+* link:creating-high-availability-group.html["Creazione di un gruppo ad alta disponibilità"]
+* link:editing-high-availability-group.html["Modifica di un gruppo ad alta disponibilità"]
+* link:removing-high-availability-group.html["Rimozione di un gruppo ad alta disponibilità"]
+

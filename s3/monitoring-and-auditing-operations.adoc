@@ -1,0 +1,18 @@
+---
+permalink: s3/monitoring-and-auditing-operations.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile monitorare i carichi di lavoro e le efficienze per le operazioni dei client visualizzando le tendenze delle transazioni per l"intero grid o per nodi specifici. È possibile utilizzare i messaggi di audit per monitorare le operazioni e le transazioni dei client.' 
+---
+= Operazioni di monitoraggio e controllo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile monitorare i carichi di lavoro e le efficienze per le operazioni dei client visualizzando le tendenze delle transazioni per l'intero grid o per nodi specifici. È possibile utilizzare i messaggi di audit per monitorare le operazioni e le transazioni dei client.
+
+* link:monitoring-object-ingest-and-retrieval-rates.html["Monitoraggio delle velocità di acquisizione e recupero degli oggetti"]
+* link:accessing-and-reviewing-audit-logs.html["Accesso e revisione dei registri di audit"]
+

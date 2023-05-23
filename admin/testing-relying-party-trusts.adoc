@@ -1,0 +1,55 @@
+---
+permalink: admin/testing-relying-party-trusts.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Prima di imporre l"utilizzo del single sign-on per StorageGRID, verificare che il single sign-on e il single logout siano configurati correttamente. Se è stata creata un"attendibilità per ciascun nodo di amministrazione, confermare che è possibile utilizzare SSO e SLO per ciascun nodo di amministrazione.' 
+---
+= Verifica dei trust della parte di base
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di imporre l'utilizzo del Single Sign-on (SSO) per StorageGRID, verificare che il Single Sign-on e il Single Logout (SLO) siano configurati correttamente. Se è stata creata un'attendibilità per ciascun nodo di amministrazione, confermare che è possibile utilizzare SSO e SLO per ciascun nodo di amministrazione.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre di autorizzazioni di accesso specifiche.
+* Sono stati configurati uno o più trust di parti di supporto in ad FS.
+
+
+.Fasi
+. Selezionare *Configuration* *Access Control* *Single Sign-on*.
++
+Viene visualizzata la pagina Single Sign-on (accesso singolo), con l'opzione *Sandbox Mode* (modalità sandbox) selezionata.
+
+. Nelle istruzioni per la modalità sandbox, individuare il collegamento alla pagina di accesso del provider di identità.
++
+L'URL deriva dal valore immesso nel campo *Federated Service Name*.
+
++
+image::../media/sso_sandbox_mode_url.gif[URL della pagina di accesso del provider di identità]
+
+. Fare clic sul collegamento oppure copiare e incollare l'URL in un browser per accedere alla pagina di accesso del provider di identità.
+. Per confermare che è possibile utilizzare SSO per accedere a StorageGRID, selezionare *Accedi a uno dei seguenti siti*, selezionare l'identificativo della parte di base per il nodo di amministrazione principale e fare clic su *Accedi*.
++
+image::../media/sso_sandbox_mode_testing.gif[Verifica dei trust della parte di base in modalità SSO Sandbox]
+
++
+Viene richiesto di inserire il nome utente e la password.
+
+. Immettere il nome utente e la password federated.
++
+** Se le operazioni di accesso e disconnessione SSO hanno esito positivo, viene visualizzato un messaggio di esito positivo.
++
+image::../media/sso_sandbox_mode_sign_in_success.gif[Messaggio di successo del test di disconnessione e autenticazione SSO]
+
+** Se l'operazione SSO non riesce, viene visualizzato un messaggio di errore. Risolvere il problema, eliminare i cookie del browser e riprovare.
+
+
+. Ripetere i passaggi precedenti per confermare che è possibile accedere a qualsiasi altro nodo Admin.
++
+Se tutte le operazioni di accesso e disconnessione SSO hanno esito positivo, è possibile attivare SSO.
+
+

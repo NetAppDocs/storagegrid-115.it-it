@@ -1,0 +1,39 @@
+---
+permalink: upgrade/performing-upgrade.html 
+sidebar: sidebar 
+keywords: upgrade, software upgrade 
+summary: 'La pagina aggiornamento software guida l"utente attraverso il processo di caricamento del file richiesto e l"aggiornamento di tutti i nodi grid nel sistema StorageGRID.' 
+---
+= Esecuzione dell'aggiornamento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La pagina aggiornamento software guida l'utente attraverso il processo di caricamento del file richiesto e l'aggiornamento di tutti i nodi grid nel sistema StorageGRID.
+
+.Di cosa hai bisogno
+Sei a conoscenza di quanto segue:
+
+* È necessario aggiornare tutti i nodi grid per tutti i siti del data center dal nodo di amministrazione primario, utilizzando Grid Manager.
+* Per rilevare e risolvere i problemi, è possibile eseguire manualmente i controlli preliminari dell'aggiornamento prima di avviare l'aggiornamento effettivo. Le stesse verifiche preliminari vengono eseguite all'avvio dell'aggiornamento. Gli errori di pre-controllo arrestano il processo di aggiornamento e potrebbero richiedere il coinvolgimento del supporto tecnico per la risoluzione.
+* Quando si avvia l'aggiornamento, il nodo di amministrazione primario viene aggiornato automaticamente.
+* Una volta aggiornato il nodo di amministrazione primario, è possibile selezionare i nodi della griglia da aggiornare successivamente.
+* Per completare l'aggiornamento, è necessario aggiornare tutti i nodi grid nel sistema StorageGRID, ma è possibile aggiornare i singoli nodi grid in qualsiasi ordine. È possibile selezionare singoli nodi della griglia, gruppi di nodi della griglia o tutti i nodi della griglia. È possibile ripetere il processo di selezione dei nodi di griglia tutte le volte necessarie, fino a quando tutti i nodi di griglia in tutti i siti non vengono aggiornati.
+* Quando l'aggiornamento inizia su un nodo grid, i servizi su quel nodo vengono interrotti. In seguito, il nodo Grid viene riavviato. Non approvare l'aggiornamento per un nodo Grid a meno che non si sia certi che il nodo sia pronto per essere arrestato e riavviato.
+* Una volta aggiornati tutti i nodi della griglia, vengono attivate nuove funzionalità ed è possibile riprendere le operazioni; tuttavia, è necessario attendere l'esecuzione di una procedura di decommissionamento o espansione fino al completamento dell'attività *Upgrade Database* in background e dell'attività *Final Upgrade Steps*.
+* È necessario completare l'aggiornamento sulla stessa piattaforma hypervisor con cui si è iniziato.
+
+
+.Fasi
+. link:linux-installing-rpm-or-deb-package-on-all-hosts.html["Linux: Installazione del pacchetto RPM o DEB su tutti gli host"]
+. link:starting-upgrade.html["Avvio dell'aggiornamento"]
+. link:upgrading-grid-nodes-and-completing-upgrade.html["Aggiornamento dei nodi grid e completamento dell'aggiornamento"]
+. link:increasing-metadata-reserved-space-setting.html["Aumento dell'impostazione Metadata Reserved Space (spazio riservato metadati)"]
+
+
+.Informazioni correlate
+link:../admin/index.html["Amministrare StorageGRID"]
+
+link:estimating-time-to-complete-upgrade.html["Stima del tempo necessario per completare un aggiornamento"]

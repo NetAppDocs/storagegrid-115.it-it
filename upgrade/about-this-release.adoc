@@ -1,0 +1,20 @@
+---
+permalink: upgrade/about-this-release.html 
+sidebar: sidebar 
+keywords:  
+summary: Prima di iniziare un aggiornamento, consulta questa sezione per scoprire le nuove funzionalità e i miglioramenti di StorageGRID 11.5, determinare se le funzionalità sono state obsolete o rimosse e scoprire le modifiche apportate alle API StorageGRID. 
+---
+= Informazioni su StorageGRID 11.5
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di iniziare un aggiornamento, consulta questa sezione per scoprire le nuove funzionalità e i miglioramenti di StorageGRID 11.5, determinare se le funzionalità sono state obsolete o rimosse e scoprire le modifiche apportate alle API StorageGRID.
+
+* link:whats-new.html["Novità di StorageGRID 11.5"]
+* link:removed-or-deprecated-features.html["Funzionalità rimosse o obsolete"]
+* link:changes-to-grid-management-api.html["Modifiche all'API Grid Management"]
+* link:changes-to-tenant-management-api.html["Modifiche all'API di gestione del tenant"]
+

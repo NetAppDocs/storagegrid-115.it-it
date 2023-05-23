@@ -1,0 +1,31 @@
+---
+permalink: admin/updating-storagegrid-license-information.html 
+sidebar: sidebar 
+keywords:  
+summary: È necessario aggiornare le informazioni di licenza per il sistema StorageGRID in qualsiasi momento in cui i termini della licenza cambiano. Ad esempio, è necessario aggiornare le informazioni sulla licenza se si acquista ulteriore capacità di storage per il grid. 
+---
+= Aggiornamento delle informazioni sulla licenza StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario aggiornare le informazioni di licenza per il sistema StorageGRID in qualsiasi momento in cui i termini della licenza cambiano. Ad esempio, è necessario aggiornare le informazioni sulla licenza se si acquista ulteriore capacità di storage per il grid.
+
+.Di cosa hai bisogno
+* È necessario disporre di un nuovo file di licenza per l'applicazione al sistema StorageGRID.
+* È necessario disporre di autorizzazioni di accesso specifiche.
+* È necessario disporre della passphrase di provisioning.
+
+
+.Fasi
+. Selezionare *manutenzione* *sistema* *licenza*.
+. Inserire la passphrase di provisioning per il sistema StorageGRID nella casella di testo *Passphrase di provisioning*.
+. Fare clic su *Sfoglia*.
+. Nella finestra di dialogo Apri, individuare e selezionare il nuovo file di licenza (`.txt`), quindi fare clic su *Apri*.
++
+Il nuovo file di licenza viene validato e visualizzato.
+
+. Fare clic su *Save* (Salva).
+

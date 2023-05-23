@@ -1,0 +1,25 @@
+---
+permalink: ilm/managing-objects-with-information-lifecycle-management.html 
+sidebar: sidebar 
+keywords:  
+summary: È possibile gestire gli oggetti in un sistema StorageGRID configurando le regole e i criteri di gestione del ciclo di vita delle informazioni. Le regole e i criteri ILM spiegano a StorageGRID come creare e distribuire copie di dati a oggetti e come gestirle nel tempo. 
+---
+= Gestione degli oggetti con la gestione del ciclo di vita delle informazioni
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile gestire gli oggetti in un sistema StorageGRID configurando le regole e le policy di Information Lifecycle Management (ILM). Le regole e i criteri ILM spiegano a StorageGRID come creare e distribuire copie di dati a oggetti e come gestirle nel tempo.
+
+La progettazione e l'implementazione delle regole ILM e della policy ILM richiede un'attenta pianificazione. È necessario comprendere i requisiti operativi, la topologia del sistema StorageGRID, le esigenze di protezione degli oggetti e i tipi di storage disponibili. Quindi, è necessario determinare come si desidera copiare, distribuire e memorizzare diversi tipi di oggetti.
+
+* link:how-ilm-operates-throughout-objects-life.html["Come ILM opera per tutta la vita di un oggetto"]
+* link:what-ilm-policy-is.html["Che cos'è una policy ILM"]
+* link:what-ilm-rule-is.html["Che cos'è una regola ILM"]
+* link:creating-storage-grades-storage-pools-ec-profiles-regions.html["Creazione di livelli di storage, pool di storage, profili EC e regioni"]
+* link:creating-ilm-rule.html["Creazione di una regola ILM"]
+* link:creating-ilm-policy.html["Creazione di un criterio ILM"]
+* link:working-with-ilm-rules-and-ilm-policies.html["Utilizzo delle regole ILM e delle policy ILM"]
+

@@ -1,0 +1,14 @@
+---
+permalink: monitor/using-charts-and-reports.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile utilizzare grafici e report per monitorare lo stato del sistema StorageGRID e risolvere i problemi. I tipi di grafici e report disponibili in Grid Manager includono grafici a torta (solo nella dashboard), grafici e report di testo.' 
+---
+= Utilizzo di grafici e report
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare grafici e report per monitorare lo stato del sistema StorageGRID e risolvere i problemi. I tipi di grafici e report disponibili in Grid Manager includono grafici a torta (solo nella dashboard), grafici e report di testo.

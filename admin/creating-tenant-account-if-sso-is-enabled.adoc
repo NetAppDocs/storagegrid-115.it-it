@@ -1,0 +1,63 @@
+---
+permalink: admin/creating-tenant-account-if-sso-is-enabled.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Quando si crea un account tenant, specificare un nome, un protocollo client e, facoltativamente, una quota di storage. Se l"accesso singolo è attivato per StorageGRID, specificare anche quale gruppo federato dispone dell"autorizzazione di accesso root per configurare l"account tenant.' 
+---
+= Creazione di un account tenant se SSO è attivato
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando si crea un account tenant, specificare un nome, un protocollo client e, facoltativamente, una quota di storage. Se SSO (Single Sign-on) è attivato per StorageGRID, specificare anche quale gruppo federato dispone dell'autorizzazione di accesso root per configurare l'account tenant.
+
+.Fasi
+. Nella casella di testo *Display Name* (Nome visualizzato), immettere un nome visualizzato per l'account tenant.
++
+I nomi visualizzati non devono essere univoci. Una volta creato, l'account tenant riceve un ID account univoco e numerico.
+
+. Selezionare il protocollo client che verrà utilizzato da questo account tenant, *S3* o *Swift*.
+. Per gli account tenant S3, mantenere la casella di controllo *Allow Platform Services* (Consenti servizi piattaforma) selezionata, a meno che non si desideri che il tenant non utilizzi i servizi della piattaforma per i bucket S3.
++
+Se i servizi della piattaforma sono attivati, un tenant può utilizzare funzionalità, come la replica CloudMirror, che accedono ai servizi esterni. È possibile disattivare l'utilizzo di queste funzioni per limitare la quantità di larghezza di banda di rete o di altre risorse consumate dal tenant. Vedere "`Managing platform Services`".
+
+. Nella casella di testo *quota di storage*, immettere il numero massimo di gigabyte, terabyte o petabyte che si desidera rendere disponibili per gli oggetti del tenant. Quindi, selezionare le unità dall'elenco a discesa.
++
+Lasciare vuoto questo campo se si desidera che il tenant abbia una quota illimitata.
+
++
+
+NOTE: La quota di storage di un tenant rappresenta una quantità logica (dimensione dell'oggetto), non una quantità fisica (dimensione sul disco). Le copie ILM e la codifica di cancellazione non contribuiscono alla quantità di quota utilizzata. Se la quota viene superata, l'account tenant non può creare nuovi oggetti.
+
++
+
+NOTE: Per monitorare l'utilizzo dello storage di ciascun account tenant, selezionare *Usage* (utilizzo). Gli account tenant possono anche monitorare il proprio utilizzo dello storage dalla dashboard in Tenant Manager o con l'API di gestione tenant. Si noti che i valori di utilizzo dello storage di un tenant potrebbero non essere aggiornati se i nodi sono isolati da altri nodi nella griglia. I totali verranno aggiornati al ripristino della connettività di rete.
+
+. Si noti che la casella di controllo *utilizza origine identità* è deselezionata e disattivata.
++
+Poiché SSO è attivato, il tenant deve utilizzare l'origine dell'identità configurata per Grid Manager. Nessun utente locale può accedere.
+
+. Nel campo *Root Access Group*, selezionare un gruppo federated esistente da Grid Manager per ottenere l'autorizzazione di accesso root iniziale per il tenant.
++
+
+NOTE: Se si dispone di autorizzazioni adeguate, quando si fa clic sul campo vengono elencati i gruppi federated esistenti di Grid Manager. In caso contrario, immettere il nome univoco del gruppo.
+
+. Fare clic su *Save* (Salva).
++
+Viene creato l'account tenant. Viene visualizzata la pagina account tenant, che include una riga per il nuovo tenant.
+
+. Se si è un utente del gruppo Root Access, fare clic sul collegamento *Sign in* (Accedi) per accedere immediatamente al tenant Manager, dove è possibile configurare il tenant. In caso contrario, fornire l'URL del collegamento *Accedi* all'amministratore dell'account tenant. (L'URL di un tenant è il nome di dominio completo o l'indirizzo IP di qualsiasi nodo di amministrazione, seguito da `/?accountId=_20-digit-account-id_`.)
++
+
+NOTE: Se si fa clic su *Sign in* (accesso negato), ma non si appartiene al gruppo Root Access per l'account tenant, viene visualizzato un messaggio di accesso negato.
+
+
+
+.Informazioni correlate
+link:configuring-sso.html["Configurazione del single sign-on"]
+
+link:managing-platform-services-for-s3-tenant-accounts.html["Gestione dei servizi della piattaforma per gli account tenant S3"]
+
+link:../tenant/index.html["Utilizzare un account tenant"]

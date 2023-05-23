@@ -1,0 +1,31 @@
+---
+permalink: monitor/reviewing-previous-events.html 
+sidebar: sidebar 
+keywords:  
+summary: È possibile generare un elenco di messaggi di eventi precedenti per isolare i problemi verificatisi in passato. 
+---
+= Revisione degli eventi precedenti
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile generare un elenco di messaggi di eventi precedenti per isolare i problemi verificatisi in passato.
+
+. Selezionare *supporto* > *Strumenti* > *topologia griglia*.
+. Selezionare *_site_* *_grid node_* *SSM* *Eventi* *Report*.
+. Selezionare *testo*.
++
+L'attributo *Last Event* non viene visualizzato nella vista Charts.
+
+. Modificare *attributo* in *ultimo evento*.
+. Facoltativamente, selezionare un periodo di tempo per *Query rapida*.
+. Fare clic su *Aggiorna*.
++
+image::../media/events_report.gif[Pagina Eventi]
+
+
+
+.Informazioni correlate
+link:using-charts-and-reports.html["Utilizzo di grafici e report"]

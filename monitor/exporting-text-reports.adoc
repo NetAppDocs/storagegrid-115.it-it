@@ -1,0 +1,36 @@
+---
+permalink: monitor/exporting-text-reports.html 
+sidebar: sidebar 
+keywords: reports, text, export text, report 
+summary: I report di testo esportati aprono una nuova scheda del browser che consente di selezionare e copiare i dati. 
+---
+= Esportazione di report di testo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I report di testo esportati aprono una nuova scheda del browser che consente di selezionare e copiare i dati.
+
+.A proposito di questa attività
+I dati copiati possono quindi essere salvati in un nuovo documento (ad esempio, un foglio di calcolo) e utilizzati per analizzare le prestazioni del sistema StorageGRID.
+
+.Fasi
+. Selezionare *supporto* > *Strumenti* > *topologia griglia*.
+. Creare un report di testo.
+. Fare clic su *Esporta*image:../media/icon_export.gif["icona export (esporta)"].
++
+image::../media/export_text_report.gif[schermata descritta dal testo circostante]
+
++
+Viene visualizzata la finestra Export Text Report (Esporta report di testo) che visualizza il report.
+
++
+image::../media/export_text_report_data.gif[schermata che mostra un report di testo di esempio]
+
+. Selezionare e copiare il contenuto della finestra Esporta report di testo.
++
+Questi dati possono ora essere incollati in un documento di terze parti, ad esempio un foglio di calcolo.
+
+

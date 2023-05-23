@@ -1,0 +1,54 @@
+---
+permalink: sg6000/accessing-bmc-interface-sg6000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, BMC, baseboard management controller, access, open, login 
+summary: 'È possibile accedere all"interfaccia BMC sul controller SG6000-CN utilizzando l"indirizzo IP statico o DHCP per la porta di gestione BMC.' 
+---
+= Accesso all'interfaccia BMC
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile accedere all'interfaccia BMC sul controller SG6000-CN utilizzando l'indirizzo IP statico o DHCP per la porta di gestione BMC.
+
+.Di cosa hai bisogno
+* La porta di gestione BMC del controller SG6000-CN è collegata alla rete di gestione che si intende utilizzare.
++
+image::../media/sg6000_cn_bmc_management_port.gif[Porta di gestione BMC sul controller SG6000-CN]
+
+* Il client di gestione utilizza un browser Web supportato.
+
+
+.Fasi
+. Inserire l'URL dell'interfaccia BMC: +
+`*https://_BMC_Port_IP_*`
++
+Per `_BMC_Port_IP_`, Utilizzare l'indirizzo IP statico o DHCP per la porta di gestione BMC.
+
++
+Viene visualizzata la pagina di accesso BMC.
+
+. Inserire il nome utente root e la password, utilizzando la password impostata quando si modifica la password root predefinita: +
+`*root*` +
+`*_password_*`
++
+image::../media/bmc_signin_page.gif[BMC Sign in Page (pagina di accesso BMC)]
+
+. Selezionare *Accedi*.
++
+Viene visualizzata la dashboard BMC.
+
++
+image::../media/bmc_dashboard.gif[BMC Dashboard]
+
+. Facoltativamente, creare utenti aggiuntivi selezionando *Impostazioni* > *Gestione utente* e facendo clic su qualsiasi utente "`dabilitato`".
++
+
+NOTE: Quando gli utenti accedono per la prima volta, potrebbe essere richiesto di modificare la password per una maggiore sicurezza.
+
+
+
+.Informazioni correlate
+link:changing-root-password-for-bmc-interface-sg6000.html["Modifica della password root per l'interfaccia BMC"]

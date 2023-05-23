@@ -1,0 +1,48 @@
+---
+permalink: maintain/rebooting-grid-node-from-grid-manager.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, reboot node, grid manager 
+summary: 'Il riavvio di un nodo Grid da Grid Manager genera il `reboot` sul nodo di destinazione.' 
+---
+= Riavvio di un nodo Grid da Grid Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il riavvio di un nodo Grid da Grid Manager genera il `reboot` sul nodo di destinazione.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre dell'autorizzazione Maintenance (manutenzione) o Root Access (accesso root).
+* È necessario disporre della passphrase di provisioning.
+
+
+.Fasi
+. Selezionare *nodi*.
+. Selezionare il nodo della griglia che si desidera riavviare.
+. Selezionare la scheda *Tasks*.
++
+image::../media/nodes_tasks_reboot.gif[Nodi > attività > pulsante Riavvia]
+
+. Fare clic su *Reboot* (Riavvia).
++
+Viene visualizzata una finestra di dialogo di conferma.
+
++
+image::../media/reboot_node_confirmation.gif[Finestra di dialogo di conferma per il nodo Reboot Grid]
+
++
+
+NOTE: Se si sta riavviando il nodo di amministrazione primario, la finestra di dialogo di conferma ricorda che la connessione del browser a Grid Manager viene temporaneamente persa quando i servizi vengono arrestati.
+
+. Inserire la passphrase di provisioning e fare clic su *OK*.
+. Attendere il riavvio del nodo.
++
+L'arresto dei servizi potrebbe richiedere del tempo.
+
++
+Quando il nodo viene riavviato, l'icona grigia (amministrativamente in basso) viene visualizzata sul lato sinistro della pagina Nodes (nodi). Una volta riavviati tutti i servizi, l'icona torna al colore originale.
+
+

@@ -1,0 +1,34 @@
+---
+permalink: monitor/viewing-events-tab.html 
+sidebar: sidebar 
+keywords:  
+summary: 'La scheda Events (Eventi) visualizza il conteggio degli errori di sistema o degli eventi di errore di un nodo, inclusi gli errori di rete.' 
+---
+= Visualizzazione della scheda Eventi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La scheda Events (Eventi) visualizza il conteggio degli errori di sistema o degli eventi di errore di un nodo, inclusi gli errori di rete.
+
+Viene visualizzata la scheda Eventi per tutti i nodi.
+
+Se si verificano problemi con un nodo specifico, è possibile utilizzare la scheda Eventi per ulteriori informazioni sul problema. Il supporto tecnico può anche utilizzare le informazioni nella scheda Eventi per facilitare la risoluzione dei problemi.
+
+image::../media/nodes_page_events_tab.png[Scheda Eventi della pagina nodi]
+
+È possibile eseguire queste attività dalla scheda Eventi:
+
+* Utilizzare le informazioni visualizzate per il campo *ultimo evento* nella parte superiore della tabella per determinare quale evento si è verificato più di recente.
+* Fare clic sull'icona del grafico image:../media/icon_chart_new.gif["Icona del grafico"] per un evento specifico per vedere quando tale evento si è verificato nel tempo.
+* Azzerare i conteggi degli eventi dopo aver risolto eventuali problemi.
+
+
+.Informazioni correlate
+link:monitoring-events.html["Monitoraggio degli eventi"]
+
+link:displaying-charts-and-graphs.html["Visualizzazione di grafici e grafici"]
+
+link:resetting-event-counts.html["Reimpostazione dei conteggi degli eventi"]

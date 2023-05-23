@@ -1,0 +1,24 @@
+---
+permalink: ilm/configuring-storage-pools.html 
+sidebar: sidebar 
+keywords:  
+summary: Quando si definisce una regola ILM, si utilizzano i pool di storage per specificare dove memorizzare gli oggetti . Prima di creare un pool di storage, è necessario rivedere le linee guida del pool di storage. 
+---
+= Configurazione dei pool di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando si definisce una regola ILM, si utilizzano i pool di storage per specificare dove memorizzare gli oggetti . Prima di creare un pool di storage, è necessario rivedere le linee guida del pool di storage.
+
+* link:what-storage-pool-is.html["Che cos'è un pool di storage"]
+* link:guidelines-for-creating-storage-pools.html["Linee guida per la creazione di pool di storage"]
+* link:using-multiple-storage-pools-for-cross-site-replication.html["Utilizzo di più pool di storage per la replica tra siti"]
+* link:using-storage-pool-as-temporary-location-deprecated.html["Utilizzo di un pool di storage come posizione temporanea (obsoleto)"]
+* link:creating-storage-pool.html["Creazione di un pool di storage"]
+* link:viewing-storage-pool-details.html["Visualizzazione dei dettagli del pool di storage"]
+* link:editing-storage-pool.html["Modifica di un pool di storage"]
+* link:removing-storage-pool.html["Rimozione di un pool di storage"]
+

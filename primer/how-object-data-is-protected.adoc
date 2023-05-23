@@ -1,0 +1,39 @@
+---
+permalink: primer/how-object-data-is-protected.html 
+sidebar: sidebar 
+keywords: object data, replicate, replication, erasure coding, ec 
+summary: 'Il sistema StorageGRID offre due meccanismi per proteggere i dati degli oggetti dalla perdita: Replica e erasure coding.' 
+---
+= Modalità di protezione dei dati degli oggetti
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il sistema StorageGRID offre due meccanismi per proteggere i dati degli oggetti dalla perdita: Replica e erasure coding.
+
+
+
+== Replica
+
+Quando StorageGRID associa gli oggetti a una regola ILM (Information Lifecycle Management) configurata per creare copie replicate, il sistema crea copie esatte dei dati degli oggetti e li memorizza nei nodi di storage, nei nodi di archivio o nei pool di storage cloud. Le regole ILM determinano il numero di copie effettuate, la posizione in cui vengono memorizzate e la durata della conservazione da parte del sistema. Se una copia viene persa, ad esempio, a causa della perdita di un nodo di storage, l'oggetto rimane disponibile se una copia di esso esiste altrove nel sistema StorageGRID.
+
+Nell'esempio seguente, la regola Make 2 copies specifica che due copie replicate di ciascun oggetto devono essere collocate in un pool di storage che contiene tre nodi di storage.
+
+image::../media/ilm_replication_make_2_copies.png[Regola di creazione di 2 copie]
+
+
+
+== Erasure coding
+
+Quando StorageGRID associa oggetti a una regola ILM configurata per creare copie con codifica di cancellazione, slice i dati degli oggetti in frammenti di dati, calcola ulteriori frammenti di parità e memorizza ogni frammento su un nodo di storage diverso. Quando si accede a un oggetto, questo viene riassemblato utilizzando i frammenti memorizzati. Se un dato o un frammento di parità viene corrotto o perso, l'algoritmo di erasure coding può ricreare quel frammento utilizzando un sottoinsieme dei rimanenti dati e frammenti di parità. Le regole ILM e i profili di erasure coding determinano lo schema di erasure coding utilizzato.
+
+Nell'esempio riportato di seguito viene illustrato l'utilizzo della codifica erasure sui dati di un oggetto. In questo esempio, la regola ILM utilizza uno schema di erasure coding 4+2. Ciascun oggetto viene suddiviso in quattro frammenti di dati uguali e due frammenti di parità vengono calcolati dai dati dell'oggetto. Ciascuno dei sei frammenti viene memorizzato su un nodo di storage diverso in tre data center per fornire protezione dei dati in caso di guasti al nodo o perdita del sito.
+
+image::../media/ec_three_sites_4_plus_2.png[Erasure Coded Three Sites 4 Plus 2]
+
+.Informazioni correlate
+link:../ilm/index.html["Gestire gli oggetti con ILM"]
+
+link:using-information-lifecycle-management.html["Utilizzo della gestione del ciclo di vita delle informazioni"]

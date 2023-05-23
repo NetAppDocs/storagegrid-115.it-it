@@ -1,0 +1,88 @@
+---
+permalink: vmware/collecting-information-about-your-deployment-environment.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Prima di implementare i nodi grid, è necessario raccogliere informazioni sulla configurazione di rete e sull"ambiente VMware.' 
+---
+= Raccolta di informazioni sull'ambiente di implementazione
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di implementare i nodi grid, è necessario raccogliere informazioni sulla configurazione di rete e sull'ambiente VMware.
+
+
+
+== Informazioni VMware
+
+È necessario accedere all'ambiente di implementazione e raccogliere informazioni sull'ambiente VMware, sulle reti create per Grid, Admin e Client Network e sui tipi di volumi di storage che si intende utilizzare per i nodi di storage.
+
+È necessario raccogliere informazioni sull'ambiente VMware, tra cui:
+
+* Il nome utente e la password di un account VMware vSphere che dispone delle autorizzazioni appropriate per completare l'implementazione.
+* Informazioni sulla configurazione di host, datastore e rete per ciascuna macchina virtuale del nodo grid StorageGRID.
+
+
+
+IMPORTANT: VMware Live vMotion fa saltare il tempo di clock della macchina virtuale e non è supportato per i nodi grid di qualsiasi tipo. Anche se rari, tempi di clock errati possono causare la perdita di dati o aggiornamenti della configurazione.
+
+
+
+== Informazioni Grid Network
+
+È necessario raccogliere informazioni sulla rete VMware creata per la rete grid StorageGRID (richiesta), tra cui:
+
+* Il nome della rete.
+* Se non si utilizza DHCP, i dettagli di rete richiesti per ciascun nodo della griglia (indirizzo IP, gateway e maschera di rete).
+* Se non si utilizza DHCP, l'indirizzo IP del nodo di amministrazione primario sulla rete di rete. Per ulteriori informazioni, vedere "`come i nodi della griglia rilevano il nodo di amministrazione primario`".
+
+
+
+
+== Admin Network Information (informazioni di rete amministratore
+
+Per i nodi che saranno connessi alla rete amministrativa StorageGRID opzionale, è necessario raccogliere informazioni sulla rete VMware creata per questa rete, tra cui:
+
+* Il nome della rete.
+* Metodo utilizzato per assegnare indirizzi IP, statici o DHCP.
+* Se si utilizzano indirizzi IP statici, i dettagli di rete richiesti per ciascun nodo della griglia (indirizzo IP, gateway, maschera di rete).
+* L'elenco di subnet esterne (ESL) per la rete di amministrazione.
+
+
+
+
+== Informazioni di rete del client
+
+Per i nodi che saranno connessi alla rete client StorageGRID opzionale, è necessario raccogliere informazioni sulla rete VMware creata per questa rete, tra cui:
+
+* Il nome della rete.
+* Metodo utilizzato per assegnare indirizzi IP, statici o DHCP.
+* Se si utilizzano indirizzi IP statici, i dettagli di rete richiesti per ciascun nodo della griglia (indirizzo IP, gateway, maschera di rete).
+
+
+
+
+== Volumi di storage per nodi di storage virtuali
+
+Per i nodi di storage basati su macchine virtuali, è necessario raccogliere le seguenti informazioni:
+
+* Il numero e la dimensione dei volumi di storage (LUN di storage) che si intende aggiungere. Vedere "`Srequisiti di torage e performance`".
+
+
+
+
+== Informazioni sulla configurazione della griglia
+
+È necessario raccogliere informazioni per configurare la griglia:
+
+* Licenza Grid
+* Indirizzi IP del server NTP (Network Time Protocol)
+* Indirizzi IP del server DNS (Domain Name System)
+
+
+.Informazioni correlate
+link:how-grid-nodes-discover-primary-admin-node.html["In che modo i nodi della griglia rilevano il nodo di amministrazione primario"]
+
+link:storage-and-performance-requirements.html["Requisiti di storage e performance"]

@@ -1,0 +1,78 @@
+---
+permalink: vmware/automating-grid-node-deployment-in-vmware-vsphere.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile automatizzare l"implementazione dei nodi grid StorageGRID in VMware vSphere.' 
+---
+= Automazione dell'implementazione dei nodi grid in VMware vSphere
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile automatizzare l'implementazione dei nodi grid StorageGRID in VMware vSphere.
+
+.Di cosa hai bisogno
+* Hai accesso a un sistema Linux/Unix con Bash 3.2 o versione successiva.
+* VMware OVF Tool 4.1 è installato e configurato correttamente.
+* Conosci il nome utente e la password necessari per accedere a VMware vSphere utilizzando il tool OVF.
+* Conosci l'URL dell'infrastruttura virtuale (VI) per la posizione in vSphere in cui desideri implementare le macchine virtuali StorageGRID. In genere, questo URL sarà un vApp o un pool di risorse. Ad esempio: `vi://vcenter.example.com/vi/sgws`
++
+
+NOTE: È possibile utilizzare VMware `ovftool` per determinare questo valore (vedere `ovftool` documentazione per ulteriori dettagli).
+
++
+
+NOTE: Se si esegue la distribuzione su una vApp, le macchine virtuali non si avviano automaticamente la prima volta ed è necessario accenderle manualmente.
+
+* Sono state raccolte tutte le informazioni necessarie per il file di configurazione. Vedere link:collecting-information-about-your-deployment-environment.html["Raccolta di informazioni sull'ambiente di implementazione"] per informazioni.
+* È possibile accedere ai seguenti file dall'archivio di installazione di VMware per StorageGRID:
+
+
+[cols="1a,1a"]
+|===
+| Nome file | Descrizione 
+
+
+| NetApp-SG-version-SHA.vmdk  a| 
+Il file del disco della macchina virtuale utilizzato come modello per la creazione di macchine virtuali con nodo grid.
+
+*Nota:* questo file deve trovarsi nella stessa cartella di `.ovf` e. `.mf` file.
+
+
+
+| vsphere-primary-admin.ovf vsphere-primary-admin.mf  a| 
+Il file di modello Open Virtualization Format (`.ovf`) e il file manifest (`.mf`) Per l'implementazione del nodo di amministrazione primario.
+
+
+
+| vsphere-non-primary-admin.ovf vsphere-non-primary-admin.mf  a| 
+Il file di modello (`.ovf`) e il file manifest (`.mf`) Per l'implementazione di nodi amministrativi non primari.
+
+
+
+| vsphere-archive.ovf vsphere-archive.mf  a| 
+Il file di modello (`.ovf`) e il file manifest (`.mf`) Per l'implementazione dei nodi di archiviazione.
+
+
+
+| vsphere-gateway.ovf vsphere-gateway.mf  a| 
+Il file di modello (`.ovf`) e il file manifest (`.mf`) Per l'implementazione dei nodi gateway.
+
+
+
+| vsphere-storage.ovf vsphere-storage.mf  a| 
+Il file di modello (`.ovf`) e il file manifest (`.mf`) Per l'implementazione di nodi di storage basati su macchine virtuali.
+
+
+
+| deploy-vsphere-ovftool.sh  a| 
+Lo script della shell Bash utilizzato per automatizzare l'implementazione dei nodi virtual grid.
+
+
+
+| deploy-vsphere-ovftool-sample.ini  a| 
+File di configurazione di esempio da utilizzare con `deploy-vsphere-ovftool.sh` script.
+
+|===

@@ -1,0 +1,61 @@
+---
+section: expand
+title: Espandi il tuo grid
+url: "/expand/index.html"
+entries:
+- title: Pianificazione di un'espansione di StorageGRID
+  url: "/expand/planning-expansion.html"
+  entries:
+  - title: Aggiunta di capacità di storage
+    url: "/expand/adding-storage-capacity.html"
+    entries:
+    - title: Linee guida per l'aggiunta della capacità degli oggetti
+      url: "/expand/guidelines-for-adding-object-capacity.html"
+    - title: Aggiunta di capacità di storage per gli oggetti replicati
+      url: "/expand/adding-storage-capacity-for-replicated-objects.html"
+    - title: Aggiunta di capacità di storage per gli oggetti con codifica per la cancellazione
+      url: "/expand/adding-storage-capacity-for-erasure-coded-objects.html"
+    - title: Considerazioni per il ribilanciamento dei dati con codifica erasure
+      url: "/expand/considerations-for-rebalancing-erasure-coded-data.html"
+  - title: Aggiunta di capacità di metadati
+    url: "/expand/adding-metadata-capacity.html"
+  - title: Aggiunta di nodi grid per aggiungere funzionalità al sistema
+    url: "/expand/adding-grid-nodes-to-add-capabilities.html"
+  - title: Aggiunta di un nuovo sito
+    url: "/expand/adding-new-site.html"
+- title: Preparazione per un'espansione
+  url: "/expand/preparing-for-expansion.html"
+- title: Panoramica della procedura di espansione
+  url: "/expand/overview-of-expansion-procedure.html"
+- title: Aggiunta di volumi di storage ai nodi di storage
+  url: "/expand/adding-storage-volumes-to-storage-nodes.html"
+  entries:
+  - title: 'VMware: Aggiunta di volumi di storage a un nodo di storage'
+    url: "/expand/vmware-adding-storage-volumes-to-storage-node.html"
+  - title: 'Linux: Aggiunta di volumi direct-attached o SAN a un nodo di storage'
+    url: "/expand/linux-adding-direct-attached-or-san-volumes-to-storage-node.html"
+- title: Aggiunta di nodi di griglia a un sito esistente o aggiunta di un nuovo sito
+  url: "/expand/adding-grid-nodes-to-existing-site-or-adding-new-site.html"
+  entries:
+  - title: Aggiornamento delle subnet per la rete Grid
+    url: "/expand/updating-subnets-for-grid-network.html"
+  - title: Implementazione di nuovi nodi grid
+    url: "/expand/deploying-new-grid-nodes.html"
+  - title: Esecuzione dell'espansione
+    url: "/expand/performing-expansion.html"
+- title: Configurazione del sistema Expanded StorageGRID
+  url: "/expand/configuring-expanded-storagegrid-system.html"
+  entries:
+  - title: Verificare che il nodo di storage sia attivo
+    url: "/expand/verifying-storage-node-is-active.html"
+  - title: Copia del database Admin Node
+    url: "/expand/copying-admin-node-database.html"
+  - title: Copia delle metriche Prometheus
+    url: "/expand/copying-prometheus-metrics.html"
+  - title: Copia dei registri di audit
+    url: "/expand/copying-audit-logs.html"
+  - title: Ribilanciamento dei dati con codifica erasure dopo l'aggiunta di nodi di
+      storage
+    url: "/expand/rebalancing-erasure-coded-data-after-adding-storage-nodes.html"
+- title: Contattare il supporto tecnico
+  url: "/expand/contacting-technical-support.html"

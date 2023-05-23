@@ -1,0 +1,18 @@
+---
+permalink: tenant/managing-s3-tenant-accounts.html 
+sidebar: sidebar 
+keywords:  
+summary: È possibile utilizzare Tenant Manager per gestire le chiavi di accesso S3 e per creare e gestire i bucket S3. 
+---
+= Gestione degli account tenant S3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare Tenant Manager per gestire le chiavi di accesso S3 e per creare e gestire i bucket S3.
+
+* link:managing-s3-access-keys.html["Gestione delle chiavi di accesso S3"]
+* link:managing-s3-buckets.html["Gestione dei bucket S3"]
+

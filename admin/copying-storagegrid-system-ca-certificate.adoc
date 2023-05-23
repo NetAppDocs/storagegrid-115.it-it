@@ -1,0 +1,39 @@
+---
+permalink: admin/copying-storagegrid-system-ca-certificate.html 
+sidebar: sidebar 
+keywords:  
+summary: 'StorageGRID utilizza un"autorità di certificazione interna per proteggere il traffico interno. Questo certificato non cambia se si caricano i propri certificati.' 
+---
+= Copia del certificato CA del sistema StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID utilizza un'autorità di certificazione (CA) interna per proteggere il traffico interno. Questo certificato non cambia se si caricano i propri certificati.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre di autorizzazioni di accesso specifiche.
+
+
+.A proposito di questa attività
+Se è stato configurato un certificato server personalizzato, le applicazioni client devono verificare il server utilizzando il certificato server personalizzato. Non devono copiare il certificato CA dal sistema StorageGRID.
+
+.Fasi
+. Selezionare *Configurazione* *Impostazioni di rete* *certificati server*.
+. Nella sezione *certificato CA interno*, selezionare tutto il testo del certificato.
++
+È necessario includere `-----BEGIN CERTIFICATE-----` e. `-----END CERTIFICATE-----` nella selezione.
+
++
+image::../media/ca_certificate_export.png[Esportazione certificato CA]
+
+. Fare clic con il pulsante destro del mouse sul testo selezionato e selezionare *Copia*.
+. Incollare il certificato copiato in un editor di testo.
+. Salvare il file con l'estensione `.pem`.
++
+Ad esempio: `storagegrid_certificate.pem`
+
+

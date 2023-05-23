@@ -1,0 +1,58 @@
+---
+permalink: primer/viewing-nodes-page.html 
+sidebar: sidebar 
+keywords: nodes page, connection state, unknown, administratively down, critical, major, minor, icon 
+summary: 'Quando hai bisogno di informazioni più dettagliate sul tuo sistema StorageGRID rispetto a quelle fornite dalla dashboard, puoi utilizzare la pagina Nodes per visualizzare le metriche per l"intera griglia, ogni sito nella griglia e ogni nodo di un sito.' 
+---
+= Visualizzazione della pagina nodi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando hai bisogno di informazioni più dettagliate sul tuo sistema StorageGRID rispetto a quelle fornite dalla dashboard, puoi utilizzare la pagina Nodes per visualizzare le metriche per l'intera griglia, ogni sito nella griglia e ogni nodo di un sito.
+
+image::../media/nodes_menu.png[Menu nodi]
+
+Dalla vista ad albero a sinistra, è possibile visualizzare tutti i siti e tutti i nodi nel sistema StorageGRID. L'icona di ciascun nodo indica se il nodo è connesso o se sono presenti avvisi attivi.
+
+
+
+== Icone di stato della connessione
+
+Se un nodo viene disconnesso dalla griglia, la vista ad albero mostra un'icona di stato della connessione blu o grigia, non l'icona per gli avvisi sottostanti.
+
+* *Non connesso - Sconosciuto* image:../media/icon_alarm_blue_unknown.png["icona del punto interrogativo blu"]: Il nodo non è connesso alla rete per un motivo sconosciuto. Ad esempio, la connessione di rete tra i nodi è stata persa o l'alimentazione è inattiva. Potrebbe essere attivato anche l'avviso *Impossibile comunicare con il nodo*. Potrebbero essere attivi anche altri avvisi. Questa situazione richiede un'attenzione immediata.
++
+
+NOTE: Un nodo potrebbe apparire come sconosciuto durante le operazioni di shutdown gestite. In questi casi, è possibile ignorare lo stato Unknown (Sconosciuto).
+
+* *Non connesso - amministrazione non attiva* image:../media/icon_alarm_gray_administratively_down.png["icona del punto interrogativo grigio"]: Il nodo non è connesso alla rete per un motivo previsto. Ad esempio, il nodo o i servizi sul nodo sono stati normalmente spenti, il nodo è in fase di riavvio o il software è in fase di aggiornamento. Potrebbero essere attivi anche uno o più avvisi.
+
+
+
+
+== Icone di avviso
+
+Se un nodo è connesso alla griglia, la vista ad albero mostra una delle seguenti icone, a seconda della presenza di avvisi correnti per il nodo.
+
+* *Critico* image:../media/icon_alert_red_critical.png["Icona Avviso rosso critico"]: Si verifica una condizione anomala che ha interrotto le normali operazioni di un nodo o servizio StorageGRID. È necessario risolvere immediatamente il problema sottostante. Se il problema non viene risolto, potrebbero verificarsi interruzioni del servizio e perdita di dati.
+* *Maggiore* image:../media/icon_alert_orange_major.png["Icona Alert arancione maggiore"]: Si verifica una condizione anomala che influisce sulle operazioni correnti o si avvicina alla soglia per un avviso critico. È necessario analizzare gli avvisi principali e risolvere eventuali problemi sottostanti per assicurarsi che le condizioni anomale non interrompano il normale funzionamento di un nodo o servizio StorageGRID.
+* *Minore* image:../media/icon_alert_yellow_miinor.png["Icona Avviso giallo minore"]: Il sistema funziona normalmente, ma si verifica una condizione anomala che potrebbe influire sulla capacità di funzionamento del sistema se continua a funzionare. È necessario monitorare e risolvere gli avvisi minori che non vengono risolti da soli per assicurarsi che non causino problemi più gravi.
+* *Normale* image:../media/icon_alert_green_checkmark.png["icona di avviso segno di spunta verde"]: Non sono attivi avvisi e il nodo è connesso alla rete.
+
+
+
+
+== Visualizzazione dei dettagli di un sistema, sito o nodo
+
+Per visualizzare le informazioni disponibili, fare clic sui collegamenti appropriati a sinistra, come indicato di seguito:
+
+* Selezionare il nome della griglia per visualizzare un riepilogo aggregato delle statistiche per l'intero sistema StorageGRID. (La schermata mostra un sistema denominato implementazione StorageGRID).
+* Selezionare un sito specifico del data center per visualizzare un riepilogo aggregato delle statistiche per tutti i nodi del sito.
+* Selezionare un nodo specifico per visualizzare informazioni dettagliate relative a tale nodo.
+
+
+.Informazioni correlate
+link:../monitor/index.html["Monitor  risoluzione dei problemi"]

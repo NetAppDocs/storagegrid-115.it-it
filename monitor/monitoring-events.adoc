@@ -1,0 +1,49 @@
+---
+permalink: monitor/monitoring-events.html 
+sidebar: sidebar 
+keywords: monitor, monitoring events, events, storageGRID events 
+summary: 'È possibile monitorare gli eventi rilevati da un nodo grid, inclusi gli eventi personalizzati creati per tenere traccia degli eventi registrati nel server syslog. Il messaggio Last Event (ultimo evento) visualizzato in Grid Manager fornisce ulteriori informazioni sull"evento più recente.' 
+---
+= Monitoraggio degli eventi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile monitorare gli eventi rilevati da un nodo grid, inclusi gli eventi personalizzati creati per tenere traccia degli eventi registrati nel server syslog. Il messaggio Last Event (ultimo evento) visualizzato in Grid Manager fornisce ulteriori informazioni sull'evento più recente.
+
+I messaggi degli eventi sono elencati anche in `/var/local/log/bycast-err.log` file di log.
+
+L'allarme SMTT (Total events) può essere ripetutamente attivato da problemi come problemi di rete, interruzioni di corrente o aggiornamenti. Questa sezione contiene informazioni sull'analisi degli eventi, in modo da comprendere meglio il motivo per cui si sono verificati questi allarmi. Se un evento si è verificato a causa di un problema noto, è possibile ripristinare i contatori degli eventi in tutta sicurezza.
+
+
+
+== Revisione degli eventi dalla pagina nodi
+
+La pagina Nodes (nodi) elenca gli eventi di sistema per ciascun nodo della griglia.
+
+. Selezionare *nodi*.
+. Selezionare *_grid node_* *Events*.
+. Nella parte superiore della pagina, determinare se viene visualizzato un evento per *ultimo evento*, che descrive l'ultimo evento rilevato dal nodo della griglia.
++
+L'evento viene inoltrato verbatim dal nodo grid e include tutti i messaggi di log con un livello di gravità DI ERRORE o CRITICO.
+
+. Esaminare la tabella per verificare se il conteggio per qualsiasi evento o errore non è pari a zero.
+. Dopo aver risolto i problemi, fare clic su *Reset event count* (Ripristina conteggi eventi) per azzerare i conteggi.
+
+
+
+
+== Revisione degli eventi dalla pagina Grid Topology (topologia griglia)
+
+La pagina Grid Topology (topologia griglia) elenca anche gli eventi di sistema per ciascun nodo della griglia.
+
+. Selezionare *supporto* > *Strumenti* > *topologia griglia*.
+. Selezionare *_Site_* *_Grid Node_* *SSM* *Eventi* *Panoramica* *principale*.
+
+
+.Informazioni correlate
+link:resetting-event-counts.html["Reimpostazione dei conteggi degli eventi"]
+
+link:../monitor/logs-files-reference.html["Riferimenti ai file di log"]

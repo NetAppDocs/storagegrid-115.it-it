@@ -1,0 +1,93 @@
+---
+permalink: troubleshoot/troubleshooting-object-and-storage-issues.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile eseguire diverse attività per determinare l"origine dei problemi di storage e oggetti.' 
+---
+= Risoluzione dei problemi relativi a oggetti e storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile eseguire diverse attività per determinare l'origine dei problemi di storage e oggetti.
+
+
+
+== Conferma delle posizioni dei dati degli oggetti
+
+A seconda del problema, potrebbe essere necessario confermare la posizione in cui vengono memorizzati i dati dell'oggetto. Ad esempio, è possibile verificare che il criterio ILM funzioni come previsto e che i dati degli oggetti vengano memorizzati dove previsto.
+
+.Di cosa hai bisogno
+* È necessario disporre di un identificatore di oggetto, che può essere uno dei seguenti:
++
+** *UUID*: Identificativo universalamente univoco dell'oggetto. Inserire l'UUID in tutte le lettere maiuscole.
+** *CBID*: Identificatore univoco dell'oggetto all'interno di StorageGRID . È possibile ottenere il CBID di un oggetto dal log di audit. Inserire il CBID in tutte le lettere maiuscole.
+** *S3 bucket e chiave oggetto*: Quando un oggetto viene acquisito tramite l'interfaccia S3, l'applicazione client utilizza una combinazione di bucket e chiave oggetto per memorizzare e identificare l'oggetto.
+** *Swift container and object name*: Quando un oggetto viene acquisito tramite l'interfaccia Swift, l'applicazione client utilizza una combinazione di container e object name per memorizzare e identificare l'oggetto.
+
+
+
+
+.Fasi
+. Selezionare *ILM* > *Object Metadata Lookup*.
+. Digitare l'identificativo dell'oggetto nel campo *Identifier*.
++
+È possibile immettere UUID, CBID, S3 bucket/object-key o Swift container/object-name.
+
++
+image::../media/object_lookup.png[Pagina Object Lookup (Ricerca oggetto)]
+
+. Fare clic su *Cerca*.
++
+Vengono visualizzati i risultati della ricerca dei metadati dell'oggetto. In questa pagina sono elencati i seguenti tipi di informazioni:
+
++
+** Metadati di sistema, tra cui l'ID oggetto (UUID), il nome dell'oggetto, il nome del contenitore, il nome o l'ID dell'account tenant, la dimensione logica dell'oggetto, la data e l'ora in cui l'oggetto è stato creato per la prima volta e la data e l'ora dell'ultima modifica dell'oggetto.
+** Qualsiasi coppia di valori chiave metadati utente personalizzata associata all'oggetto.
+** Per gli oggetti S3, qualsiasi coppia chiave-valore tag oggetto associata all'oggetto.
+** Per le copie di oggetti replicate, la posizione di storage corrente di ciascuna copia.
+** Per le copie di oggetti con codifica erasure, la posizione di storage corrente di ciascun frammento.
+** Per le copie di oggetti in un Cloud Storage Pool, la posizione dell'oggetto, incluso il nome del bucket esterno e l'identificatore univoco dell'oggetto.
+** Per oggetti segmentati e multiparte, un elenco di segmenti di oggetti che include identificatori di segmenti e dimensioni dei dati. Per gli oggetti con più di 100 segmenti, vengono visualizzati solo i primi 100 segmenti.
+** Tutti i metadati degli oggetti nel formato di storage interno non elaborato. Questi metadati raw includono metadati interni del sistema che non sono garantiti per la persistenza dalla release alla release.
++
+Nell'esempio seguente vengono illustrati i risultati della ricerca dei metadati degli oggetti per un oggetto di test S3 memorizzato come due copie replicate.
+
+
+
++
+image::../media/object_lookup_results.png[Risultati della ricerca di oggetti]
+
+
+
+.Informazioni correlate
+link:../ilm/index.html["Gestire gli oggetti con ILM"]
+
+link:../s3/index.html["Utilizzare S3"]
+
+link:../swift/index.html["USA Swift"]
+
+
+
+== Errori dell'archivio di oggetti (volume di storage)
+
+Lo storage sottostante su un nodo di storage è diviso in archivi di oggetti. Questi archivi di oggetti sono partizioni fisiche che fungono da punti di montaggio per lo storage del sistema StorageGRID. Gli archivi di oggetti sono anche noti come volumi di storage.
+
+È possibile visualizzare le informazioni sull'archivio di oggetti per ciascun nodo di storage. Gli archivi di oggetti sono visualizzati nella parte inferiore della pagina *Node* *_Storage Node_* *Storage*.
+
+image::../media/nodes_page_storage_nodes_storage_tables.png[Tabelle di storage dei nodi della pagina Storage Node]
+
+Per ulteriori informazioni su ciascun nodo di storage, attenersi alla seguente procedura:
+
+. Selezionare *supporto* > *Strumenti* > *topologia griglia*.
+. Selezionare *_Site_* *_Storage Node_* *LDR* *Storage* *Overview* *Main*.
+
+
+image::../media/storage_node_object_stores.png[Archivio di oggetti del nodo di storage]
+
+A seconda della natura del guasto, gli errori di un volume di storage potrebbero essere riflessi in un allarme sullo stato di storage o sullo stato di un archivio di oggetti. In caso di guasto di un volume di storage, è necessario riparare il volume di storage guasto per ripristinare la funzionalità completa del nodo di storage il prima possibile. Se necessario, accedere alla scheda *Configurazione* e posizionare il nodo di storage in uno stato di sola lettura‐in modo che il sistema StorageGRID possa utilizzarlo per il recupero dei dati mentre si prepara per un ripristino completo del server.
+
+.Informazioni correlate
+link:../maintain/index.html["Mantieni  Ripristina"]

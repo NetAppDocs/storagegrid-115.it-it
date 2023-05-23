@@ -1,0 +1,109 @@
+---
+permalink: tenant/understanding-tenant-management-api.html 
+sidebar: sidebar 
+keywords: StorageGRID, tenant management api, tenant api 
+summary: 'È possibile eseguire attività di gestione del sistema utilizzando l"API REST di Tenant Management invece dell"interfaccia utente di Tenant Manager. Ad esempio, è possibile utilizzare l"API per automatizzare le operazioni o creare più entità, ad esempio gli utenti, più rapidamente.' 
+---
+= Informazioni sull'API di gestione del tenant
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile eseguire attività di gestione del sistema utilizzando l'API REST di Tenant Management invece dell'interfaccia utente di Tenant Manager. Ad esempio, è possibile utilizzare l'API per automatizzare le operazioni o creare più entità, ad esempio gli utenti, più rapidamente.
+
+L'API di gestione tenant utilizza la piattaforma API open source Swagger. Swagger offre un'interfaccia utente intuitiva che consente a sviluppatori e non sviluppatori di interagire con l'API. L'interfaccia utente di Swagger fornisce dettagli completi e documentazione per ogni operazione API.
+
+Per accedere alla documentazione Swagger per l'API di gestione tenant:
+
+.Fasi
+. Accedi al tenant manager.
+. Selezionare *Help* > *API Documentation* dall'intestazione di Tenant Manager.
+
+
+
+
+== Operazioni API
+
+L'API di gestione tenant organizza le operazioni API disponibili nelle seguenti sezioni:
+
+* *Account* -- operazioni sull'account tenant corrente, incluso il recupero delle informazioni sull'utilizzo dello storage.
+* *Auth* -- operazioni per eseguire l'autenticazione della sessione utente.
++
+L'API di gestione tenant supporta lo schema di autenticazione del token del bearer. Per l'accesso del tenant, immettere un nome utente, una password e un ID account nel corpo JSON della richiesta di autenticazione (ovvero `POST /api/v3/authorize`). Se l'utente viene autenticato correttamente, viene restituito un token di sicurezza. Questo token deve essere fornito nell'intestazione delle richieste API successive ("autorizzazione: Token portante").
+
++
+Per informazioni su come migliorare la sicurezza dell'autenticazione, consultare "`Protecting Against Cross-Site Request Fjery`".
+
++
+
+NOTE: Se per il sistema StorageGRID è attivato il Single Sign-on (SSO), è necessario eseguire diversi passaggi per l'autenticazione. Consultare "`Authenticating in to the API if single sign-on is enabled`" nelle istruzioni per l'amministrazione di StorageGRID.
+
+* *Config* -- operazioni relative alla release del prodotto e alle versioni dell'API di gestione tenant. È possibile elencare la versione di release del prodotto e le principali versioni dell'API supportate da tale release.
+* *Containers* -- operazioni su bucket S3 o container Swift, come segue:
++
+[cols="1a,3a"]
+|===
+| Protocollo | Permesso consentito 
+
+
+ a| 
+S3
+ a| 
+** Creazione di bucket conformi e non conformi
+** Modifica delle impostazioni di compliance legacy
+** Impostazione del controllo di coerenza per le operazioni eseguite sugli oggetti
+** Creazione, aggiornamento ed eliminazione della configurazione CORS di un bucket
+** Attivazione e disattivazione degli ultimi aggiornamenti dell'orario di accesso per gli oggetti
+** Gestione delle impostazioni di configurazione per i servizi della piattaforma, tra cui replica CloudMirror, notifiche e integrazione della ricerca (notifica dei metadati)
+** Eliminazione di bucket vuoti
+
+
+
+
+ a| 
+Rapido
+ a| 
+Impostazione del livello di coerenza utilizzato per i container
+
+|===
+* *Disattivato-funzioni* -- operazioni per visualizzare le funzioni che potrebbero essere state disattivate.
+* *Endpoint* -- operazioni per gestire un endpoint. Gli endpoint consentono a un bucket S3 di utilizzare un servizio esterno per la replica, le notifiche o l'integrazione della ricerca di StorageGRID CloudMirror.
+* *Groups* -- operazioni per gestire gruppi di tenant locali e recuperare gruppi di tenant federati da un'origine di identità esterna.
+* *Identity-source* -- operazioni per configurare un'origine di identità esterna e sincronizzare manualmente le informazioni di utenti e gruppi federati.
+* *Regioni* -- operazioni per determinare quali regioni sono state configurate per il sistema StorageGRID.
+* *s3* -- operazioni per gestire le chiavi di accesso S3 per gli utenti del tenant.
+* *s3-Object-lock* -- operazioni per determinare la modalità di configurazione del blocco oggetti S3 globale (compliance) per il sistema StorageGRID.
+* *Utenti* -- operazioni per visualizzare e gestire gli utenti del tenant.
+
+
+
+
+== Dettagli dell'operazione
+
+Quando si espandono le operazioni API, è possibile visualizzare l'azione HTTP, l'URL dell'endpoint, un elenco di eventuali parametri obbligatori o facoltativi, un esempio del corpo della richiesta (se necessario) e le possibili risposte.
+
+image::../media/tenant_api_swagger_example.gif[Esempio che mostra l'operazione GET groups nell'API Swagger]
+
+
+
+== Invio di richieste API
+
+
+IMPORTANT: Tutte le operazioni API eseguite utilizzando la pagina web API Docs sono operazioni live. Fare attenzione a non creare, aggiornare o eliminare per errore i dati di configurazione o altri dati.
+
+.Fasi
+. Fare clic sull'azione HTTP per visualizzare i dettagli della richiesta.
+. Determinare se la richiesta richiede parametri aggiuntivi, ad esempio un ID utente o un gruppo. Quindi, ottenere questi valori. Potrebbe essere necessario emettere prima una richiesta API diversa per ottenere le informazioni necessarie.
+. Determinare se è necessario modificare il corpo della richiesta di esempio. In tal caso, fare clic su *Model* per conoscere i requisiti di ciascun campo.
+. Fare clic su *Provalo*.
+. Fornire i parametri richiesti o modificare il corpo della richiesta secondo necessità.
+. Fare clic su *Execute* (Esegui).
+. Esaminare il codice di risposta per determinare se la richiesta ha avuto esito positivo.
+
+
+.Informazioni correlate
+link:protecting-against-cross-site-request-forgery-csrf.html["Protezione contro la contraffazione delle richieste (CSRF)"]
+
+link:../admin/index.html["Amministrare StorageGRID"]

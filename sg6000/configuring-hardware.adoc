@@ -1,0 +1,23 @@
+---
+permalink: sg6000/configuring-hardware.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, hardware, configure, configuration, set up, setup, network, networking 
+summary: 'Dopo aver alimentato l"appliance, è necessario configurare le connessioni di rete che verranno utilizzate da StorageGRID. È necessario configurare Gestore di sistema di SANtricity, che è il software che verrà utilizzato per monitorare i controller di storage e altro hardware nello shelf del controller. È inoltre necessario assicurarsi di poter accedere all"interfaccia BMC del controller SG6000-CN.' 
+---
+= Configurazione dell'hardware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dopo aver alimentato l'appliance, è necessario configurare le connessioni di rete che verranno utilizzate da StorageGRID. È necessario configurare Gestore di sistema di SANtricity, che è il software che verrà utilizzato per monitorare i controller di storage e altro hardware nello shelf del controller. È inoltre necessario assicurarsi di poter accedere all'interfaccia BMC del controller SG6000-CN.
+
+.Fasi
+* link:configuring-storagegrid-connections.html["Configurazione delle connessioni StorageGRID"]
+* link:accessing-and-configuring-santricity-system-manager.html["Accesso e configurazione di Gestore di sistema di SANtricity"]
+* link:configuring-bmc-interface-sg6000.html["Configurazione dell'interfaccia BMC"]
+* link:optional-enabling-node-encryption.html["Opzionale: Attivazione della crittografia del nodo"]
+* link:optional-changing-raid-mode-sg6000-only.html["Opzionale: Modifica della modalità RAID (solo SG6000)"]
+* link:optional-remapping-network-ports-for-appliance-sg6000.html["Opzionale: Rimappatura delle porte di rete per l'appliance"]
+

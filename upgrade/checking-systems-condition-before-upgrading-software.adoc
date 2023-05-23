@@ -1,0 +1,50 @@
+---
+permalink: upgrade/checking-systems-condition-before-upgrading-software.html 
+sidebar: sidebar 
+keywords: upgrade, firewall, ports 
+summary: 'Prima di aggiornare un sistema StorageGRID, è necessario verificare che il sistema sia pronto per l"aggiornamento. È necessario assicurarsi che il sistema funzioni correttamente e che tutti i nodi della griglia siano operativi.' 
+---
+= Verifica delle condizioni del sistema prima dell'aggiornamento del software
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di aggiornare un sistema StorageGRID, è necessario verificare che il sistema sia pronto per l'aggiornamento. È necessario assicurarsi che il sistema funzioni correttamente e che tutti i nodi della griglia siano operativi.
+
+.Fasi
+. Accedere a Grid Manager utilizzando un browser supportato.
+. Verificare la presenza di eventuali avvisi attivi e risolverli.
++
+Per informazioni su avvisi specifici, consultare le istruzioni per il monitoraggio e la risoluzione dei problemi.
+
+. Verificare che non vi siano attività della griglia in conflitto attive o in sospeso.
++
+.. Selezionare *supporto* > *Strumenti* > *topologia griglia*.
+.. Selezionare *_Site_* > *_Primary Admin Node_* > *CMN* > *Grid Tasks* > *Configuration*.
++
+I task ILME (Information Lifecycle Management Evaluation) sono gli unici task grid che possono essere eseguiti contemporaneamente all'aggiornamento del software.
+
+.. Se altre attività della griglia sono attive o in sospeso, attendere il completamento o rilasciare il blocco.
++
+
+NOTE: Contattare il supporto tecnico se un'attività non termina o non rilascia il blocco.
+
+
+
+. Fare riferimento agli elenchi delle porte interne ed esterne nella versione 11.5 delle linee guida per il collegamento in rete e assicurarsi che tutte le porte richieste siano aperte prima di eseguire l'aggiornamento.
++
+
+IMPORTANT: Se sono state aperte porte firewall personalizzate, viene inviata una notifica durante la verifica preliminare dell'aggiornamento. È necessario contattare il supporto tecnico prima di procedere con l'aggiornamento.
+
+
+
+.Informazioni correlate
+link:../monitor/index.html["Monitor  risoluzione dei problemi"]
+
+link:../admin/index.html["Amministrare StorageGRID"]
+
+link:../maintain/index.html["Mantieni  Ripristina"]
+
+link:../network/index.html["Linee guida per la rete"]

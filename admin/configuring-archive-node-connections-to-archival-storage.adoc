@@ -1,0 +1,25 @@
+---
+permalink: admin/configuring-archive-node-connections-to-archival-storage.html 
+sidebar: sidebar 
+keywords:  
+summary: Quando si configura un nodo di archiviazione per la connessione a un archivio esterno, è necessario selezionare il tipo di destinazione. 
+---
+= Configurazione delle connessioni del nodo di archiviazione allo storage di archiviazione
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando si configura un nodo di archiviazione per la connessione a un archivio esterno, è necessario selezionare il tipo di destinazione.
+
+Il sistema StorageGRID supporta l'archiviazione dei dati a oggetti nel cloud tramite un'interfaccia S3 o su nastro tramite il middleware TSM (Tivoli Storage Manager).
+
+
+NOTE: Una volta configurato il tipo di destinazione di archiviazione per un nodo di archiviazione, il tipo di destinazione non può essere modificato.
+
+* link:archiving-to-cloud-through-s3-api.html["Archiviazione nel cloud tramite l'API S3"]
+* link:archiving-to-tape-through-tsm-middleware.html["Archiviazione su nastro tramite middleware TSM"]
+* link:configuring-archive-node-retrieve-settings.html["Configurazione delle impostazioni di recupero del nodo di archiviazione"]
+* link:configuring-archive-node-replication.html["Configurazione della replica del nodo di archiviazione"]
+

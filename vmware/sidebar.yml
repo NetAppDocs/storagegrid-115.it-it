@@ -1,0 +1,78 @@
+---
+section: vmware
+title: Installare VMware
+url: "/vmware/index.html"
+entries:
+- title: Panoramica dell'installazione
+  url: "/vmware/installation-overview.html"
+- title: Pianificazione e preparazione
+  url: "/vmware/planning-and-preparation.html"
+  entries:
+  - title: Materiali richiesti
+    url: "/vmware/required-materials.html"
+  - title: Download ed estrazione dei file di installazione di StorageGRID
+    url: "/vmware/downloading-and-extracting-storagegrid-installation-files.html"
+  - title: Requisiti software
+    url: "/vmware/software-requirements.html"
+  - title: Requisiti di CPU e RAM
+    url: "/vmware/cpu-and-ram-requirements.html"
+  - title: Requisiti di storage e performance
+    url: "/vmware/storage-and-performance-requirements.html"
+  - title: Requisiti del browser Web
+    url: "/vmware/web-browser-requirements.html"
+- title: Implementazione di nodi grid di macchine virtuali in VMware vSphere Web Client
+  url: "/vmware/deploying-virtual-machine-grid-nodes-in-vmware-vsphere-web-client.html"
+  entries:
+  - title: Raccolta di informazioni sull'ambiente di implementazione
+    url: "/vmware/collecting-information-about-your-deployment-environment.html"
+  - title: In che modo i nodi della griglia rilevano il nodo di amministrazione primario
+    url: "/vmware/how-grid-nodes-discover-primary-admin-node.html"
+  - title: Implementazione di un nodo StorageGRID come macchina virtuale
+    url: "/vmware/deploying-storagegrid-node-as-virtual-machine.html"
+- title: Configurazione della griglia e completamento dell'installazione
+  url: "/vmware/configuring-grid-and-completing-installation.html"
+  entries:
+  - title: Accedere a Grid Manager
+    url: "/vmware/navigating-to-grid-manager.html"
+  - title: Specifica delle informazioni di licenza StorageGRID
+    url: "/vmware/specifying-storagegrid-license-information.html"
+  - title: Aggiunta di siti
+    url: "/vmware/adding-sites.html"
+  - title: Specifica delle subnet Grid Network
+    url: "/vmware/specifying-grid-network-subnets.html"
+  - title: Approvazione dei nodi griglia in sospeso
+    url: "/vmware/approving-pending-grid-nodes.html"
+  - title: Specifica delle informazioni del server Network Time Protocol
+    url: "/vmware/specifying-network-time-protocol-server-information.html"
+  - title: Specifica delle informazioni sul server Domain Name System
+    url: "/vmware/specifying-domain-name-system-server-information.html"
+  - title: Specifica delle password di sistema di StorageGRID
+    url: "/vmware/specifying-storagegrid-system-passwords.html"
+  - title: Verifica della configurazione e completamento dell'installazione
+    url: "/vmware/reviewing-your-configuration-and-completing-installation.html"
+  - title: Linee guida per la post-installazione
+    url: "/vmware/post-installation-guidelines.html"
+- title: Automazione dell'installazione
+  url: "/vmware/automating-installation.html"
+  entries:
+  - title: Automazione dell'implementazione dei nodi grid in VMware vSphere
+    url: "/vmware/automating-grid-node-deployment-in-vmware-vsphere.html"
+    entries:
+    - title: Definizione del file di configurazione per l'implementazione
+      url: "/vmware/defining-configuration-file-for-your-deployment.html"
+      entries:
+      - title: Impostazioni del file di configurazione
+        url: "/vmware/configuration-file-settings.html"
+    - title: Esecuzione dello script Bash
+      url: "/vmware/running-bash-script.html"
+  - title: Automazione della configurazione di StorageGRID
+    url: "/vmware/automating-configuration-of-storagegrid.html"
+- title: Panoramica dell'API REST per l'installazione
+  url: "/vmware/overview-of-installation-rest-api.html"
+- title: Dove andare
+  url: "/vmware/where-to-go-next.html"
+- title: Risoluzione dei problemi di installazione
+  url: "/vmware/troubleshooting-installation-issues.html"
+  entries:
+  - title: La prenotazione delle risorse delle macchine virtuali richiede una modifica
+    url: "/vmware/virtual-machine-resource-reservation-requires-adjustment.html"

@@ -1,0 +1,114 @@
+---
+permalink: admin/creating-high-availability-group.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile creare uno o più gruppi ad alta disponibilità per fornire l"accesso altamente disponibile ai servizi sui nodi Admin o Gateway.' 
+---
+= Creazione di un gruppo ad alta disponibilità
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile creare uno o più gruppi ad alta disponibilità (ha) per fornire un accesso altamente disponibile ai servizi sui nodi Admin o Gateway.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre dell'autorizzazione di accesso root.
+
+
+.A proposito di questa attività
+Un'interfaccia deve soddisfare le seguenti condizioni per essere inclusa in un gruppo ha:
+
+* L'interfaccia deve essere per un nodo gateway o un nodo amministratore.
+* L'interfaccia deve appartenere alla Grid Network (eth0) o alla Client Network (eth2).
+* L'interfaccia deve essere configurata con indirizzi IP fissi o statici, non con DHCP.
+
+
+.Fasi
+. Selezionare *Configurazione* > *Impostazioni di rete* > *gruppi ad alta disponibilità*.
++
+Viene visualizzata la pagina High Availability Groups.
+
++
+image::../media/ha_groups_page_with_no_groups.png[Pagina GRUPPI HA senza gruppi]
+
+. Fare clic su *Create* (Crea).
++
+Viene visualizzata la finestra di dialogo Crea gruppo ad alta disponibilità.
+
+. Digitare un nome e, se si desidera, una descrizione per il gruppo ha.
+. Fare clic su *Select Interfaces* (Seleziona interfacce).
++
+Viene visualizzata la finestra di dialogo Add Interfaces to High Availability Group. La tabella elenca nodi, interfacce e subnet IPv4 idonee.
+
++
+image::../media/ha_group_add_interfaces.png[Gruppi HA Aggiungi interfacce]
+
++
+Se il relativo indirizzo IP è assegnato da DHCP, l'interfaccia non viene visualizzata nell'elenco.
+
+. Nella colonna *Aggiungi al gruppo ha*, selezionare la casella di controllo dell'interfaccia che si desidera aggiungere al gruppo ha.
++
+Attenersi alle seguenti linee guida per la selezione delle interfacce:
+
++
+** Selezionare almeno un'interfaccia.
+** Se si seleziona più di un'interfaccia, tutte le interfacce devono trovarsi sulla rete griglia (eth0) o sulla rete client (eth2).
+** Tutte le interfacce devono trovarsi nella stessa subnet o in subnet con un prefisso comune.
++
+Gli indirizzi IP saranno limitati alla subnet più piccola (quella con il prefisso più grande).
+
+** Se si selezionano interfacce su diversi tipi di nodi e si verifica un failover, solo i servizi comuni ai nodi selezionati saranno disponibili sugli IP virtuali.
++
+*** Selezionare due o più nodi di amministrazione per la protezione ha di Grid Manager o di Tenant Manager.
+*** Selezionare due o più nodi di amministrazione, nodi gateway o entrambi per la protezione ha del servizio Load Balancer.
+*** Selezionare due o più nodi gateway per la protezione ha del servizio CLB.
++
+
+NOTE: Il servizio CLB è obsoleto.
+
+
+
+
+
++
+image::../media/ha_groups_different_node_types.png[HA gruppi diversi tipi di nodi]
+
+. Fare clic su *Apply* (Applica).
++
+Le interfacce selezionate sono elencate nella sezione interfacce della pagina Crea gruppo ad alta disponibilità. Per impostazione predefinita, la prima interfaccia dell'elenco viene selezionata come Master preferito.
+
++
+image::../media/ha_group_select_virtual_ips.png[GRUPPI HA: Selezionare IP virtuali]
+
+. Se si desidera che un'interfaccia diversa sia la master preferita, selezionare tale interfaccia nella colonna *Master preferito*.
++
+Preferred Master è l'interfaccia attiva a meno che non si verifichi un errore che causa la riassegnazione degli indirizzi VIP a un'interfaccia di backup.
+
++
+
+NOTE: Se il gruppo ha fornisce l'accesso a Grid Manager, è necessario selezionare un'interfaccia sul nodo di amministrazione primario come master preferito. Alcune procedure di manutenzione possono essere eseguite solo dal nodo di amministrazione primario.
+
+. Nella sezione Virtual IP Addresses (indirizzi IP virtuali) della pagina, immettere da uno a 10 indirizzi IP virtuali per il gruppo ha. Fare clic sul segno più (image:../media/icon_plus_sign_black_on_white_old.png["Segno più"]) Per aggiungere più indirizzi IP.
++
+Specificare almeno un indirizzo IPv4. In alternativa, è possibile specificare ulteriori indirizzi IPv4 e IPv6.
+
++
+Gli indirizzi IPv4 devono trovarsi all'interno della subnet IPv4 condivisa da tutte le interfacce membri.
+
+. Fare clic su *Save* (Salva).
++
+Viene creato il gruppo ha ed è ora possibile utilizzare gli indirizzi IP virtuali configurati.
+
+
+
+.Informazioni correlate
+link:../rhel/index.html["Installare Red Hat Enterprise Linux o CentOS"]
+
+link:../vmware/index.html["Installare VMware"]
+
+link:../ubuntu/index.html["Installare Ubuntu o Debian"]
+
+link:managing-load-balancing.html["Gestione del bilanciamento del carico"]

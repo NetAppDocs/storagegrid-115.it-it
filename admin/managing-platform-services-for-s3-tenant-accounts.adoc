@@ -1,0 +1,20 @@
+---
+permalink: admin/managing-platform-services-for-s3-tenant-accounts.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Se si abilitano i servizi della piattaforma per gli account tenant S3, è necessario configurare il grid in modo che i tenant possano accedere alle risorse esterne necessarie per l"utilizzo di questi servizi.' 
+---
+= Gestione dei servizi della piattaforma per gli account tenant S3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se si abilitano i servizi della piattaforma per gli account tenant S3, è necessario configurare il grid in modo che i tenant possano accedere alle risorse esterne necessarie per l'utilizzo di questi servizi.
+
+* link:what-platform-services-are.html["Quali sono i servizi della piattaforma"]
+* link:networking-and-ports-for-platform-services.html["Networking e porte per i servizi della piattaforma"]
+* link:per-site-delivery-of-platform-services-messages.html["Erogazione per sito di messaggi relativi ai servizi della piattaforma"]
+* link:troubleshooting-platform-services.html["Risoluzione dei problemi relativi ai servizi della piattaforma"]
+

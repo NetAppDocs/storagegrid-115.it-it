@@ -1,0 +1,42 @@
+---
+permalink: ilm/how-objects-are-ingested.html 
+sidebar: sidebar 
+keywords:  
+summary: 'StorageGRID protegge gli oggetti durante l"acquisizione eseguendo il posizionamento sincrono o eseguendo il commit doppio, come specificato nella regola ILM che corrisponde agli oggetti.' 
+---
+= Modalità di acquisizione degli oggetti
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID protegge gli oggetti durante l'acquisizione eseguendo il posizionamento sincrono o eseguendo il commit doppio, come specificato nella regola ILM che corrisponde agli oggetti.
+
+Quando un client S3 o Swift memorizza un oggetto nella griglia, StorageGRID acquisisce l'oggetto utilizzando uno dei due metodi seguenti:
+
+* *Posizionamento sincrono*: StorageGRID crea immediatamente tutte le copie degli oggetti necessarie per soddisfare i requisiti ILM. StorageGRID invia un messaggio "`ingest Successful`" al client al momento della creazione di tutte le copie.
++
+Se StorageGRID non riesce a creare immediatamente tutte le copie degli oggetti (ad esempio, perché una posizione richiesta non è temporaneamente disponibile), invia un messaggio "`ingest failed`" al client, In alternativa, è possibile creare copie temporanee degli oggetti e valutare ILM in un secondo momento, a seconda della scelta effettuata al momento della creazione della regola ILM.
+
+* *Doppio commit*: StorageGRID crea immediatamente due copie temporanee dell'oggetto, ciascuna su un nodo di storage diverso, e invia un messaggio "`acquisizione riuscita`" al client. StorageGRID inserisce quindi in coda l'oggetto per la valutazione ILM.
++
+Quando StorageGRID esegue la valutazione ILM, verifica innanzitutto se le copie intermedie soddisfano le istruzioni di posizionamento della regola ILM. Ad esempio, le due copie intermedie potrebbero soddisfare le istruzioni di una regola ILM a due copie, ma non soddisferebbero le istruzioni di una regola di erasure coding. Se le copie intermedie non soddisfano le istruzioni ILM, StorageGRID crea nuove copie a oggetti ed elimina le copie temporanee non necessarie.
+
++
+Se StorageGRID non riesce a creare due copie intermedie (ad esempio, se un problema di rete impedisce la creazione della seconda copia), StorageGRID non riprova. L'acquisizione non riesce.
+
++
+
+NOTE: I client S3 o Swift possono specificare che StorageGRID crea una singola copia provvisoria al momento dell'acquisizione specificando `REDUCED_REDUNDANCY` per la classe di storage. Per ulteriori informazioni, consultare le istruzioni per l'implementazione di un client S3 o Swift.
+
+
+
+Per impostazione predefinita, StorageGRID utilizza il posizionamento sincrono per proteggere gli oggetti durante l'acquisizione.
+
+.Informazioni correlate
+link:data-protection-options-for-ingest.html["Opzioni di protezione dei dati per l'acquisizione"]
+
+link:../s3/index.html["Utilizzare S3"]
+
+link:../swift/index.html["USA Swift"]

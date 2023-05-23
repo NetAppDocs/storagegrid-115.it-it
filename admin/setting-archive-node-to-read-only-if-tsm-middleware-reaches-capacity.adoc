@@ -1,0 +1,32 @@
+---
+permalink: admin/setting-archive-node-to-read-only-if-tsm-middleware-reaches-capacity.html 
+sidebar: sidebar 
+keywords:  
+summary: Se il server middleware TSM di destinazione raggiunge la capacità, il nodo di archiviazione può essere ottimizzato per eseguire solo i recuperi. 
+---
+= Impostazione di Archive Node su Read-only se il middleware TSM raggiunge la capacità
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se il server middleware TSM di destinazione raggiunge la capacità, il nodo di archiviazione può essere ottimizzato per eseguire solo i recuperi.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre di autorizzazioni di accesso specifiche.
+
+
+.Fasi
+. Selezionare *supporto* > *Strumenti* > *topologia griglia*.
+. Selezionare *_Archive Node_* *ARC* *Target*.
+. Selezionare *Configurazione* *principale*.
+. Impostare il numero massimo di sessioni di recupero in modo che sia uguale al numero di sessioni simultanee elencate in numero di sessioni.
+. Impostare il numero massimo di sessioni di memorizzazione su 0.
++
+
+NOTE: Se il nodo di archiviazione è di sola lettura, non è necessario modificare il numero massimo di sessioni di archiviazione su 0. Le sessioni del negozio non verranno create.
+
+. Fare clic su *Applica modifiche*.
+

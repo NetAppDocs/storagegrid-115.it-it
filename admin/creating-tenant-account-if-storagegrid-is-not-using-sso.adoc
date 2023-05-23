@@ -1,0 +1,173 @@
+---
+permalink: admin/creating-tenant-account-if-storagegrid-is-not-using-sso.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Quando si crea un account tenant, specificare un nome, un protocollo client e, facoltativamente, una quota di storage. Se StorageGRID non utilizza il single sign-on, è necessario specificare se l"account tenant utilizzerà la propria origine di identità e configurare la password iniziale per l"utente root locale del tenant.' 
+---
+= Creazione di un account tenant se StorageGRID non utilizza SSO
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando si crea un account tenant, specificare un nome, un protocollo client e, facoltativamente, una quota di storage. Se StorageGRID non utilizza SSO (Single Sign-on), è necessario specificare se l'account tenant utilizzerà la propria origine di identità e configurare la password iniziale per l'utente root locale del tenant.
+
+.A proposito di questa attività
+Se l'account tenant utilizza l'origine dell'identità configurata per Grid Manager e si desidera concedere l'autorizzazione di accesso root per l'account tenant a un gruppo federato, è necessario aver importato tale gruppo federated in Grid Manager. Non è necessario assegnare alcuna autorizzazione Grid Manager a questo gruppo di amministratori. Consultare le istruzioni per link:managing-admin-groups.html["gestione dei gruppi di amministratori"].
+
+.Fasi
+. Nella casella di testo *Display Name* (Nome visualizzato), immettere un nome visualizzato per l'account tenant.
++
+I nomi visualizzati non devono essere univoci. Una volta creato, l'account tenant riceve un ID account univoco e numerico.
+
+. Selezionare il protocollo client che verrà utilizzato da questo account tenant, *S3* o *Swift*.
+. Per gli account tenant S3, mantenere la casella di controllo *Allow Platform Services* (Consenti servizi piattaforma) selezionata, a meno che non si desideri che il tenant non utilizzi i servizi della piattaforma per i bucket S3.
++
+Se i servizi della piattaforma sono attivati, un tenant può utilizzare funzionalità, come la replica CloudMirror, che accedono ai servizi esterni. È possibile disattivare l'utilizzo di queste funzioni per limitare la quantità di larghezza di banda di rete o di altre risorse consumate dal tenant. Vedere "`Managing platform Services`".
+
+. Nella casella di testo *quota di storage*, immettere il numero massimo di gigabyte, terabyte o petabyte che si desidera rendere disponibili per gli oggetti del tenant. Quindi, selezionare le unità dall'elenco a discesa.
++
+Lasciare vuoto questo campo se si desidera che il tenant abbia una quota illimitata.
+
++
+
+NOTE: La quota di storage di un tenant rappresenta una quantità logica (dimensione dell'oggetto), non una quantità fisica (dimensione sul disco). Le copie ILM e la codifica di cancellazione non contribuiscono alla quantità di quota utilizzata. Se la quota viene superata, l'account tenant non può creare nuovi oggetti.
+
++
+
+NOTE: Per monitorare l'utilizzo dello storage di ciascun account tenant, selezionare *Usage* (utilizzo). Gli account tenant possono anche monitorare il proprio utilizzo dello storage dalla dashboard in Tenant Manager o con l'API di gestione tenant. Si noti che i valori di utilizzo dello storage di un tenant potrebbero non essere aggiornati se i nodi sono isolati da altri nodi nella griglia. I totali verranno aggiornati al ripristino della connettività di rete.
+
+. Se il tenant gestirà i propri gruppi e utenti, attenersi alla seguente procedura.
++
+.. Selezionare la casella di controllo *utilizza origine identità* (impostazione predefinita).
++
+
+NOTE: Se questa casella di controllo è selezionata e si desidera utilizzare la federazione di identità per gruppi e utenti tenant, il tenant deve configurare la propria origine di identità. Consultare le istruzioni per l'utilizzo degli account tenant.
+
+.. Specificare una password per l'utente root locale del tenant.
+
+
+. Se il tenant utilizza i gruppi e gli utenti configurati per Grid Manager, attenersi alla seguente procedura.
++
+.. Deselezionare la casella di controllo *utilizza origine identità*.
+.. Eseguire una o entrambe le operazioni seguenti:
++
+*** Nel campo Root Access Group (Gruppo di accesso principale), selezionare un gruppo federated esistente da Grid Manager che deve disporre dell'autorizzazione di accesso principale iniziale per il tenant.
++
+
+NOTE: Se si dispone di autorizzazioni adeguate, quando si fa clic sul campo vengono elencati i gruppi federated esistenti di Grid Manager. In caso contrario, immettere il nome univoco del gruppo.
+
+*** Specificare una password per l'utente root locale del tenant.
+
+
+
+
+. Fare clic su *Save* (Salva).
++
+Viene creato l'account tenant.
+
+. In alternativa, accedere al nuovo tenant. In caso contrario, passare al punto per <<STEP_SIGN_IN_LATER,accesso al tenant in un secondo momento>>.
++
+[cols="1a,2a"]
+|===
+| Se sei... | Eseguire questa operazione... 
+
+
+ a| 
+Accesso a Grid Manager su una porta con restrizioni
+ a| 
+Fare clic su *Restricted* per ulteriori informazioni sull'accesso a questo account tenant.
+
+L'URL del tenant manager ha il seguente formato:
+
+`https://_FQDN_or_Admin_Node_IP:port_/?accountId=_20-digit-account-id_/`
+
+** `_FQDN_or_Admin_Node_IP_` È un nome di dominio completo o l'indirizzo IP di un nodo amministratore
+** `_port_` è la porta solo tenant
+** `_20-digit-account-id_` È l'ID account univoco del tenant
+
+
+
+
+ a| 
+Accesso a Grid Manager sulla porta 443 ma non è stata impostata una password per l'utente root locale
+ a| 
+Fare clic su *Accedi* e immettere le credenziali per un utente nel gruppo federated di accesso root.
+
+
+
+ a| 
+Accedendo a Grid Manager sulla porta 443, viene impostata una password per l'utente root locale
+ a| 
+Passare alla fase successiva da a. <<STEP_SIGN_IN_AS_ROOT,accedi come root>>.
+
+|===
+. [[STEP_SIGN_IN_AS_ROOT]]Accedi al tenant come root:
++
+.. Dalla finestra di dialogo Configura account tenant, fare clic sul pulsante *Accedi come root*.
++
+image::../media/configure_tenant_account.gif[Schermata della fase 2 - Configurazione dell'account tenant]
+
++
+Sul pulsante viene visualizzato un segno di spunta verde, a indicare che si è ora effettuato l'accesso all'account tenant come utente root.
+
++
+image::../media/step_2_sign_in_as_root.gif[Accedi come root]
+
+.. Fare clic sui collegamenti per configurare l'account tenant.
++
+Ciascun collegamento apre la pagina corrispondente in Tenant Manager. Per completare la pagina, consultare le istruzioni per l'utilizzo degli account tenant.
+
+.. Fare clic su *fine*.
+
+
+. [[STEP_SIGN_IN_LATER]]per accedere al tenant in un secondo momento:
++
+[cols="1a,2a"]
+|===
+| Se si utilizza... | Eseguire una di queste operazioni... 
+
+
+ a| 
+Porta 443
+ a| 
+** Da Grid Manager, selezionare *tenant* e fare clic su *Sign in* (Accedi) a destra del nome del tenant.
+** Inserire l'URL del tenant in un browser Web:
++
+`https://_FQDN_or_Admin_Node_IP_/?accountId=_20-digit-account-id_/`
+
++
+*** `_FQDN_or_Admin_Node_IP_` È un nome di dominio completo o l'indirizzo IP di un nodo amministratore
+*** `_20-digit-account-id_` È l'ID account univoco del tenant
+
+
+
+
+
+
+ a| 
+Una porta con restrizioni
+ a| 
+** In Grid Manager, selezionare *tenant* e fare clic su *Restricted*.
+** Inserire l'URL del tenant in un browser Web:
++
+`https://_FQDN_or_Admin_Node_IP:port_/?accountId=_20-digit-account-id_`
+
++
+*** `_FQDN_or_Admin_Node_IP_` È un nome di dominio completo o l'indirizzo IP di un nodo amministratore
+*** `_port_` è la porta limitata solo tenant
+*** `_20-digit-account-id_` È l'ID account univoco del tenant
+
+
+
+
+|===
+
+
+.Informazioni correlate
+link:controlling-access-through-firewalls.html["Controllo dell'accesso tramite firewall"]
+
+link:managing-platform-services-for-s3-tenant-accounts.html["Gestione dei servizi della piattaforma per gli account tenant S3"]
+
+link:../tenant/index.html["Utilizzare un account tenant"]

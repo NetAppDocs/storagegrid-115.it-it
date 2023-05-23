@@ -1,0 +1,34 @@
+---
+permalink: admin/configuring-client-connections.html 
+sidebar: sidebar 
+keywords:  
+summary: In qualità di amministratore di grid, gestisci le opzioni di configurazione che controllano il modo in cui i tenant S3 e Swift possono connettere le applicazioni client al sistema StorageGRID per memorizzare e recuperare i dati. Esistono diverse opzioni per soddisfare i diversi requisiti di client e tenant. 
+---
+= Configurazione delle connessioni dei client S3 e Swift
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In qualità di amministratore di grid, gestisci le opzioni di configurazione che controllano il modo in cui i tenant S3 e Swift possono connettere le applicazioni client al sistema StorageGRID per memorizzare e recuperare i dati. Esistono diverse opzioni per soddisfare i diversi requisiti di client e tenant.
+
+Le applicazioni client possono memorizzare o recuperare oggetti connettendosi a una delle seguenti opzioni:
+
+* Il servizio Load Balancer sui nodi Admin o Gateway o, facoltativamente, l'indirizzo IP virtuale di un gruppo ad alta disponibilità (ha) di nodi Admin o nodi Gateway
+* Il servizio CLB sui nodi gateway o, facoltativamente, l'indirizzo IP virtuale di un gruppo ad alta disponibilità di nodi gateway
++
+
+NOTE: Il servizio CLB è obsoleto. I client configurati prima della release StorageGRID 11.3 possono continuare a utilizzare il servizio CLB sui nodi gateway. Tutte le altre applicazioni client che dipendono da StorageGRID per fornire il bilanciamento del carico devono connettersi utilizzando il servizio bilanciamento del carico.
+
+* Nodi di storage, con o senza bilanciamento del carico esterno
+
+
+È possibile configurare le seguenti funzioni sul sistema StorageGRID:
+
+* Servizio *Load Balancer*: Consente ai client di utilizzare il servizio Load Balancer creando endpoint di bilanciamento del carico per le connessioni client. Quando si crea un endpoint di bilanciamento del carico, specificare un numero di porta, se l'endpoint accetta connessioni HTTP o HTTPS, il tipo di client (S3 o Swift) che utilizzerà l'endpoint e il certificato da utilizzare per le connessioni HTTPS (se applicabile).
+* *Untrusted Client Network*: È possibile rendere la rete client più sicura configurandola come non attendibile. Quando la rete client non è attendibile, i client possono connettersi solo utilizzando endpoint di bilanciamento del carico.
+* *Gruppi ad alta disponibilità*: È possibile creare un gruppo ha di nodi gateway o nodi di amministrazione per creare una configurazione di backup attivo oppure utilizzare un DNS round-robin o un bilanciamento del carico di terze parti e più gruppi ha per ottenere una configurazione Active-Active. Le connessioni client vengono eseguite utilizzando gli indirizzi IP virtuali dei gruppi ha.
+
+
+È inoltre possibile abilitare l'utilizzo di HTTP per i client che si connettono a StorageGRID direttamente ai nodi di storage o utilizzando il servizio CLB (obsoleto) ed è possibile configurare i nomi di dominio degli endpoint API S3 per i client S3.

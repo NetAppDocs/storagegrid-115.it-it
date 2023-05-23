@@ -1,0 +1,66 @@
+---
+permalink: admin/configuration-options-for-ha-groups.html 
+sidebar: sidebar 
+keywords:  
+summary: I seguenti diagrammi forniscono esempi di diversi modi per configurare i gruppi ha. Ogni opzione presenta vantaggi e svantaggi. 
+---
+= Opzioni di configurazione per i gruppi ha
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I seguenti diagrammi forniscono esempi di diversi modi per configurare i gruppi ha. Ogni opzione presenta vantaggi e svantaggi.
+
+image::../media/high_availability_examples.png[ESEMPI DI HA]
+
+Quando si creano più gruppi ha sovrapposti, come mostrato nell'esempio Active-Active ha, il throughput totale viene scalato in base al numero di nodi e gruppi ha. Con tre o più nodi e tre o più gruppi ha, puoi anche continuare le operazioni utilizzando uno qualsiasi dei VIP anche durante le procedure di manutenzione che richiedono di portare un nodo offline.
+
+La tabella riassume i vantaggi di ciascuna configurazione ha mostrata nel diagramma.
+
+[cols="1a,1a,1a"]
+|===
+| Configurazione | Vantaggi | Svantaggi 
+
+
+ a| 
+Ha Active-Backup
+ a| 
+* Gestito da StorageGRID senza dipendenze esterne.
+* Failover rapido.
+
+ a| 
+* Solo un nodo in un gruppo ha è attivo. Almeno un nodo per gruppo ha sarà inattivo.
+
+
+
+
+ a| 
+DNS Round Robin
+ a| 
+* Maggiore throughput aggregato.
+* Nessun host inattivo.
+
+ a| 
+* Failover lento, che potrebbe dipendere dal comportamento del client.
+* Richiede la configurazione dell'hardware al di fuori di StorageGRID.
+* Ha bisogno di un controllo dello stato di salute implementato dal cliente.
+
+
+
+
+ a| 
+Attivo-attivo
+ a| 
+* Il traffico viene distribuito tra più gruppi ha.
+* Throughput aggregato elevato che si adatta al numero di gruppi ha.
+* Failover rapido.
+
+ a| 
+* Più complesso da configurare.
+* Richiede la configurazione dell'hardware al di fuori di StorageGRID.
+* Ha bisogno di un controllo dello stato di salute implementato dal cliente.
+
+
+|===

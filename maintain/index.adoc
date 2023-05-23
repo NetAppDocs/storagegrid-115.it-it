@@ -1,0 +1,25 @@
+---
+permalink: maintain/index.html 
+sidebar: sidebar 
+keywords:  
+summary: Scopri come applicare una correzione rapida, ripristinare un nodo di griglia guasto, decommissionare i nodi di griglia e i siti e ripristinare gli oggetti in caso di guasto al sistema. 
+---
+= Mantenere il ripristino
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Scopri come applicare una correzione rapida, ripristinare un nodo di griglia guasto, decommissionare i nodi di griglia e i siti e ripristinare gli oggetti in caso di guasto al sistema.
+
+* link:introduction-to-storagegrid-recovery-and-maintenance.html["Introduzione al ripristino e alla manutenzione di StorageGRID"]
+* link:storagegrid-hotfix-procedure.html["Procedura di hotfix StorageGRID"]
+* link:grid-node-recovery-procedures.html["Procedure di ripristino del nodo Grid"]
+* link:how-site-recovery-is-performed-by-technical-support.html["Come viene eseguito il ripristino del sito dal supporto tecnico"]
+* link:decommission-procedure.html["Procedura di decommissionamento"]
+* link:network-maintenance-procedures.html["Procedure di manutenzione della rete"]
+* link:host-level-and-middleware-procedures.html["Procedure middleware e a livello di host"]
+* link:grid-node-procedures.html["Procedure del nodo di rete"]
+* link:appliance-node-cloning.html["Cloning del nodo dell'appliance"]
+

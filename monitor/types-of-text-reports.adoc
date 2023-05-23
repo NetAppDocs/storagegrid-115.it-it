@@ -1,0 +1,43 @@
+---
+permalink: monitor/types-of-text-reports.html 
+sidebar: sidebar 
+keywords:  
+summary: 'I report di testo visualizzano una rappresentazione testuale dei valori dei dati degli attributi elaborati dal servizio NMS. Esistono due tipi di report generati in base al periodo di tempo in cui si esegue il reporting: Report di testo raw per periodi inferiori a una settimana e report di testo aggregati per periodi superiori a una settimana.' 
+---
+= Tipi di report di testo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I report di testo visualizzano una rappresentazione testuale dei valori dei dati degli attributi elaborati dal servizio NMS. Esistono due tipi di report generati in base al periodo di tempo in cui si esegue il reporting: Report di testo raw per periodi inferiori a una settimana e report di testo aggregati per periodi superiori a una settimana.
+
+
+
+== Report di testo raw
+
+Un report di testo raw visualizza i dettagli relativi all'attributo selezionato:
+
+* Time Received (ora ricezione): Data e ora locali in cui un valore di esempio dei dati di un attributo è stato elaborato dal servizio NMS.
+* Sample Time (ora campione): Data e ora locali in cui un valore di attributo è stato campionato o modificato all'origine.
+* Value (valore): Valore dell'attributo al momento del campionamento.
+
+
+image::../media/raw_text_report.gif[schermata che mostra il report di testo raw]
+
+
+
+== Aggregare report di testo
+
+Un report di testo aggregato visualizza i dati in un periodo di tempo più lungo (di solito una settimana) rispetto a un report di testo raw. Ciascuna voce è il risultato di un riepilogo di più valori di attributo (un aggregato di valori di attributo) da parte del servizio NMS nel tempo in una singola voce con valori medi, massimi e minimi derivati dall'aggregazione.
+
+Ciascuna voce visualizza le seguenti informazioni:
+
+* Aggregate time (ora aggregata): L'ultima data e ora locale in cui il servizio NMS ha aggregato (raccolto) un insieme di valori di attributo modificati.
+* Average value (valore medio): La media del valore dell'attributo nel periodo di tempo aggregato.
+* Minimum Value (valore minimo): Il valore minimo nel periodo di tempo aggregato.
+* Maximum Value (valore massimo): Il valore massimo nel periodo di tempo aggregato.
+
+
+image::../media/aggregate_text_report.gif[schermata che mostra il report di testo aggregato]

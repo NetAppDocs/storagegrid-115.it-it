@@ -1,0 +1,22 @@
+---
+permalink: sg5600/configuring-hardware.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5600, storage node, storage appliance, hardware, configure, configuration, set up, setup, network, networking 
+summary: 'Dopo aver alimentato l"appliance, è necessario configurare Gestione storage SANtricity, il software che verrà utilizzato per monitorare l"hardware. È inoltre necessario configurare le connessioni di rete che verranno utilizzate da StorageGRID.' 
+---
+= Configurazione dell'hardware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dopo aver alimentato l'appliance, è necessario configurare Gestione storage SANtricity, il software che verrà utilizzato per monitorare l'hardware. È inoltre necessario configurare le connessioni di rete che verranno utilizzate da StorageGRID.
+
+.Fasi
+* link:configuring-storagegrid-connections.html["Configurazione delle connessioni StorageGRID"]
+* link:configuring-santricity-storage-manager.html["Configurazione di Gestore storage SANtricity"]
+* link:optional-enabling-node-encryption.html["Opzionale: Attivazione della crittografia del nodo"]
+* link:optional-changing-to-raid6-mode-sg5660-only.html["Opzionale: Passaggio alla modalità RAID6 (solo SG5660)"]
+* link:optional-remapping-network-ports-for-appliance-sg5600-and-sg5700.html["Opzionale: Rimappatura delle porte di rete per l'appliance"]
+

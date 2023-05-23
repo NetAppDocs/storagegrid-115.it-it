@@ -1,0 +1,22 @@
+---
+permalink: expand/adding-storage-capacity.html 
+sidebar: sidebar 
+keywords: storage, capacity, add, adding, expand, expansion, full storage node 
+summary: Quando i nodi di storage esistenti diventano pieni, è necessario aumentare la capacità di storage del sistema StorageGRID. 
+---
+= Aggiunta di capacità di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando i nodi di storage esistenti diventano pieni, è necessario aumentare la capacità di storage del sistema StorageGRID.
+
+Per aumentare la capacità dello storage, è necessario prima capire dove sono memorizzati i dati e poi aggiungere capacità in tutte le posizioni richieste. Ad esempio, se attualmente si memorizzano copie dei dati a oggetti in diversi siti, potrebbe essere necessario aumentare la capacità di storage di ciascun sito.
+
+* link:guidelines-for-adding-object-capacity.html["Linee guida per l'aggiunta della capacità degli oggetti"]
+* link:adding-storage-capacity-for-replicated-objects.html["Aggiunta di capacità di storage per gli oggetti replicati"]
+* link:adding-storage-capacity-for-erasure-coded-objects.html["Aggiunta di capacità di storage per gli oggetti con codifica per la cancellazione"]
+* link:considerations-for-rebalancing-erasure-coded-data.html["Considerazioni per il ribilanciamento dei dati con codifica erasure"]
+

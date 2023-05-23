@@ -1,0 +1,77 @@
+---
+permalink: upgrade/how-your-system-is-affected-during-upgrade.html 
+sidebar: sidebar 
+keywords: upgrade, firmware, appliance, alert 
+summary: 'È necessario comprendere in che modo il sistema StorageGRID verrà influenzato durante l"aggiornamento.' 
+---
+= Impatto del sistema durante l'aggiornamento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario comprendere in che modo il sistema StorageGRID verrà influenzato durante l'aggiornamento.
+
+
+
+== Gli aggiornamenti di StorageGRID sono senza interruzioni
+
+Il sistema StorageGRID è in grado di acquisire e recuperare i dati dalle applicazioni client durante l'intero processo di aggiornamento. Durante l'aggiornamento, i nodi della griglia vengono disattivati uno alla volta, quindi non c'è tempo in cui tutti i nodi della griglia non sono disponibili.
+
+Per garantire la disponibilità continua, è necessario assicurarsi che gli oggetti vengano memorizzati in modo ridondante utilizzando i criteri ILM appropriati. È inoltre necessario assicurarsi che tutti i client S3 o Swift esterni siano configurati per inviare richieste a uno dei seguenti:
+
+* Endpoint StorageGRID configurato come gruppo ad alta disponibilità (ha)
+* Bilanciamento del carico di terze parti ad alta disponibilità
+* Nodi gateway multipli per ogni client
+* Più nodi di storage per ogni client
+
+
+
+
+== Il firmware dell'appliance viene aggiornato
+
+Durante l'aggiornamento a StorageGRID 11.5:
+
+* Tutti i nodi appliance StorageGRID vengono aggiornati automaticamente alla versione 3.5 del firmware del programma di installazione dell'appliance StorageGRID.
+* Le appliance SG6060 e SGF6024 vengono aggiornate automaticamente alla versione del firmware del BIOS 3B03.EX e alla versione del firmware BMC BMC 3.90.07.
+* Le appliance SG100 e SG1000 vengono aggiornate automaticamente alla versione del firmware del BIOS 3B08.EC e alla versione del firmware BMC 4.64.07.
+
+
+
+
+== Potrebbero essere attivati degli avvisi
+
+Gli avvisi potrebbero essere attivati all'avvio e all'arresto dei servizi e quando il sistema StorageGRID funziona come ambiente a versione mista (alcuni nodi di griglia che eseguono una versione precedente, mentre altri sono stati aggiornati a una versione successiva). Ad esempio, potrebbe essere visualizzato l'avviso *Impossibile comunicare con il nodo* quando i servizi vengono arrestati oppure l'avviso *errore di comunicazione Cassandra* quando alcuni nodi sono stati aggiornati a StorageGRID 11.5 ma altri nodi eseguono ancora StorageGRID 11.4.
+
+In generale, questi avvisi verranno visualizzati al termine dell'aggiornamento.
+
+Una volta completato l'aggiornamento, è possibile rivedere gli avvisi relativi all'aggiornamento selezionando *Avvisi risolti di recente* dal dashboard di Grid Manager.
+
+
+NOTE: Durante l'aggiornamento a StorageGRID 11.5, l'avviso *ILM placement unachievable* potrebbe essere attivato quando i nodi di storage vengono arrestati. Questo avviso potrebbe persistere per 1 giorno dopo il completamento dell'aggiornamento.
+
+
+
+== Vengono generate molte notifiche SNMP
+
+Tenere presente che è possibile che vengano generate numerose notifiche SNMP quando i nodi della griglia vengono arrestati e riavviati durante l'aggiornamento. Per evitare notifiche eccessive, deselezionare la casella di controllo *Enable SNMP Agent Notifications* (*Configuration* > *Monitoring* > *SNMP Agent*) per disattivare le notifiche SNMP prima di avviare l'aggiornamento. Quindi, riattivare le notifiche al termine dell'aggiornamento.
+
+
+
+== Le modifiche alla configurazione sono limitate
+
+Fino al completamento dell'attività *Enable New Feature*:
+
+* Non apportare modifiche alla configurazione della griglia.
+* Non modificare la configurazione del livello di audit.
+* Non attivare o disattivare nuove funzioni.
+* Non aggiornare la configurazione ILM. In caso contrario, potrebbe verificarsi un comportamento ILM inconsistente e imprevisto.
+* Non applicare una correzione rapida o ripristinare un nodo della griglia.
+
+
+Fino al completamento dell'attività *fasi finali dell'aggiornamento*:
+
+* Non eseguire una procedura di espansione.
+* Non eseguire una procedura di decommissionamento.
+

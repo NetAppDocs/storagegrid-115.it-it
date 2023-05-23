@@ -1,0 +1,79 @@
+---
+permalink: monitor/monitoring-system-health.html 
+sidebar: sidebar 
+keywords:  
+summary: È necessario monitorare quotidianamente lo stato di salute generale del sistema StorageGRID. 
+---
+= Monitoraggio dello stato del sistema
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario monitorare quotidianamente lo stato di salute generale del sistema StorageGRID.
+
+Il sistema StorageGRID è a tolleranza di errore e può continuare a funzionare anche quando parti della griglia non sono disponibili. Il primo segno di un potenziale problema con il sistema StorageGRID è probabilmente un avviso o un allarme (sistema legacy) e non necessariamente un problema con le operazioni del sistema. Prestare attenzione allo stato di salute del sistema può aiutare a rilevare problemi minori prima che influiscano sulle operazioni o sull'efficienza della rete.
+
+Il pannello Health (Salute) del pannello Grid Manager (Gestione griglia) fornisce un riepilogo dei problemi che potrebbero interessare il sistema. È necessario esaminare tutti i problemi visualizzati nella dashboard.
+
+
+NOTE: Per ricevere una notifica degli avvisi non appena vengono attivati, è possibile impostare le notifiche e-mail per gli avvisi o configurare i trap SNMP.
+
+. Accedi a Grid Manager per visualizzare la dashboard.
+. Esaminare le informazioni nel pannello Health (Salute).
++
+image::../media/dashboard_health_panel.png[Pannello di stato della dashboard]
+
++
+In caso di problemi, vengono visualizzati collegamenti che consentono di visualizzare ulteriori dettagli:
+
++
+|===
+| Collegamento | Indica 
+
+
+ a| 
+Dettagli della griglia
+ a| 
+Viene visualizzato se i nodi sono disconnessi (stato connessione sconosciuto o amministrativamente inattivo). Fare clic sul collegamento o sull'icona blu o grigia per determinare quale nodo o nodi sono interessati.
+
+
+
+ a| 
+Avvisi correnti
+ a| 
+Viene visualizzato se sono attivi avvisi. Fare clic sul collegamento oppure fare clic su *critico*, *maggiore* o *minore* per visualizzare i dettagli nella pagina *Avvisi* *corrente*.
+
+
+
+ a| 
+Avvisi risolti di recente
+ a| 
+Viene visualizzato se gli avvisi attivati nell'ultima settimana sono stati risolti. Fare clic sul collegamento per visualizzare i dettagli nella pagina *Avvisi* *risolti*.
+
+
+
+ a| 
+Allarmi legacy
+ a| 
+Viene visualizzato se sono attivi allarmi (sistema precedente). Fare clic sul collegamento per visualizzare i dettagli nella pagina *supporto* *Allarmi (legacy)* *Allarmi correnti*.
+
+*Nota:* mentre il sistema di allarme legacy continua a essere supportato, il sistema di allarme offre benefici significativi ed è più facile da utilizzare.
+
+
+
+ a| 
+Licenza
+ a| 
+Viene visualizzato se si verifica un problema con la licenza software per questo sistema StorageGRID. Fare clic sul collegamento per visualizzare i dettagli nella pagina *manutenzione* *sistema* *licenza*.
+
+|===
+
+
+.Informazioni correlate
+link:../admin/index.html["Amministrare StorageGRID"]
+
+link:managing-alerts.html["Impostazione delle notifiche e-mail per gli avvisi"]
+
+link:using-snmp-monitoring.html["Utilizzo del monitoraggio SNMP"]

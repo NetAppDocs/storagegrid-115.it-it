@@ -1,0 +1,60 @@
+---
+permalink: admin/kms-adding-upload-client-certificates.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Nella fase 3 (carica certificati client) della procedura guidata Add a Key Management Server (Aggiungi un server di gestione delle chiavi), vengono caricati il certificato client e la chiave privata del certificato client. Il certificato client consente a StorageGRID di autenticarsi nel KMS.' 
+---
+= Fase 3: Caricare i certificati client
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nella fase 3 (carica certificati client) della procedura guidata Add a Key Management Server (Aggiungi un server di gestione delle chiavi), vengono caricati il certificato client e la chiave privata del certificato client. Il certificato client consente a StorageGRID di autenticarsi nel KMS.
+
+.Fasi
+. Dal *passaggio 3 (carica certificati client)*, individuare la posizione del certificato client.
++
+image::../media/kms_step_3_upload_client_certificate.png[KMS fase 3 carica certificato client]
+
+. Caricare il file di certificato del client.
++
+Vengono visualizzati i metadati del certificato client.
+
+. Individuare la posizione della chiave privata per il certificato client.
+. Caricare il file della chiave privata.
++
+Vengono visualizzati i metadati per il certificato client e la chiave privata del certificato client.
+
++
+image::../media/kms_step_3_client_certificate_metadata.png[METADATI del certificato client KMS fase 3]
+
+. Selezionare *Salva*.
++
+Vengono verificate le connessioni tra il server di gestione delle chiavi e i nodi dell'appliance. Se tutte le connessioni sono valide e la chiave corretta viene trovata nel KMS, il nuovo server di gestione delle chiavi viene aggiunto alla tabella nella pagina Server di gestione delle chiavi.
+
++
+
+NOTE: Subito dopo aver aggiunto un KMS, lo stato del certificato nella pagina Server gestione chiavi viene visualizzato come Sconosciuto. Per ottenere lo stato effettivo di ciascun certificato, StorageGRID potrebbe impiegare fino a 30 minuti. È necessario aggiornare il browser Web per visualizzare lo stato corrente.
+
+. Se viene visualizzato un messaggio di errore quando si seleziona *Salva*, rivedere i dettagli del messaggio e selezionare *OK*.
++
+Ad esempio, se un test di connessione non riesce, potrebbe essere visualizzato un errore 422: Unprocessable Entity.
+
+. Se si desidera salvare la configurazione corrente senza verificare la connessione esterna, selezionare *Force Save* (forza salvataggio).
++
+image::../media/kms_force_save.png[SALVATAGGIO forzato KMS]
+
++
+
+IMPORTANT: Selezionando *forza salvataggio* viene salvata la configurazione KMS, ma non viene eseguita una verifica della connessione esterna da ciascuna appliance a quel KMS. In caso di problemi con la configurazione, potrebbe non essere possibile riavviare i nodi dell'appliance che hanno attivato la crittografia dei nodi nel sito interessato. È possibile che l'accesso ai dati venga perso fino a quando i problemi non vengono risolti.
+
+. Controllare l'avviso di conferma e selezionare *OK* se si desidera forzare il salvataggio della configurazione.
++
+image::../media/kms_force_save_warning.png[Avviso DI salvataggio forzato KMS]
+
++
+La configurazione KMS viene salvata ma la connessione al KMS non viene verificata.
+
+

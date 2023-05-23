@@ -1,0 +1,109 @@
+---
+permalink: admin/managing-local-users.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Gestione degli utenti locali
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile creare utenti locali e assegnarli a gruppi di amministratori locali per determinare a quali funzioni di Grid Manager possono accedere questi utenti.
+
+Grid Manager include un utente locale predefinito, denominato "`root`". Sebbene sia possibile aggiungere e rimuovere utenti locali, non è possibile rimuovere l'utente root.
+
+
+NOTE: Se è stato attivato il Single Sign-on (SSO), gli utenti locali non possono accedere a StorageGRID.
+
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre di autorizzazioni di accesso specifiche.
+
+
+
+
+== Creazione di un utente locale
+
+Se sono stati creati gruppi di amministratori locali, è possibile creare uno o più utenti locali e assegnare ciascun utente a uno o più gruppi. Le autorizzazioni del gruppo controllano le funzionalità di Grid Manager a cui l'utente può accedere.
+
+.A proposito di questa attività
+È possibile creare solo utenti locali e assegnarli solo a gruppi di amministratori locali. Gli utenti federati e i gruppi federati vengono gestiti utilizzando l'origine dell'identità esterna.
+
+.Fasi
+. Selezionare *Configuration* *Access Control* *Admin Users*.
+. Fare clic su *Create* (Crea).
+. Immettere il nome visualizzato, il nome univoco e la password dell'utente.
+. Assegnare l'utente a uno o più gruppi che gestiscono le autorizzazioni di accesso.
++
+L'elenco dei nomi dei gruppi viene generato dalla tabella Groups (gruppi).
+
+. Fare clic su *Save* (Salva).
+
+
+.Informazioni correlate
+link:managing-admin-groups.html["Gestione dei gruppi di amministratori"]
+
+
+
+== Modifica dell'account di un utente locale
+
+È possibile modificare l'account di un utente amministratore locale per aggiornare il nome visualizzato dell'utente o l'appartenenza al gruppo. È inoltre possibile impedire temporaneamente a un utente di accedere al sistema.
+
+.A proposito di questa attività
+È possibile modificare solo gli utenti locali. I dettagli dell'utente federato vengono sincronizzati automaticamente con l'origine dell'identità esterna.
+
+.Fasi
+. Selezionare *Configuration* *Access Control* *Admin Users*.
+. Selezionare l'utente che si desidera modificare.
++
+Se il sistema include più di 20 elementi, è possibile specificare quante righe vengono visualizzate su ogni pagina contemporaneamente. È quindi possibile utilizzare la funzione trova del browser per cercare un elemento specifico nelle righe attualmente visualizzate.
+
+. Fare clic su *Edit* (Modifica).
+. Facoltativamente, apportare modifiche al nome o all'appartenenza al gruppo.
+. Facoltativamente, per impedire all'utente di accedere temporaneamente al sistema, selezionare *Nega accesso*.
+. Fare clic su *Save* (Salva).
++
+Le nuove impostazioni vengono applicate alla successiva disconnessione dell'utente e quindi all'accesso a Grid Manager.
+
+
+
+
+
+== Eliminazione di un account utente locale
+
+È possibile eliminare gli account degli utenti locali che non richiedono più l'accesso a Grid Manager.
+
+.Fasi
+. Selezionare *Configuration* *Access Control* *Admin Users*.
+. Selezionare l'utente locale che si desidera eliminare.
++
+
+NOTE: Non è possibile eliminare l'utente locale root predefinito.
+
++
+Se il sistema include più di 20 elementi, è possibile specificare quante righe vengono visualizzate su ogni pagina contemporaneamente. È quindi possibile utilizzare la funzione trova del browser per cercare un elemento specifico nelle righe attualmente visualizzate.
+
+. Fare clic su *Rimuovi*.
+. Fare clic su *OK*.
+
+
+
+
+== Modifica della password di un utente locale
+
+Gli utenti locali possono modificare le proprie password utilizzando l'opzione *Change Password* (Modifica password) nel banner Grid Manager. Inoltre, gli utenti che hanno accesso alla pagina Admin Users possono modificare le password per altri utenti locali.
+
+.A proposito di questa attività
+È possibile modificare le password solo per gli utenti locali. Gli utenti federati devono modificare le proprie password nell'origine dell'identità esterna.
+
+.Fasi
+. Selezionare *Configuration* *Access Control* *Admin Users*.
+. Nella pagina utenti, selezionare l'utente.
++
+Se il sistema include più di 20 elementi, è possibile specificare quante righe vengono visualizzate su ogni pagina contemporaneamente. È quindi possibile utilizzare la funzione trova del browser per cercare un elemento specifico nelle righe attualmente visualizzate.
+
+. Fare clic su *Change Password* (Modifica password).
+. Immettere e confermare la password, quindi fare clic su *Save* (Salva).
+

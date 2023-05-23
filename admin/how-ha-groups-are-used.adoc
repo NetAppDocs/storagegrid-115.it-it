@@ -1,0 +1,86 @@
+---
+permalink: admin/how-ha-groups-are-used.html 
+sidebar: sidebar 
+keywords:  
+summary: È possibile utilizzare i gruppi ad alta disponibilità per diversi motivi. 
+---
+= Come vengono utilizzati i gruppi ha
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare i gruppi ad alta disponibilità (ha) per diversi motivi.
+
+* Un gruppo ha può fornire connessioni amministrative altamente disponibili al Grid Manager o al tenant Manager.
+* Un gruppo ha può fornire connessioni dati altamente disponibili per i client S3 e Swift.
+* Un gruppo ha che contiene una sola interfaccia consente di fornire molti indirizzi VIP e di impostare esplicitamente gli indirizzi IPv6.
+
+
+Un gruppo ha può fornire alta disponibilità solo se tutti i nodi inclusi nel gruppo forniscono gli stessi servizi. Quando si crea un gruppo ha, aggiungere interfacce dai tipi di nodi che forniscono i servizi richiesti.
+
+* *Admin Node*: Include il servizio Load Balancer e abilita l'accesso al Grid Manager o al Tenant Manager.
+* *Gateway Node*: Include il servizio Load Balancer e il servizio CLB (obsoleto).
+
+
+[cols="1a,1a"]
+|===
+| Scopo del gruppo ha | Aggiungere nodi di questo tipo al gruppo ha 
+
+
+ a| 
+Accesso a Grid Manager
+ a| 
+* Nodo amministratore primario (*Master preferito*)
+* Nodi amministrativi non primari
+
+
+*Nota:* il nodo di amministrazione primario deve essere il master preferito. Alcune procedure di manutenzione possono essere eseguite solo dal nodo di amministrazione primario.
+
+
+
+ a| 
+Accesso solo al tenant manager
+ a| 
+* Nodi di amministrazione primari o non primari
+
+
+
+
+ a| 
+Accesso client S3 o Swift -- Servizio Load Balancer
+ a| 
+* Nodi di amministrazione
+* Nodi gateway
+
+
+
+
+ a| 
+Accesso client S3 o Swift -- Servizio CLB
+
+*Nota:* il servizio CLB è obsoleto.
+ a| 
+* Nodi gateway
+
+
+|===
+
+
+== Limitazioni dell'utilizzo di gruppi ha con Grid Manager o Tenant Manager
+
+Il guasto dei servizi per Grid Manager o Tenant Manager non attiva il failover all'interno del gruppo ha.
+
+Se hai effettuato l'accesso a Grid Manager o a Tenant Manager quando si verifica il failover, sei disconnesso e devi effettuare nuovamente l'accesso per riprendere l'attività.
+
+Non è possibile eseguire alcune procedure di manutenzione quando il nodo di amministrazione primario non è disponibile. Durante il failover, è possibile utilizzare Grid Manager per monitorare il sistema StorageGRID.
+
+
+
+== Limitazioni dell'utilizzo di gruppi ha con il servizio CLB
+
+Il guasto del servizio CLB non attiva il failover all'interno del gruppo ha.
+
+
+NOTE: Il servizio CLB è obsoleto.

@@ -1,0 +1,14 @@
+---
+permalink: tenant/managing-s3-buckets.html 
+sidebar: sidebar 
+keywords: StorageGRID, tenant, tenant manager, s3 bucket 
+summary: 'Se si utilizza un tenant S3 con le autorizzazioni appropriate, è possibile creare, visualizzare ed eliminare bucket S3, aggiornare le impostazioni del livello di coerenza, configurare Cross-Origin Resource Sharing (CORS), attivare e disattivare le impostazioni dell"ultimo aggiornamento dell"ora di accesso e gestire i servizi della piattaforma S3.' 
+---
+= Gestione dei bucket S3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se si utilizza un tenant S3 con le autorizzazioni appropriate, è possibile creare, visualizzare ed eliminare bucket S3, aggiornare le impostazioni del livello di coerenza, configurare Cross-Origin Resource Sharing (CORS), attivare e disattivare le impostazioni dell'ultimo aggiornamento dell'ora di accesso e gestire i servizi della piattaforma S3.

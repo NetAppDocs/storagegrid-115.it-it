@@ -1,0 +1,67 @@
+---
+permalink: admin/adding-autosupport-destination.html 
+sidebar: sidebar 
+keywords:  
+summary: Quando si attiva AutoSupport, vengono inviati messaggi di stato e di salute al supporto NetApp. È possibile specificare una destinazione aggiuntiva per tutti i messaggi AutoSupport. 
+---
+= Aggiunta di una destinazione AutoSupport aggiuntiva
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando si attiva AutoSupport, vengono inviati messaggi di stato e di salute al supporto NetApp. È possibile specificare una destinazione aggiuntiva per tutti i messaggi AutoSupport.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre dell'autorizzazione Root Access o Other Grid Configuration.
+
+
+.A proposito di questa attività
+Per verificare o modificare il protocollo utilizzato per inviare messaggi AutoSupport, consultare le istruzioni per specificare un protocollo AutoSupport.
+
+
+NOTE: Non è possibile utilizzare il protocollo SMTP per inviare messaggi AutoSupport a una destinazione aggiuntiva.
+
+link:specifying-protocol-for-autosupport-messages.html["Specifica del protocollo per i messaggi AutoSupport"]
+
+.Fasi
+. Selezionare *supporto* *Strumenti* *AutoSupport*.
++
+Viene visualizzata la pagina AutoSupport (Impostazioni) con la scheda *Settings* (Impostazioni) selezionata.
+
+. Selezionare *Abilita destinazione AutoSupport aggiuntiva*.
++
+Vengono visualizzati i campi destinazione AutoSupport aggiuntiva.
+
++
+image::../media/autosupport_additional_destinations.png[AutoSupport aggiunta di destinazioni aggiuntive]
+
+. Immettere il nome host del server o l'indirizzo IP di un server di destinazione AutoSupport aggiuntivo.
++
+
+NOTE: È possibile inserire solo una destinazione aggiuntiva.
+
+. Inserire la porta utilizzata per la connessione a un server di destinazione AutoSupport aggiuntivo (l'impostazione predefinita è la porta 80 per HTTP o la porta 443 per HTTPS).
+. Per inviare i messaggi AutoSupport con la convalida del certificato, selezionare *Usa bundle CA personalizzato* nell'elenco a discesa *convalida certificato*. Quindi, eseguire una delle seguenti operazioni:
++
+** Utilizzare uno strumento di modifica per copiare e incollare tutto il contenuto di ciascun file di certificato CA con codifica PEM nel campo *bundle CA*, concatenato in ordine di catena del certificato. È necessario includere `----BEGIN CERTIFICATE----` e. `----END CERTIFICATE----` nella selezione.
++
+image::../media/autosupport_certificate.png[Certificato AutoSupport]
+
+** Selezionare *Sfoglia*, individuare il file contenente i certificati, quindi selezionare *Apri* per caricare il file. La convalida del certificato garantisce la sicurezza della trasmissione dei messaggi AutoSupport.
+
+
+. Per inviare i messaggi AutoSupport senza convalida del certificato, selezionare *non verificare il certificato* nell'elenco a discesa *convalida certificato*.
++
+Selezionare questa opzione solo se si dispone di un buon motivo per non utilizzare la convalida del certificato, ad esempio quando si verifica un problema temporaneo con un certificato.
+
++
+Viene visualizzato un messaggio di attenzione: "Non si sta utilizzando un certificato TLS per proteggere la connessione alla destinazione AutoSupport aggiuntiva."
+
+. Selezionare *Salva*.
++
+Tutti i messaggi AutoSupport futuri, generati da eventi e attivati dall'utente, verranno inviati alla destinazione aggiuntiva.
+
+

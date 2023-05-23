@@ -1,0 +1,23 @@
+---
+permalink: tenant/s3-object-lock-workflow.html 
+sidebar: sidebar 
+keywords: S3 Object Lock 
+summary: 'Il diagramma del flusso di lavoro mostra i passaggi di alto livello per l"utilizzo della funzione blocco oggetti S3 in StorageGRID.' 
+---
+= Workflow di blocco oggetti S3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il diagramma del flusso di lavoro mostra i passaggi di alto livello per l'utilizzo della funzione blocco oggetti S3 in StorageGRID.
+
+Prima di poter creare bucket con blocco oggetti S3 attivato, l'amministratore della griglia deve attivare l'impostazione di blocco oggetti S3 globale per l'intero sistema StorageGRID. L'amministratore della griglia deve inoltre garantire che il criterio ILM (Information Lifecycle Management) sia "`compliant`"; deve soddisfare i requisiti dei bucket con S3 Object Lock abilitato. Per ulteriori informazioni, contattare l'amministratore della griglia o consultare le istruzioni per la gestione degli oggetti con la gestione del ciclo di vita delle informazioni.
+
+Una volta attivata l'impostazione globale S3 Object Lock, è possibile creare bucket con S3 Object Lock attivato. È quindi possibile utilizzare l'applicazione client S3 per specificare facoltativamente le impostazioni di conservazione per ciascuna versione dell'oggetto.
+
+image::../media/s3_object_lock_workflow_tenant.png[Tenore del flusso di lavoro blocco oggetti S3]
+
+.Informazioni correlate
+link:../ilm/index.html["Gestire gli oggetti con ILM"]

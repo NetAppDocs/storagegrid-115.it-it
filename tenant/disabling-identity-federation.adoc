@@ -1,0 +1,36 @@
+---
+permalink: tenant/disabling-identity-federation.html 
+sidebar: sidebar 
+keywords: storagegrid, tenant, disable identity federation, disabling identity federation, federated identity source 
+summary: 'Se è stato configurato un servizio di federazione delle identità per questo tenant, è possibile disattivare temporaneamente o permanentemente la federazione delle identità per gruppi e utenti tenant. Quando la federazione delle identità è disattivata, non vi è alcuna comunicazione tra il sistema StorageGRID e l"origine delle identità. Tuttavia, tutte le impostazioni configurate vengono conservate, consentendo di riattivare facilmente la federazione delle identità in futuro.' 
+---
+= Disattivazione della federazione delle identità
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se è stato configurato un servizio di federazione delle identità per questo tenant, è possibile disattivare temporaneamente o permanentemente la federazione delle identità per gruppi e utenti tenant. Quando la federazione delle identità è disattivata, non vi è alcuna comunicazione tra il sistema StorageGRID e l'origine delle identità. Tuttavia, tutte le impostazioni configurate vengono conservate, consentendo di riattivare facilmente la federazione delle identità in futuro.
+
+.Di cosa hai bisogno
+* È necessario accedere a tenant Manager utilizzando un browser supportato.
+* È necessario disporre di autorizzazioni di accesso specifiche.
+
+
+.A proposito di questa attività
+Prima di disattivare la federazione delle identità, è necessario tenere presente quanto segue:
+
+* Gli utenti federati non potranno accedere.
+* Gli utenti federati che hanno effettuato l'accesso manterranno l'accesso all'account tenant fino alla scadenza della sessione, ma non potranno accedere dopo la scadenza della sessione.
+* La sincronizzazione tra il sistema StorageGRID e l'origine dell'identità non viene eseguita.
+
+
+.Fasi
+. Selezionare *ACCESS MANAGEMENT* > *Identity Federation*.
+. Deselezionare la casella di controllo *Enable Identity Federation* (attiva federazione identità).
+. Selezionare *Salva*.
+
+
+.Informazioni correlate
+link:tenant-management-permissions.html["Permessi di gestione del tenant"]

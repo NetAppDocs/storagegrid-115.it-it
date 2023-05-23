@@ -1,0 +1,60 @@
+---
+permalink: admin/specifying-protocol-for-autosupport-messages.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile utilizzare uno dei tre protocolli per l"invio di messaggi AutoSupport.' 
+---
+= Specifica del protocollo per i messaggi AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile utilizzare uno dei tre protocolli per l'invio di messaggi AutoSupport.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+* È necessario disporre dell'autorizzazione Root Access o Other Grid Configuration.
+* Se si utilizza il protocollo HTTPS o HTTP per l'invio di messaggi AutoSupport, è necessario aver fornito l'accesso a Internet in uscita al nodo di amministrazione primario, direttamente o utilizzando un server proxy (non sono richieste connessioni in entrata).
+* Se si utilizza il protocollo HTTPS o HTTP e si desidera utilizzare un server proxy, è necessario aver configurato un server proxy Admin.
+* Se si utilizza SMTP come protocollo per i messaggi AutoSupport, è necessario aver configurato un server di posta SMTP. La stessa configurazione del server di posta viene utilizzata per le notifiche e-mail di allarme (sistema legacy).
+
+
+.A proposito di questa attività
+I messaggi AutoSupport possono essere inviati utilizzando uno dei seguenti protocolli:
+
+* *HTTPS*: Impostazione predefinita e consigliata per le nuove installazioni. Il protocollo HTTPS utilizza la porta 443. Se si desidera attivare la funzione AutoSupport on Demand, è necessario utilizzare il protocollo HTTPS.
+* *HTTP*: Questo protocollo non è sicuro, a meno che non venga utilizzato in un ambiente attendibile in cui il server proxy converte in HTTPS durante l'invio di dati su Internet. Il protocollo HTTP utilizza la porta 80.
+* *SMTP*: Utilizzare questa opzione se si desidera che i messaggi AutoSupport vengano inviati tramite e-mail. Se si utilizza il protocollo SMTP come protocollo per i messaggi AutoSupport, è necessario configurare un server di posta SMTP nella pagina Configurazione posta elettronica legacy (*supporto* *Allarmi (legacy)* *Configurazione posta elettronica legacy*).
++
+
+NOTE: SMTP era l'unico protocollo disponibile per i messaggi AutoSupport prima della release di StorageGRID 11.2. Se inizialmente è stata installata una versione precedente di StorageGRID, il protocollo selezionato potrebbe essere SMTP.
+
+
+
+Il protocollo impostato viene utilizzato per l'invio di tutti i tipi di messaggi AutoSupport.
+
+.Fasi
+. Selezionare *supporto* *Strumenti* *AutoSupport*.
++
+Viene visualizzata la pagina AutoSupport (Impostazioni) e viene selezionata la scheda *Settings* (Impostazioni).
+
+. Selezionare il protocollo che si desidera utilizzare per inviare messaggi AutoSupport.
++
+image::../media/autosupport_protocol.png[Protocollo AutoSupport]
+
+. Seleziona la tua scelta per *NetApp Support Certificate Validation*.
++
+** USA certificato di supporto NetApp (impostazione predefinita): La convalida del certificato garantisce la sicurezza della trasmissione dei messaggi AutoSupport. Il certificato di supporto NetApp è già installato con il software StorageGRID.
+** Non verificare il certificato: Selezionare questa opzione solo se si dispone di un buon motivo per non utilizzare la convalida del certificato, ad esempio quando si verifica un problema temporaneo con un certificato.
+
+
+. Selezionare *Salva*.
++
+Tutti i messaggi settimanali, attivati dall'utente e attivati dagli eventi vengono inviati utilizzando il protocollo selezionato.
+
+
+
+.Informazioni correlate
+link:configuring-admin-proxy-settings.html["Configurazione delle impostazioni del proxy amministratore"]

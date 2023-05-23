@@ -1,0 +1,23 @@
+---
+permalink: expand/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= Espandi il tuo grid
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Scopri come espandere un sistema StorageGRID senza interrompere le operazioni del sistema.
+
+* link:planning-expansion.html["Pianificazione di un'espansione di StorageGRID"]
+* link:preparing-for-expansion.html["Preparazione per un'espansione"]
+* link:overview-of-expansion-procedure.html["Panoramica della procedura di espansione"]
+* link:adding-storage-volumes-to-storage-nodes.html["Aggiunta di volumi di storage ai nodi di storage"]
+* link:adding-grid-nodes-to-existing-site-or-adding-new-site.html["Aggiunta di nodi di griglia a un sito esistente o aggiunta di un nuovo sito"]
+* link:configuring-expanded-storagegrid-system.html["Configurazione del sistema Expanded StorageGRID"]
+* link:contacting-technical-support.html["Contattare il supporto tecnico"]
+

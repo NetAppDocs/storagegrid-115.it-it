@@ -1,0 +1,26 @@
+---
+permalink: network/linux-deployments.html 
+sidebar: sidebar 
+keywords:  
+summary: Per garantire efficienza, affidabilità e sicurezza, il sistema StorageGRID viene eseguito su Linux come insieme di container Docker. La configurazione di rete relativa a Docker non è richiesta in un sistema StorageGRID. 
+---
+= Implementazioni Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per garantire efficienza, affidabilità e sicurezza, il sistema StorageGRID viene eseguito su Linux come insieme di container Docker. La configurazione di rete relativa a Docker non è richiesta in un sistema StorageGRID.
+
+Utilizzare un dispositivo non-bond, ad esempio una coppia VLAN o Virtual Ethernet (veth), per l'interfaccia di rete del container. Specificare questo dispositivo come interfaccia di rete nel file di configurazione del nodo.
+
+
+IMPORTANT: Non utilizzare dispositivi bond o bridge direttamente come interfaccia di rete del container. In questo modo si potrebbe impedire l'avvio del nodo a causa di un problema del kernel con l'utilizzo di macvlan con dispositivi bond e bridge nello spazio dei nomi dei container.
+
+Consultare le istruzioni per l'installazione di Red Hat Enterprise Linux/CentOS o Ubuntu/Debian.
+
+.Informazioni correlate
+link:../rhel/index.html["Installare Red Hat Enterprise Linux o CentOS"]
+
+link:../ubuntu/index.html["Installare Ubuntu o Debian"]

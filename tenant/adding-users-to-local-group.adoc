@@ -1,0 +1,44 @@
+---
+permalink: tenant/adding-users-to-local-group.html 
+sidebar: sidebar 
+keywords: StorageGRID, tenant manager, tenant local group, adding users to group, add users to group, add local users, adding local users 
+summary: È possibile aggiungere utenti a un gruppo locale in base alle esigenze. 
+---
+= Aggiunta di utenti a un gruppo locale
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile aggiungere utenti a un gruppo locale in base alle esigenze.
+
+.Di cosa hai bisogno
+* È necessario accedere a tenant Manager utilizzando un browser supportato.
+* È necessario appartenere a un gruppo di utenti che dispone dell'autorizzazione di accesso root.
+
+
+.Fasi
+. Selezionare *GESTIONE ACCESSI* > *gruppi*.
+. Selezionare il nome del gruppo locale a cui si desidera aggiungere utenti.
++
+In alternativa, è possibile selezionare *azioni* > *Visualizza dettagli gruppo*.
+
++
+Viene visualizzata la pagina dei dettagli del gruppo.
+
++
+image::../media/tenant_group_details.png[Visualizza dettagli gruppo]
+
+. Selezionare *Manage Users* (Gestisci utenti), quindi selezionare *Add users* (Aggiungi utenti).
++
+image::../media/manage_users.png[Gestire gli utenti]
+
+. Selezionare gli utenti che si desidera aggiungere al gruppo, quindi selezionare *Aggiungi utenti*.
++
+image::../media/add_users_to_group.png[Aggiungere utenti al gruppo]
+
++
+Viene visualizzato un messaggio di conferma nell'angolo superiore destro della pagina. Le modifiche potrebbero richiedere fino a 15 minuti per essere effettive a causa del caching.
+
+

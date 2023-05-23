@@ -1,0 +1,60 @@
+---
+permalink: maintain/linux-adding-interfaces-to-existing-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, linux, adding interfaces, add interfaces, adding interface to node, add interface to node 
+summary: 'Se si desidera aggiungere un"interfaccia a un nodo basato su Linux che non è stato installato inizialmente, è necessario utilizzare questa procedura.' 
+---
+= Linux: Aggiunta di interfacce a un nodo esistente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se si desidera aggiungere un'interfaccia a un nodo basato su Linux che non è stato installato inizialmente, è necessario utilizzare questa procedura.
+
+Se NON sono stati configurati ADMIN_NETWORK_TARGET o CLIENT_NETWORK_TARGET nel file di configurazione del nodo sull'host Linux durante l'installazione, utilizzare questa procedura per aggiungere l'interfaccia. Per ulteriori informazioni sul file di configurazione del nodo, consultare le istruzioni di installazione di StorageGRID per il sistema operativo Linux in uso.
+
+link:../rhel/index.html["Installare Red Hat Enterprise Linux o CentOS"]
+
+link:../ubuntu/index.html["Installare Ubuntu o Debian"]
+
+Questa procedura viene eseguita sul server Linux che ospita il nodo che richiede la nuova assegnazione di rete, non all'interno del nodo. Questa procedura aggiunge l'interfaccia solo al nodo; si verifica un errore di convalida se si tenta di specificare altri parametri di rete.
+
+Per fornire le informazioni di indirizzamento, è necessario utilizzare lo strumento Change IP (Modifica IP). Consultare le informazioni sulla modifica della configurazione di rete di un nodo.
+
+link:changing-nodes-network-configuration.html["Modifica della configurazione di rete di un nodo"]
+
+.Fasi
+. Accedere al server Linux che ospita il nodo che richiede la nuova assegnazione di rete.
+. Modificare il file di configurazione del nodo in `/etc/storagegrid/nodes/_node-name_.conf`.
++
+
+IMPORTANT: Non specificare altri parametri di rete, altrimenti si verificherà un errore di convalida.
+
++
+.. Aggiungere la nuova destinazione di rete.
++
+[listing]
+----
+CLIENT_NETWORK_TARGET = bond0.3206
+----
+.. Facoltativo: Aggiungere un indirizzo MAC.
++
+[listing]
+----
+CLIENT_NETWORK_MAC = aa:57:61:07:ea:5c
+----
+
+
+. Eseguire il comando node validate: `sudo storagegrid node validate _node-name_`
+. Risolvere tutti gli errori di convalida.
+. Eseguire il comando node reload: `sudo storagegrid node reload _node-name_`
+
+
+.Informazioni correlate
+link:../rhel/index.html["Installare Red Hat Enterprise Linux o CentOS"]
+
+link:../ubuntu/index.html["Installare Ubuntu o Debian"]
+
+link:changing-nodes-network-configuration.html["Modifica della configurazione di rete di un nodo"]

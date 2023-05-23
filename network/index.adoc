@@ -1,0 +1,22 @@
+---
+permalink: network/index.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Scopri l"architettura StorageGRID e le topologie di rete. Acquisire familiarità con i requisiti per la configurazione e il provisioning di rete.' 
+---
+= Linee guida per il networking
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Scopri l'architettura StorageGRID e le topologie di rete. Acquisire familiarità con i requisiti per la configurazione e il provisioning di rete.
+
+* link:storagegrid-networking-overview.html["Panoramica delle reti StorageGRID"]
+* link:networking-requirements-and-guidelines.html["Requisiti e linee guida per il networking"]
+* link:deployment-specific-networking-requirements.html["Considerazioni di rete specifiche per l'implementazione"]
+* link:network-installation-and-provisioning.html["Installazione e provisioning di rete"]
+* link:post-installation-guidelines.html["Linee guida per la post-installazione"]
+* link:network-port-reference.html["Riferimento porta di rete"]
+

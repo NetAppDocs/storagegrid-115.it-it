@@ -1,0 +1,42 @@
+---
+permalink: admin/enabling-single-sign-on.html 
+sidebar: sidebar 
+keywords:  
+summary: Dopo aver utilizzato la modalità sandbox per testare tutti i trust di StorageGRID, sei pronto per abilitare il single sign-on. 
+---
+= Abilitazione del single sign-on
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dopo aver utilizzato la modalità sandbox per testare tutti i trust di StorageGRID, sei pronto per attivare il single sign-on (SSO).
+
+.Di cosa hai bisogno
+* È necessario aver importato almeno un gruppo federated dall'origine dell'identità e aver assegnato al gruppo le autorizzazioni di gestione di accesso root. È necessario confermare che almeno un utente federato disponga dell'autorizzazione di accesso root per Grid Manager e per il tenant Manager per gli account tenant esistenti.
+* È necessario aver testato tutti i trust delle parti di base utilizzando la modalità sandbox.
+
+
+.Fasi
+. Selezionare *Configuration* *Access Control* *Single Sign-on*.
++
+Viene visualizzata la pagina Single Sign-on (accesso singolo) con l'opzione *Sandbox Mode* (modalità sandbox) selezionata.
+
+. Impostare lo stato SSO su *Enabled*.
+. Fare clic su *Save* (Salva).
++
+Viene visualizzato un messaggio di avviso.
+
++
+image::../media/sso_status_enabled_warning.gif[Messaggio di avviso per l'abilitazione di SSO]
+
+. Esaminare l'avviso e fare clic su *OK*.
++
+Il Single Sign-on è ora attivato.
+
++
+
+IMPORTANT: Tutti gli utenti devono utilizzare SSO per accedere a Grid Manager, Tenant Manager, Grid Management API e Tenant Management API. Gli utenti locali non possono più accedere a StorageGRID.
+
+

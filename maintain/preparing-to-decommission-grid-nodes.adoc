@@ -1,0 +1,19 @@
+---
+permalink: maintain/preparing-to-decommission-grid-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission 
+summary: È necessario esaminare le considerazioni relative alla rimozione dei nodi di griglia e verificare che non siano attivi lavori di riparazione per i dati con codifica di cancellazione. 
+---
+= Preparazione alla decommissionazione dei nodi grid
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario esaminare le considerazioni relative alla rimozione dei nodi di griglia e verificare che non siano attivi lavori di riparazione per i dati con codifica di cancellazione.
+
+.Fasi
+* link:considerations-for-decommissioning-storage-nodes.html["Considerazioni per la disattivazione dei nodi di storage"]
+* link:checking-data-repair-jobs.html["Verifica dei lavori di riparazione dei dati"]
+

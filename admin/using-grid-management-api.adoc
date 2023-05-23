@@ -1,0 +1,32 @@
+---
+permalink: admin/using-grid-management-api.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile eseguire attività di gestione del sistema utilizzando l"API REST di Grid Management invece dell"interfaccia utente di Grid Manager. Ad esempio, è possibile utilizzare l"API per automatizzare le operazioni o creare più entità, ad esempio gli utenti, più rapidamente.' 
+---
+= Utilizzando l'API Grid Management
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile eseguire attività di gestione del sistema utilizzando l'API REST di Grid Management invece dell'interfaccia utente di Grid Manager. Ad esempio, è possibile utilizzare l'API per automatizzare le operazioni o creare più entità, ad esempio gli utenti, più rapidamente.
+
+L'API Grid Management utilizza la piattaforma API open source Swagger. Swagger offre un'interfaccia utente intuitiva che consente a sviluppatori e non sviluppatori di eseguire operazioni in tempo reale in StorageGRID con l'API.
+
+
+
+== Risorse di alto livello
+
+L'API Grid Management fornisce le seguenti risorse di primo livello:
+
+* `/grid`: L'accesso è limitato agli utenti di Grid Manager e si basa sulle autorizzazioni di gruppo configurate.
+* `/org`: L'accesso è limitato agli utenti che appartengono a un gruppo LDAP locale o federato per un account tenant. Per ulteriori informazioni, consulta le informazioni sull'utilizzo degli account tenant.
+* `/private`: L'accesso è limitato agli utenti di Grid Manager e si basa sulle autorizzazioni di gruppo configurate. Queste API sono destinate esclusivamente all'uso interno e non sono documentate pubblicamente. Queste API sono inoltre soggette a modifiche senza preavviso.
+
+
+.Informazioni correlate
+link:../tenant/index.html["Utilizzare un account tenant"]
+
+https://prometheus.io/docs/querying/basics/["Prometheus: Nozioni di base sulle query"^]

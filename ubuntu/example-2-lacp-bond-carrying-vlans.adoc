@@ -1,0 +1,40 @@
+---
+permalink: ubuntu/example-2-lacp-bond-carrying-vlans.html 
+sidebar: sidebar 
+keywords:  
+summary: 'L"esempio 2 presuppone che si abbia familiarità con il bonding delle interfacce di rete e con la creazione di interfacce VLAN sulla distribuzione Linux in uso.' 
+---
+= Esempio 2: Collegamento LACP con VLAN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'esempio 2 presuppone che si abbia familiarità con il bonding delle interfacce di rete e con la creazione di interfacce VLAN sulla distribuzione Linux in uso.
+
+.A proposito di questa attività
+L'esempio 2 descrive uno schema generico, flessibile e basato su VLAN che facilita la condivisione di tutta la larghezza di banda di rete disponibile in tutti i nodi su un singolo host. Questo esempio è particolarmente applicabile agli host bare metal.
+
+Per comprendere questo esempio, si supponga di disporre di tre subnet separate per le reti Grid, Admin e Client in ogni data center. Le sottoreti si trovano su VLAN separate (1001, 1002 e 1003) e vengono presentate all'host su una porta di trunk collegata LACP (bond0). Configurare tre interfacce VLAN sul bond: Bond0.1001, bond0.1002 e bond0.1003.
+
+Se si richiedono VLAN e subnet separate per le reti di nodi sullo stesso host, è possibile aggiungere interfacce VLAN sul collegamento e mapparle nell'host (come illustrato nella figura come bond0.1004).
+
+image::../media/rhel_install_vlan_diag_2.gif[Questa immagine viene spiegata dal testo circostante.]
+
+.Fasi
+. Aggregare tutte le interfacce di rete fisiche che verranno utilizzate per la connettività di rete StorageGRID in un unico collegamento LACP.
++
+Utilizzare lo stesso nome per il bond su ogni host, ad esempio bond0.
+
+. Creare interfacce VLAN che utilizzano questo legame come dispositivo fisico "`associato,`" using the standard VLAN interface naming convention `physdev-name.VLAN ID`.
++
+I passi 1 e 2 richiedono una configurazione appropriata sugli edge switch che terminano le altre estremità dei collegamenti di rete. Le porte degli edge switch devono anche essere aggregate in un canale di porta LACP, configurate come trunk e in grado di passare tutte le VLAN richieste.
+
++
+Vengono forniti file di configurazione dell'interfaccia di esempio per questo schema di configurazione di rete per host.
+
+
+
+.Informazioni correlate
+link:example-etc-network-interfaces.html["Esempio di /etc/network/interfaces"]

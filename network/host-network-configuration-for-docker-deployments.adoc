@@ -1,0 +1,83 @@
+---
+permalink: network/host-network-configuration-for-docker-deployments.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Prima di iniziare la distribuzione di StorageGRID su una piattaforma Docker Container, determinare quali reti (griglia, amministratore, client) utilizzare ciascun nodo. È necessario assicurarsi che l"interfaccia di rete di ciascun nodo sia configurata sulla corretta interfaccia host virtuale o fisica e che ciascuna rete disponga di una larghezza di banda sufficiente.' 
+---
+= Configurazione della rete host per le implementazioni Docker
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di iniziare la distribuzione di StorageGRID su una piattaforma Docker Container, determinare quali reti (griglia, amministratore, client) utilizzare ciascun nodo. È necessario assicurarsi che l'interfaccia di rete di ciascun nodo sia configurata sulla corretta interfaccia host virtuale o fisica e che ciascuna rete disponga di una larghezza di banda sufficiente.
+
+
+
+== Host fisici
+
+Se si utilizzano host fisici per supportare i nodi grid:
+
+* Assicurarsi che tutti gli host utilizzino la stessa interfaccia host per ogni interfaccia di nodo. Questa strategia semplifica la configurazione degli host e consente la migrazione futura dei nodi.
+* Ottenere un indirizzo IP per l'host fisico stesso.
++
+
+NOTE: L'host può utilizzare un'interfaccia fisica sull'host e uno o più nodi in esecuzione sull'host. Gli indirizzi IP assegnati all'host o ai nodi che utilizzano questa interfaccia devono essere univoci. L'host e il nodo non possono condividere gli indirizzi IP.
+
+* Aprire le porte necessarie per l'host.
+
+
+
+
+== Consigli sulla larghezza di banda minima
+
+La seguente tabella fornisce le raccomandazioni relative alla larghezza di banda minima per ciascun tipo di nodo StorageGRID e per ciascun tipo di rete. È necessario fornire a ciascun host fisico o virtuale una larghezza di banda di rete sufficiente per soddisfare i requisiti di larghezza di banda minima aggregata per il numero totale e il tipo di nodi StorageGRID che si intende eseguire su tale host.
+
+|===
+| Tipo di nodo 3+| Tipo di rete 
+
+
+ a| 
+| Griglia | Amministratore | Client 
+
+
+ a| 
+Amministratore
+| 10 Gbps | 1 Gbps | 1 Gbps 
+
+
+ a| 
+Gateway
+| 10 Gbps | 1 Gbps | 10 Gbps 
+
+
+ a| 
+Storage
+| 10 Gbps | 1 Gbps | 10 Gbps 
+
+
+ a| 
+Archiviare
+| 10 Gbps | 1 Gbps | 10 Gbps 
+|===
+
+NOTE: Questa tabella non include la larghezza di banda DELLA SAN, necessaria per l'accesso allo storage condiviso. Se si utilizza uno storage condiviso a cui si accede tramite Ethernet (iSCSI o FCoE), è necessario eseguire il provisioning di interfacce fisiche separate su ciascun host per fornire una larghezza di banda SAN sufficiente. Per evitare di introdurre un collo di bottiglia, la larghezza di banda DELLA SAN per un determinato host deve corrispondere approssimativamente alla larghezza di banda aggregata della rete del nodo di storage per tutti i nodi di storage in esecuzione su quell'host.
+
+Utilizzare la tabella per determinare il numero minimo di interfacce di rete da eseguire su ciascun host, in base al numero e al tipo di nodi StorageGRID che si intende eseguire su tale host.
+
+Ad esempio, per eseguire un nodo Admin, un nodo Gateway e un nodo Storage su un singolo host:
+
+* Connessione delle reti Grid e Admin sul nodo Admin (richiede 10 + 1 = 11 Gbps)
+* Connessione delle reti Grid e Client sul nodo gateway (richiede 10 + 10 = 20 Gbps)
+* Connessione della rete Grid sul nodo di storage (richiede 10 Gbps)
+
+
+In questo scenario, è necessario fornire un minimo di 11 + 20 + 10 = 41 Gbps di larghezza di banda di rete, Che potrebbero essere soddisfatte da due interfacce da 40 Gbps o cinque interfacce da 10 Gbps, potenzialmente aggregate in linee e quindi condivise dalle tre o più VLAN che trasportano le subnet Grid, Admin e Client locali al data center fisico contenente l'host.
+
+Per alcuni metodi consigliati per configurare le risorse fisiche e di rete sugli host del cluster StorageGRID in modo da prepararle alla distribuzione StorageGRID, consultare le informazioni sulla configurazione della rete host nelle istruzioni di installazione della piattaforma Linux.
+
+.Informazioni correlate
+link:../rhel/index.html["Installare Red Hat Enterprise Linux o CentOS"]
+
+link:../ubuntu/index.html["Installare Ubuntu o Debian"]

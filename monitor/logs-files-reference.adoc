@@ -1,0 +1,34 @@
+---
+permalink: monitor/logs-files-reference.html 
+sidebar: sidebar 
+keywords: log, logs, log files 
+summary: Le sezioni seguenti elencano i registri utilizzati per acquisire eventi, messaggi di diagnostica e condizioni di errore. Potrebbe essere richiesto di raccogliere i file di log e inoltrarli al supporto tecnico per agevolare la risoluzione dei problemi. 
+---
+= Riferimenti ai file di log
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le sezioni seguenti elencano i registri utilizzati per acquisire eventi, messaggi di diagnostica e condizioni di errore. Potrebbe essere richiesto di raccogliere i file di log e inoltrarli al supporto tecnico per agevolare la risoluzione dei problemi.
+
+* link:storagegrid-software-logs.html["Log del software StorageGRID"]
+* link:deployment-and-maintenance-logs.html["Log di implementazione e manutenzione"]
+* link:logs-for-third-party-software.html["Registri per software di terze parti"]
+* link:about-bycast-log.html["A proposito di bycast.log"]
+
+
+
+IMPORTANT: Le tabelle di questa sezione sono solo a scopo di riferimento. I registri sono destinati al troubleshooting avanzato da parte del supporto tecnico. Le tecniche avanzate che implicano la ricostruzione della cronologia dei problemi utilizzando i registri di controllo e i file di log delle applicazioni non rientrano nell'ambito di questa guida.
+
+Per accedere a questi registri, è possibile raccogliere i file di log e i dati di sistema (*Support* *Tools* *Logs*). In alternativa, se il nodo di amministrazione primario non è disponibile o non è in grado di raggiungere un nodo specifico, è possibile accedere ai registri per ciascun nodo della griglia, come segue:
+
+. Immettere il seguente comando: `ssh admin@grid_node_IP`
+. Immettere la password elencata in `Passwords.txt` file.
+. Immettere il seguente comando per passare a root: `su -`
+. Immettere la password elencata in `Passwords.txt` file.
+
+
+.Informazioni correlate
+link:collecting-log-files-and-system-data.html["Raccolta di file di log e dati di sistema"]

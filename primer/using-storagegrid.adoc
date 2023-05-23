@@ -1,0 +1,24 @@
+---
+permalink: primer/using-storagegrid.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Dopo aver installato i nodi Grid e le reti StorageGRID, è possibile iniziare a configurare e utilizzare StorageGRID. Alcune delle attività che verranno eseguite includono il controllo dell"accesso degli utenti alle funzioni di amministrazione del sistema, la configurazione degli account tenant, la gestione delle connessioni client, l"impostazione delle opzioni di configurazione, la gestione delle posizioni degli oggetti con ILM, il monitoraggio dello stato di salute e delle attività quotidiane del sistema StorageGRID e l"esecuzione di attività di manutenzione di routine e non di routine.' 
+---
+= Utilizzando StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dopo aver installato i nodi Grid e le reti StorageGRID, è possibile iniziare a configurare e utilizzare StorageGRID. Alcune delle attività che verranno eseguite includono il controllo dell'accesso degli utenti alle funzioni di amministrazione del sistema, la configurazione degli account tenant, la gestione delle connessioni client, l'impostazione delle opzioni di configurazione, la gestione delle posizioni degli oggetti con ILM, il monitoraggio dello stato di salute e delle attività quotidiane del sistema StorageGRID e l'esecuzione di attività di manutenzione di routine e non di routine.
+
+* link:controlling-storagegrid-access.html["Controllo dell'accesso a StorageGRID"]
+* link:managing-tenants-and-client-connections.html["Gestione di tenant e connessioni client"]
+* link:configuring-network-settings.html["Configurazione delle impostazioni di rete"]
+* link:configuring-system-settings.html["Configurazione delle impostazioni di sistema"]
+* link:using-information-lifecycle-management.html["Utilizzo della gestione del ciclo di vita delle informazioni"]
+* link:monitoring-storagegrid-operations.html["Monitoraggio delle operazioni StorageGRID"]
+* link:performing-maintenance-procedures.html["Esecuzione delle procedure di manutenzione"]
+* link:using-storagegrid-support-options.html["Utilizzo delle opzioni di supporto di StorageGRID"]
+

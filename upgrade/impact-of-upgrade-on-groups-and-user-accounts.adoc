@@ -1,0 +1,41 @@
+---
+permalink: upgrade/impact-of-upgrade-on-groups-and-user-accounts.html 
+sidebar: sidebar 
+keywords: upgrade, permissions 
+summary: 'È necessario comprendere l"impatto dell"aggiornamento di StorageGRID, in modo da poter aggiornare i gruppi e gli account utente in modo appropriato una volta completato l"aggiornamento.' 
+---
+= Impatto di un aggiornamento su gruppi e account utente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario comprendere l'impatto dell'aggiornamento di StorageGRID, in modo da poter aggiornare i gruppi e gli account utente in modo appropriato una volta completato l'aggiornamento.
+
+
+
+== Modifiche alle autorizzazioni e alle opzioni del gruppo
+
+Dopo aver eseguito l'aggiornamento a StorageGRID 11.5, selezionare le seguenti nuove autorizzazioni e opzioni (*Configurazione* > *controllo accessi* > *gruppi amministratori*).
+
+[cols="1a,2a"]
+|===
+| Permesso o opzione | Descrizione 
+
+
+ a| 
+Amministratore dell'appliance di storage
+ a| 
+Necessario per accedere all'interfaccia utente di Gestione sistema SANtricity da Gestione griglia.
+
+
+
+ a| 
+Modalità di accesso
+ a| 
+Quando si gestiscono i gruppi, è possibile selezionare *sola lettura* per questa nuova opzione per impedire agli utenti di modificare le impostazioni e le funzioni selezionate per il gruppo. Gli utenti dei gruppi con modalità di accesso in sola lettura possono visualizzare le impostazioni, ma non possono modificarle.
+
+|===
+.Informazioni correlate
+link:../admin/index.html["Amministrare StorageGRID"]

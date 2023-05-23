@@ -1,0 +1,28 @@
+---
+permalink: vmware/deploying-virtual-machine-grid-nodes-in-vmware-vsphere-web-client.html 
+sidebar: sidebar 
+keywords: storagegrid, deploying grid nodes, deploy grid nodes, vsphere, vsphere web client 
+summary: 'VMware vSphere Web Client consente di implementare ciascun nodo grid come macchina virtuale. Durante l"implementazione, ciascun nodo della griglia viene creato e connesso a una o più reti. Se è necessario implementare nodi storage dell"appliance StorageGRID, consultare le istruzioni di installazione e manutenzione dell"appliance dopo aver implementato tutti i nodi grid delle macchine virtuali.' 
+---
+= Implementazione di nodi grid di macchine virtuali in VMware vSphere Web Client
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere Web Client consente di implementare ciascun nodo grid come macchina virtuale. Durante l'implementazione, ciascun nodo della griglia viene creato e connesso a una o più reti. Se è necessario implementare nodi storage dell'appliance StorageGRID, consultare le istruzioni di installazione e manutenzione dell'appliance dopo aver implementato tutti i nodi grid delle macchine virtuali.
+
+* link:collecting-information-about-your-deployment-environment.html["Raccolta di informazioni sull'ambiente di implementazione"]
+* link:how-grid-nodes-discover-primary-admin-node.html["In che modo i nodi della griglia rilevano il nodo di amministrazione primario"]
+* link:deploying-storagegrid-node-as-virtual-machine.html["Implementazione di un nodo StorageGRID come macchina virtuale"]
+
+
+.Informazioni correlate
+link:../sg100-1000/index.html["SG100  SG1000 Services appliance"]
+
+link:../sg5600/index.html["Appliance di storage SG5600"]
+
+link:../sg5700/index.html["Appliance di storage SG5700"]
+
+link:../sg6000/index.html["Appliance di storage SG6000"]

@@ -1,0 +1,14 @@
+---
+permalink: monitor/monitoring-performance-networking-and-system-resources.html 
+sidebar: sidebar 
+keywords:  
+summary: È necessario monitorare le performance, il networking e le risorse di sistema per determinare se StorageGRID è in grado di gestire il carico corrente e garantire che le performance del client non si degradino nel tempo. 
+---
+= Monitoraggio delle performance, del networking e delle risorse di sistema
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario monitorare le performance, il networking e le risorse di sistema per determinare se StorageGRID è in grado di gestire il carico corrente e garantire che le performance del client non si degradino nel tempo.

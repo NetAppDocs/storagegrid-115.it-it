@@ -1,0 +1,28 @@
+---
+permalink: rhel/deploying-virtual-grid-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, deploying grid nodes, deploy grid nodes, rhel, redhat, redhat linux, centos 
+summary: 'Per implementare nodi virtual grid su host Red Hat Enterprise Linux o CentOS, create file di configurazione dei nodi per tutti i nodi, convalidate i file e avviate il servizio host StorageGRID, che avvia i nodi. Se è necessario implementare nodi di storage dell"appliance StorageGRID, consultare le istruzioni di installazione e manutenzione dell"appliance dopo aver implementato tutti i nodi virtuali.' 
+---
+= Implementazione di nodi virtual grid
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per implementare nodi virtual grid su host Red Hat Enterprise Linux o CentOS, create file di configurazione dei nodi per tutti i nodi, convalidate i file e avviate il servizio host StorageGRID, che avvia i nodi. Se è necessario implementare nodi di storage dell'appliance StorageGRID, consultare le istruzioni di installazione e manutenzione dell'appliance dopo aver implementato tutti i nodi virtuali.
+
+* link:creating-node-configuration-files.html["Creazione di file di configurazione del nodo"]
+* link:validating-storagegrid-configuration.html["Convalida della configurazione StorageGRID"]
+* link:starting-storagegrid-host-service.html["Avvio del servizio host StorageGRID"]
+
+
+.Informazioni correlate
+link:../sg100-1000/index.html["SG100  SG1000 Services appliance"]
+
+link:../sg5600/index.html["Appliance di storage SG5600"]
+
+link:../sg5700/index.html["Appliance di storage SG5700"]
+
+link:../sg6000/index.html["Appliance di storage SG6000"]

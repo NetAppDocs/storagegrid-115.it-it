@@ -1,0 +1,40 @@
+---
+permalink: primer/prometheus-metrics.html 
+sidebar: sidebar 
+keywords: prometheus, metrics, grafana 
+summary: Il servizio Prometheus sui nodi di amministrazione raccoglie le metriche delle serie temporali dai servizi su tutti i nodi. 
+---
+= Metriche Prometheus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il servizio Prometheus sui nodi di amministrazione raccoglie le metriche delle serie temporali dai servizi su tutti i nodi.
+
+Le metriche raccolte da Prometheus vengono utilizzate in diversi punti del Grid Manager:
+
+* *Pagina nodi*: I grafici e i grafici nelle schede disponibili nella pagina nodi utilizzano lo strumento di visualizzazione Grafana per visualizzare le metriche delle serie temporali raccolte da Prometheus. Grafana visualizza i dati delle serie temporali in formato grafico e grafico, mentre Prometheus funge da origine dei dati back-end.
++
+image::../media/prometheus_graph.png[Grafico Prometheus]
+
+* *Avvisi*: Gli avvisi vengono attivati a livelli di severità specifici quando le condizioni delle regole di avviso che utilizzano le metriche Prometheus valutano come vero.
+* *API per la gestione dei grid*: Puoi utilizzare le metriche Prometheus in regole di avviso personalizzate o con strumenti di automazione esterni per monitorare il tuo sistema StorageGRID. Un elenco completo delle metriche Prometheus è disponibile nell'API Grid Management (*Help* *API Documentation* *Metrics*). Sebbene siano disponibili più di mille metriche, per monitorare le operazioni StorageGRID più critiche è necessario solo un numero relativamente ridotto.
++
+
+NOTE: Le metriche che includono _private_ nei loro nomi sono destinate esclusivamente all'uso interno e sono soggette a modifiche tra le release di StorageGRID senza preavviso.
+
+* La pagina *Support* *Tools* *Diagnostics* e la pagina *Support* *Tools* *Metrics*: Queste pagine, destinate principalmente al supporto tecnico, forniscono una serie di tool e grafici che utilizzano i valori delle metriche Prometheus.
++
+
+NOTE: Alcune funzioni e voci di menu della pagina metriche sono intenzionalmente non funzionali e sono soggette a modifiche.
+
+
+
+.Informazioni correlate
+link:monitoring-and-managing-alerts.html["Monitoraggio e gestione degli avvisi"]
+
+link:using-storagegrid-support-options.html["Utilizzo delle opzioni di supporto di StorageGRID"]
+
+link:../monitor/index.html["Monitor  risoluzione dei problemi"]

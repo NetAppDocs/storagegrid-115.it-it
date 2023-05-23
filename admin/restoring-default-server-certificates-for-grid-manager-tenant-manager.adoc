@@ -1,0 +1,24 @@
+---
+permalink: admin/restoring-default-server-certificates-for-grid-manager-tenant-manager.html 
+sidebar: sidebar 
+keywords:  
+summary: 'È possibile ripristinare l"utilizzo dei certificati server predefiniti per Grid Manager e Tenant Manager.' 
+---
+= Ripristino dei certificati server predefiniti per Grid Manager e Tenant Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile ripristinare l'utilizzo dei certificati server predefiniti per Grid Manager e Tenant Manager.
+
+.Fasi
+. Selezionare *Configurazione* *Impostazioni di rete* *certificati server*.
+. Nella sezione Manage Interface Server Certificate (Gestisci certificato server interfaccia), fare clic su *Use Default Certificates* (Usa certificati predefiniti)
+. Fare clic su *OK* nella finestra di dialogo di conferma.
++
+Quando si ripristinano i certificati del server predefiniti, i file dei certificati del server personalizzati configurati vengono cancellati e non possono essere ripristinati dal sistema. I certificati server predefiniti vengono utilizzati per tutte le nuove connessioni client successive.
+
+. Aggiornare la pagina per assicurarsi che il browser Web sia aggiornato.
+

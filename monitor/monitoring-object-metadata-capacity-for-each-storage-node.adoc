@@ -1,0 +1,92 @@
+---
+permalink: monitor/monitoring-object-metadata-capacity-for-each-storage-node.html 
+sidebar: sidebar 
+keywords: object, metadata, monitoring, monitoring object metadata, metadata, metadata capacity 
+summary: 'È necessario monitorare l"utilizzo dei metadati per ciascun nodo di storage per garantire che rimanga spazio sufficiente per le operazioni essenziali del database. È necessario aggiungere nuovi nodi di storage in ogni sito prima che i metadati dell"oggetto superino il 100% dello spazio consentito per i metadati.' 
+---
+= Monitoraggio della capacità dei metadati degli oggetti per ciascun nodo di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario monitorare l'utilizzo dei metadati per ciascun nodo di storage per garantire che rimanga spazio sufficiente per le operazioni essenziali del database. È necessario aggiungere nuovi nodi di storage in ogni sito prima che i metadati dell'oggetto superino il 100% dello spazio consentito per i metadati.
+
+.Di cosa hai bisogno
+* È necessario accedere a Grid Manager utilizzando un browser supportato.
+
+
+.A proposito di questa attività
+StorageGRID conserva tre copie dei metadati degli oggetti in ogni sito per garantire la ridondanza e proteggere i metadati degli oggetti dalla perdita. Le tre copie vengono distribuite uniformemente su tutti i nodi di storage di ogni sito utilizzando lo spazio riservato ai metadati sul volume di storage 0 di ogni nodo di storage.
+
+In alcuni casi, la capacità dei metadati degli oggetti della griglia potrebbe essere consumata più rapidamente della capacità dello storage a oggetti. Ad esempio, se in genere si acquisiscono grandi quantità di oggetti di piccole dimensioni, potrebbe essere necessario aggiungere nodi di storage per aumentare la capacità dei metadati anche se rimane sufficiente capacità di storage a oggetti.
+
+Alcuni dei fattori che possono aumentare l'utilizzo dei metadati includono la dimensione e la quantità di tag e metadati dell'utente, il numero totale di parti in un caricamento multiparte e la frequenza delle modifiche alle posizioni di storage ILM.
+
+.Fasi
+. Selezionare *Nodes* *_Storage Node_* *Storage*.
+. Passare il cursore del mouse sul grafico Storage used - Object Metadata (Storage utilizzato - metadati oggetto) per visualizzare i valori relativi a un orario specifico.
++
+image::../media/storage_used_object_metadata.png[Storage utilizzato - metadati oggetto]
+
++
+|===
+| Valore | Descrizione | Metrica Prometheus 
+
+
+ a| 
+Utilizzato (%)
+ a| 
+La percentuale dello spazio consentito per i metadati che è stato utilizzato su questo nodo di storage.
+ a| 
+`storagegrid_storage_utilization_metadata_bytes/ storagegrid_storage_utilization_metadata_allowed_bytes`
+
+
+
+ a| 
+Utilizzato
+ a| 
+I byte dello spazio di metadati consentito che sono stati utilizzati su questo nodo di storage.
+ a| 
+`storagegrid_storage_utilization_metadata_bytes`
+
+
+
+ a| 
+Consentito
+ a| 
+Lo spazio consentito per i metadati dell'oggetto su questo nodo di storage. Per informazioni su come determinare questo valore per ciascun nodo di storage, consultare le istruzioni per l'amministrazione di StorageGRID.
+ a| 
+`storagegrid_storage_utilization_metadata_allowed_bytes`
+
+
+
+ a| 
+Riservato
+ a| 
+Lo spazio effettivo riservato ai metadati su questo nodo di storage. Include lo spazio consentito e lo spazio richiesto per le operazioni essenziali dei metadati. Per informazioni sul calcolo di questo valore per ciascun nodo di storage, consultare le istruzioni per l'amministrazione di StorageGRID.
+ a| 
+`storagegrid_storage_utilization_metadata_reserved_bytes`
+
+|===
++
+
+NOTE: I valori totali di un sito o di una griglia non includono i nodi che non hanno riportato metriche per almeno cinque minuti, come i nodi offline.
+
+. Se il valore *utilizzato (%)* è pari o superiore al 70%, espandere il sistema StorageGRID aggiungendo nodi di storage a ciascun sito.
++
+
+IMPORTANT: L'avviso *Low metadata storage* viene attivato quando il valore *used (%)* raggiunge determinate soglie. I risultati indesiderati possono verificarsi se i metadati dell'oggetto utilizzano più del 100% dello spazio consentito.
+
++
+Quando si aggiungono nuovi nodi, il sistema ribilancia automaticamente i metadati degli oggetti in tutti i nodi di storage all'interno del sito. Consultare le istruzioni per espandere un sistema StorageGRID.
+
+
+
+.Informazioni correlate
+link:../troubleshoot/troubleshooting-storagegrid-system.html["Risoluzione dei problemi relativi all'avviso di storage metadati in esaurimento"]
+
+link:../admin/index.html["Amministrare StorageGRID"]
+
+link:../expand/index.html["Espandi il tuo grid"]
