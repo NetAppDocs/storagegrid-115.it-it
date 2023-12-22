@@ -15,7 +15,7 @@ Per le due porte di gestione 1-GbE sull'appliance di servizi, è possibile scegl
 
 *Porte di gestione della rete SG100*
 
-image::../media/sg100_bonded_management_ports.png[porte di gestione bonded sg100]
+image::../media/sg100_bonded_management_ports.png[SG100 porte di gestione incollate]
 
 *Porte di gestione della rete SG1000*
 

@@ -21,7 +21,7 @@ La rete amministrativa per StorageGRID è una rete opzionale utilizzata per l'am
 
 *Porte RJ-45 SG100*
 
-image::../media/sg100_rj_45_ports_circled.png[porte rj 45 sg100 cerchiate]
+image::../media/sg100_rj_45_ports_circled.png[SG100 porte RJ-45]
 
 *Porte RJ-45 SG1000*
 

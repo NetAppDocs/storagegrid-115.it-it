@@ -18,7 +18,7 @@ NOTE: I messaggi AutoSupport attivati dagli eventi vengono soppressi quando si s
 
 Quando il messaggio AutoSupport non viene inviato, nella scheda *Results* della pagina *AutoSupport* viene visualizzato "`Failed`".
 
-image::../media/autosupport_results_tab.png[scheda risultati AutoSupport]
+image::../media/autosupport_results_tab.png[Scheda risultati AutoSupport]
 
 
 

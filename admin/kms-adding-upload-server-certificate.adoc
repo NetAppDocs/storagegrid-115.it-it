@@ -23,7 +23,7 @@ image::../media/kms_step_2_upload_server_certificate.png[KMS fase 2 carica certi
 Vengono visualizzati i metadati del certificato del server.
 
 +
-image::../media/kms_step_2_server_certificate_metadata.png[metadati del certificato server kms fase 2]
+image::../media/kms_step_2_server_certificate_metadata.png[Metadati del certificato del server]
 
 +
 

@@ -20,7 +20,7 @@ summary: 'È possibile accedere all"interfaccia BMC sul dispositivo di servizi u
 *Porta di gestione BMC SG100*
 
 +
-image::../media/sg100_bmc_management_port.png[porta di gestione sg100 bmc]
+image::../media/sg100_bmc_management_port.png[Porta di gestione SG100]
 
 +
 *Porta di gestione BMC SG1000*

@@ -55,7 +55,7 @@ image::../media/dds_object_counts_queries.png[Pagina Panoramica DDS]
 
 È inoltre possibile visualizzare il numero totale di query non riuscite a causa di errori di coerenza. Gli errori del livello di coerenza derivano da un numero insufficiente di archivi di metadati disponibili nel momento in cui viene eseguita una query attraverso il servizio DDS specifico.
 
-È possibile utilizzare la pagina Diagnostics (Diagnostica) per ottenere ulteriori informazioni sullo stato corrente della griglia. Vedere link:../monitor/running-diagnostics.html.html["Esecuzione della diagnostica"].
+È possibile utilizzare la pagina Diagnostics (Diagnostica) per ottenere ulteriori informazioni sullo stato corrente della griglia. Vedere link:../monitor/running-diagnostics.html["Esecuzione della diagnostica"].
 
 
 
@@ -92,7 +92,7 @@ Le query LDR includono query per la posizione degli oggetti durante le operazion
 
 È inoltre possibile visualizzare il numero totale di query non riuscite a causa di errori di coerenza. Gli errori del livello di coerenza derivano da un numero insufficiente di archivi di metadati disponibili nel momento in cui viene eseguita una query attraverso il servizio LDR specifico.
 
-È possibile utilizzare la pagina Diagnostics (Diagnostica) per ottenere ulteriori informazioni sullo stato corrente della griglia. Vedere link:../monitor/running-diagnostics.html.html["Esecuzione della diagnostica"].
+È possibile utilizzare la pagina Diagnostics (Diagnostica) per ottenere ulteriori informazioni sullo stato corrente della griglia. Vedere link:../monitor/running-diagnostics.html["Esecuzione della diagnostica"].
 
 
 

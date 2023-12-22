@@ -38,7 +38,7 @@ CAUTION: Memorizzare la nuova passphrase di provisioning in una posizione sicura
 Al termine della modifica della passphrase di provisioning, il sistema visualizza un banner verde di successo. La modifica dovrebbe richiedere meno di un minuto.
 
 +
-image::../media/change_provisioning_passphrase_success.png[modifica passphrase provisioning riuscita]
+image::../media/change_provisioning_passphrase_success.png[Modifica passphrase di provisioning - messaggio di successo]
 
 . Selezionare il collegamento *Recovery Package page* all'interno del banner di successo.
 . Scarica il nuovo pacchetto di ripristino da Grid Manager. Selezionare *manutenzione* *pacchetto di ripristino* e inserire la nuova passphrase di provisioning.

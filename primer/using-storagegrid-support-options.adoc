@@ -44,7 +44,7 @@ I messaggi AutoSupport includono informazioni quali:
 
 image::../media/autosupport_disabled_message.png[Messaggio AutoSupport disattivato]
 
-È possibile selezionare il simbolo "`x`" image:../media/autosupport_close_message.png[""] per chiudere il messaggio. Il messaggio non viene visualizzato fino a quando la cache del browser non viene cancellata, anche se AutoSupport rimane disattivato.
+È possibile selezionare il simbolo "`x`" image:../media/autosupport_close_message.png["simbolo x."] per chiudere il messaggio. Il messaggio non viene visualizzato fino a quando la cache del browser non viene cancellata, anche se AutoSupport rimane disattivato.
 
 
 
