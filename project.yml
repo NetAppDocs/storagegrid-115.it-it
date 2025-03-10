@@ -1,6 +1,6 @@
 ---
 settings:
-  name: StorageGRID 11.5
+  name: StorageGRID
   search: storagegrid-enable,storagegrid-115
   downlevel: true
   internal:
@@ -9,10 +9,21 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
     lipi_enabled: false
-  langs: it-it,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,es-es,fr-fr
+  versions:
+  - version-number: '11.5'
+    url: "/storagegrid-115"
+  - version-number: '11.9'
+    url: "/storagegrid"
+  - version-number: '11.8'
+    url: "/storagegrid-118"
+  - version-number: '11.7'
+    url: "/storagegrid-117"
+  - version-number: '11.6'
+    url: "/storagegrid-116"
+  langs: it-it,us-en,de-de,es-es,fr-fr,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
-  - title: StorageGRID 11.5 documenti
+  - title: Documentazione di StorageGRID 11,5
     url: "/index.html"
   - section: release-notes
   - title: Inizia subito
@@ -51,8 +62,6 @@ sidebar:
     entries:
     - section: expand
     - section: maintain
-  - title: Altre versioni
-    url: "/earlier-versions.html"
   - title: Note legali
     url: "/legal-notices.html"
 product-family:
