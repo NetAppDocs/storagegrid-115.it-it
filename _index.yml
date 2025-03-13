@@ -1,5 +1,13 @@
 ---
 indexpage:
+  title: Documentazione di StorageGRID 11,5
+  summary: NetApp StorageGRID è una suite di storage a oggetti software-defined che
+    supporta un'ampia gamma di casi di utilizzo in ambienti multi-cloud pubblici,
+    privati e ibridi. StorageGRID utilizza innovazioni leader del settore come la
+    gestione automatica del ciclo di vita per memorizzare, proteggere, proteggere
+    e conservare i dati non strutturati per un utilizzo multi-scopo su lunghi periodi
+    di tempo.
+  keywords: storagegrid 115 documentation
   lead: NetApp StorageGRID è una suite di storage a oggetti software-defined che supporta
     un'ampia gamma di casi di utilizzo in ambienti multi-cloud pubblici, privati e
     ibridi. StorageGRID utilizza innovazioni leader del settore come la gestione automatica
